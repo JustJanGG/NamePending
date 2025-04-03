@@ -4,13 +4,10 @@ public class FireballProto : MonoBehaviour
 {
     private Vector2 direction;
 
-    
-
     [Header("Locations")]
     private Transform firePoint;
     private Transform target;
     
-
     [Header("Fireball properties")]
     public float speed = 5.0f;
     public int damage = 1;
@@ -25,17 +22,18 @@ public class FireballProto : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         target.position = mousePos;
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = (target.position - firePoint.position).normalized;
+        direction = (target.position - firePoint.position);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
+        gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

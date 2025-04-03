@@ -7,10 +7,12 @@ public class ShootFireball : MonoBehaviour
     public GameObject fireballPrefab;
 
     private float lastFireballTime = 0.0f;
+
     private void Start()
     {
         fireballProto = fireballPrefab.GetComponent<FireballProto>();
     }
+
     public void Shoot(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && Time.time > fireballProto.castDelay + lastFireballTime)
