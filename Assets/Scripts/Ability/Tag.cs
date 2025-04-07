@@ -4,11 +4,11 @@ public enum Tag
     AoE,
     Projectile,
     Melee,
+    Ranged,
     Buff,
     Debuff,
     Recovery,
     Duration,
     Channeling,
-    Ranged,
     Travel
 }

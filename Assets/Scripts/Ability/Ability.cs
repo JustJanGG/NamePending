@@ -4,11 +4,12 @@ using UnityEngine;
 using System;
 public abstract class Ability : MonoBehaviour
 {
-    private int id;
-    private string abilityName;
-    private string abilityDescription;
-    private float procCoefficiant;
-    private float cooldown;
-    private List<Tag> tags;
-    private List<Circuit> circuits;
+    public GameObject prefab;
+    protected int id;
+    protected string abilityName;
+    protected string abilityDescription;
+    protected float procCoefficiant;
+    protected float cooldown;
+    protected List<Tag> tags;
+    protected List<Circuit> circuits;
 }
