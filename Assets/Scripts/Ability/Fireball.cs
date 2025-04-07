@@ -1,13 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 
 public class Fireball : Ability
-{
-    public float speedTest = 5.0f;
-    public Fireball()
+{    
+
+    private void Start()
     {
+        circuits = new List<GameObject>();
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
         tags.Add(Tag.Projectile);
@@ -16,6 +18,11 @@ public class Fireball : Ability
         abilityName = "Fireball";
         procCoefficiant = 1f;
         cooldown = 0f;
+        physicalDamage = 0f;
+        fireDamage = 10f;
+        projectileSpeed = 10f;
+        areaOfEffect = 1f;
+        projectileCount = 1;
     }
     public override void UseAbility(InputAction.CallbackContext ctx)
     {
@@ -24,7 +31,20 @@ public class Fireball : Ability
             GameObject fireball = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
 
             FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
-            fireballPrefab.speed = speedTest;
+            fireballPrefab.speed = projectileSpeed;
+        }
+    }
+
+    public void ApplyRedCircuits()
+    {
+        Debug.Log("Applying red circuits to fireball");
+        foreach (var circuit in circuits)
+        {
+            Circuit currentCircuit = circuit.GetComponent<Circuit>();
+            if (currentCircuit.circuitType == CircuitType.Red)
+            {
+                circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
+            }
         }
     }
 }
