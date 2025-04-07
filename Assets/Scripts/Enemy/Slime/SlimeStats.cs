@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class SlimeStats : MonoBehaviour
 {
     [Header("Stats")]
-    public int health = 3;
-    public int maxHealth = 3;
-    public int healthRegen;
-    public float movementSpeed = 5.0f;
+    private int health = 5;
+    private int maxHealth= 5;
+    public float movementSpeed = 2.0f;
+    public float aggroRange = 5.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
