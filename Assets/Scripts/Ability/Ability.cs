@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 using System;
 public abstract class Ability : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject abilityPrefab;
     protected int id;
     protected string abilityName;
     protected string abilityDescription;
@@ -12,4 +13,6 @@ public abstract class Ability : MonoBehaviour
     protected float cooldown;
     protected List<Tag> tags;
     protected List<Circuit> circuits;
+
+    public abstract void UseAbility(InputAction.CallbackContext ctx);
 }

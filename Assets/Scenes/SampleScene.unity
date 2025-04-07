@@ -164,8 +164,8 @@ GameObject:
   - component: {fileID: 332618233}
   - component: {fileID: 332618232}
   - component: {fileID: 332618231}
-  - component: {fileID: 332618237}
   - component: {fileID: 332618238}
+  - component: {fileID: 332618239}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -233,9 +233,9 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332618237}
-        m_TargetAssemblyTypeName: ShootFireball, Assembly-CSharp
-        m_MethodName: Shoot
+      - m_Target: {fileID: 332618239}
+        m_TargetAssemblyTypeName: Fireball, Assembly-CSharp
+        m_MethodName: UseAbility
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -460,19 +460,6 @@ Transform:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &332618237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332618230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7df20abea3b79a429b228a30774d6c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireballPrefab: {fileID: 1584603602410823806, guid: 3b55e71a23e3dfa459f4bca53b296919, type: 3}
 --- !u!95 &332618238
 Animator:
   serializedVersion: 7
@@ -495,6 +482,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &332618239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332618230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ecad4e42f5c774ab736570216c4100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
+  speedTest: 5
 --- !u!1 &388076172
 GameObject:
   m_ObjectHideFlags: 0
