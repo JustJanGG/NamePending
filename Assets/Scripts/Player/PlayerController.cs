@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D playerCollider;
     
     [Header("Movement")]
-    private Vector2 direction;
+    public Vector2 direction;
     public float movementSpeed = 9f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
