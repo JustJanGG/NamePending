@@ -601,7 +601,7 @@ MonoBehaviour:
   maxHealth: 3
   healthRegen: 0
   movementSpeed: 5
-  dashRange: 3
+  dashRange: 10
   dashCooldown: 1
 --- !u!1 &388076172
 GameObject:
