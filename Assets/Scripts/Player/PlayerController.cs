@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     private float dashTimer;
     private bool isDashing;
-    private Vector2 lastDirection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,10 +40,6 @@ public class PlayerController : MonoBehaviour
         if (!isDashing)
         {
             rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
-            if (direction != Vector2.zero)
-            {
-                lastDirection = direction;
-            }
         }
     }
     private IEnumerator Dash()
@@ -53,7 +48,8 @@ public class PlayerController : MonoBehaviour
         Vector2 dashDirection = direction.normalized;
         if (dashDirection == Vector2.zero)
         {
-            dashDirection = lastDirection.normalized;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            dashDirection = (mousePosition - (Vector2)transform.position).normalized;
         }
 
         rigidBody.AddForce(dashDirection * dashRange, ForceMode2D.Impulse);
