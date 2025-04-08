@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,21 +7,28 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rigidBody;
     private Collider2D playerCollider;
-    
+
     [Header("Movement")]
     public Vector2 direction;
-    private float movementSpeed;
+    public float movementSpeed;
+
+    public float dashRange;
+    public float dashCooldown;
+    private float dashTimer;
+    private bool isDashing;
+    private Vector2 lastDirection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        isDashing = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        movementSpeed = GetComponent<PlayerStats>().movementSpeed;
+        dashTimer -= Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -30,11 +38,43 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
+        if (!isDashing)
+        {
+            rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
+            if (direction != Vector2.zero)
+            {
+                lastDirection = direction;
+            }
+        }
+    }
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        Vector2 dashDirection = direction.normalized;
+        if (dashDirection == Vector2.zero)
+        {
+            dashDirection = lastDirection.normalized;
+        }
+
+        rigidBody.AddForce(dashDirection * dashRange, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(0.2f);
+
+        dashTimer = dashCooldown;
+        isDashing = false;
     }
 
     public void HandleMoveInput(InputAction.CallbackContext ctx)
     {
         direction = ctx.ReadValue<Vector2>().normalized;
     }
+
+    public void HandleDashInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && dashTimer <= 0)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
 }
