@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Movement")]
     public Vector2 direction;
-    public float movementSpeed = 9f;
+    private float movementSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        movementSpeed = GetComponent<PlayerStats>().movementSpeed;
+    }
+
     void FixedUpdate()
     {
         Move();
