@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public abstract class Circuit
+public abstract class Circuit : MonoBehaviour
 {
     protected int id;
     protected string circuitName;
     protected string circuitDescription;
-    protected CircuitType circuitType;
+    public CircuitType circuitType;
 
 }
 public enum CircuitType
