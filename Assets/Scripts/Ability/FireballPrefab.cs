@@ -4,10 +4,6 @@ public class FireballPrefab : MonoBehaviour
 {
     private Vector2 direction;
 
-    [Header("Locations")]
-    private Transform firePoint;
-    private Transform target;
-
     [Header("Fireball properties")]
     public float speed = 5.0f;
     public int damage = 1;
@@ -15,19 +11,11 @@ public class FireballPrefab : MonoBehaviour
     public float areaOfEffect = 1.0f;
     public float castDelay = 1f;
 
-    private void Awake()
-    {
-        target = new GameObject().transform;
-        firePoint = gameObject.transform;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        target.position = mousePos;
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = (target.position - firePoint.position);
+        direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+        Destroy(gameObject, 3f); 
     }
 
     // Update is called once per frame
