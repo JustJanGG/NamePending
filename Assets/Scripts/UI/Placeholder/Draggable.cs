@@ -10,10 +10,13 @@ public class Draggable : MonoBehaviour
     Vector3 mousePositionOffset;
     private bool isHolding = false;
 
+    //public TMPro.TextMeshPro tooltipText;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = player.GetComponentInChildren<Camera>();
+        //tooltipText = this.GetComponentInChildren<TMPro.TextMeshPro>();
     }
 
     private void Update()
@@ -21,6 +24,18 @@ public class Draggable : MonoBehaviour
         if (!isHolding)
         {
             CheckSortingLayer();
+        }
+
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+        if (distance < 1.0f)
+        {
+            Debug.Log("Show Tooltip");
+            //tooltipText.gameObject.SetActive(true);
+            //tooltipText.transform.position = mainCamera.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
+        }
+        else
+        {
+            //tooltipText.gameObject.SetActive(false);
         }
     }
 
