@@ -6,10 +6,6 @@ public class FireballPrefab : MonoBehaviour
 
     [Header("Fireball properties")]
     public float speed = 5.0f;
-    public int damage = 1;
-    public int projectileCount = 1;
-    public float areaOfEffect = 1.0f;
-    public float castDelay = 1f;
 
     void Start()
     {
