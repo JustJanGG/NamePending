@@ -10,7 +10,7 @@ public abstract class Ability : MonoBehaviour
     public List<GameObject> circuits;
 
     protected GameObject player;
-    protected int id;
+    //protected int id;
     protected string abilityName;
     protected string abilityDescription;
     protected float cooldown;

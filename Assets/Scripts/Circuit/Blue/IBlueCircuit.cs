@@ -1,9 +1,14 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
-public interface IBlueCircuit
+public interface IBlueCircuit : ICircuit
 {
     float procCoefficient { get; set; }
     float procChance { get; set; }
+    Ability socketedAbility { get; set; }
+    List<RedCircuit> redCircuits { get; set; }
+
 
     public bool Proc(float procCoefficient)
     {

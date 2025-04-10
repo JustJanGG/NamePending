@@ -15,6 +15,6 @@ public class FasterProjectiles : RedCircuit
 
     public override void ApplyRedCircuit(Ability ability)
     {
-        ability.projectileSpeed *= 2f;
+        ability.projectileSpeed *= 1.5f;
     }
 }
