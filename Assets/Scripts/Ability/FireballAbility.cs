@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 
-public class Fireball : Ability
+public class FireballAbility : Ability
 {    
 
     private void Start()
