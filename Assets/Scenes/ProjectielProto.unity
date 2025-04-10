@@ -190,6 +190,7 @@ MonoBehaviour:
   abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
   circuits:
   - {fileID: 0}
+  procCoefficiant: 0
   projectileSpeed: 0
   projectileCount: 0
   areaOfEffect: 0
@@ -537,13 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774841ca686bd7b41b45ee01fe842730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
-  healthRegen: 0
-  movementSpeed: 5
-  dashRange: 10
-  dashCooldown: 1
-  fireDamage: 5
 --- !u!1 &941604495
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +684,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: movementSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -755,7 +753,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683293768}
-  - component: {fileID: 1683293767}
   m_Layer: 0
   m_Name: FasterProjectile
   m_TagString: Untagged
@@ -763,20 +760,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1683293767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683293766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22a3449aa1eb454d875f8e82690a47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circuitType: 1
-  tags: 01000000
 --- !u!4 &1683293768
 Transform:
   m_ObjectHideFlags: 0

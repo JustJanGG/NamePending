@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class BlueCircuit : Circuit
+public interface IBlueCircuit
 {
-    protected float procCoefficient;
-    protected float procChance;
+    float procCoefficient { get; set; }
+    float procChance { get; set; }
 
     public bool Proc(float procCoefficient)
     {

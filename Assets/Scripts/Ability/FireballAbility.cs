@@ -46,7 +46,7 @@ public class FireballAbility : Ability
         Debug.Log("Applying red circuits to fireball");
         foreach (var circuit in circuits)
         {
-            if (circuit.GetComponent<Circuit>().circuitType == CircuitType.Red)
+            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)
             {
                 circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
             }

@@ -7,7 +7,7 @@ public class Hit
     private GameObject enemy;
     private EnemyStats enemyStats;
     private Ability ability;
-    private List<BlueCircuit> circuits;
+    private List<IBlueCircuit> circuits;
 
     public Hit(GameObject enemy, Ability ability)
     {
@@ -18,15 +18,15 @@ public class Hit
 
         enemyStats.TakeDamage(ability.DealDamage());
 
-        foreach (var circuit in circuits)
-        {
-            if (circuit.Proc(ability.procCoefficiant))
-            {
+        //foreach (var circuit in circuits)
+        //{
+        //    if (circuit.Proc(ability.procCoefficiant))
+        //    {
                 
-            }
-        }
+        //    }
+        //}
     }
-    public Hit(GameObject enemy, List<BlueCircuit> circuits)
+    public Hit(GameObject enemy, List<IBlueCircuit> circuits)
     {
 
     }
