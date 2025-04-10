@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 
 public class FireballAbility : Ability
-{    
+{
 
     private void Start()
     {
@@ -40,20 +40,25 @@ public class FireballAbility : Ability
             fireballPrefab.speed = projectileSpeed;
         }
     }
-    public override List<BlueCircuit> GetBlueCircuits()
-    {
-        return null;
-    }
+
     public void ApplyRedCircuits()
     {
         Debug.Log("Applying red circuits to fireball");
         foreach (var circuit in circuits)
         {
-            Circuit currentCircuit = circuit.GetComponent<Circuit>();
-            if (currentCircuit.circuitType == CircuitType.Red)
+            if (circuit.GetComponent<Circuit>().circuitType == CircuitType.Red)
             {
                 circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
             }
         }
+    }
+    public override float[] DealDamage()
+    {
+        float[] damage = new float[4];
+        damage[0] = physicalDamage;
+        damage[1] = fireDamage;
+        damage[2] = 0f; //cold
+        damage[3] = 0f; //Lightning
+        return damage;
     }
 }
