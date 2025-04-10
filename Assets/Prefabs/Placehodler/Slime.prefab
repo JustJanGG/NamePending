@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 505817641620433615}
   - component: {fileID: 2123997603343740482}
   - component: {fileID: 5883093355021914832}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -102,8 +102,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -15397251
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 368543389579951487, guid: c9bbe4cd3ab55ac4f9276387f774a304, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,8 +154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d825385db3097d74cbd548be877bf294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  maxHealth: 1
   movementSpeed: 2
   aggroRange: 5
+  damage: 1
 --- !u!50 &2123997603343740482
 Rigidbody2D:
   serializedVersion: 5
@@ -238,8 +241,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4266676904651726893}
-  - component: {fileID: 8855213043796530307}
-  m_Layer: 8
+  - component: {fileID: 6431173378977718527}
+  m_Layer: 12
   m_Name: EnemyCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,15 +257,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848805892787624650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5075677655276035390}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8855213043796530307
-CircleCollider2D:
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!70 &6431173378977718527
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -295,5 +298,6 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.35
+  m_Offset: {x: -0.2, y: 0}
+  m_Size: {x: 0.5, y: 0.8}
+  m_Direction: 0
