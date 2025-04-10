@@ -24,10 +24,15 @@ public class Draggable : MonoBehaviour
         }
     }
 
+    private void OnMouseOver()
+    {
+        // show press F + Tooltip
+    }
+
     private void OnMouseDown()
     {
         mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("DraggableAbovePlayer");
+        GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("DraggableBelowPlayer");
         isHolding = true;
     }
 
