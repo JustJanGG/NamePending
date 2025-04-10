@@ -9,6 +9,7 @@ public abstract class Ability : MonoBehaviour
     public GameObject abilityPrefab;
     public List<GameObject> circuits;
 
+    protected GameObject player;
     protected int id;
     protected string abilityName;
     protected string abilityDescription;
@@ -25,5 +26,10 @@ public abstract class Ability : MonoBehaviour
     [Header("Area of Effect Stats")]
     public float areaOfEffect;
 
+    public abstract List<BlueCircuit> GetBlueCircuits();
+    public void ProcBlueCircuit(Hit hit, BlueCircuit blueCircuit, GameObject enemy)
+    {
+
+    }
     public abstract void UseAbility(InputAction.CallbackContext ctx);
 }

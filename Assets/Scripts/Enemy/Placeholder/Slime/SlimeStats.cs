@@ -8,15 +8,12 @@ public class SlimeStats : MonoBehaviour
     public float movementSpeed = 2.0f;
     public float aggroRange = 5.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void TakeDamage(int damage)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

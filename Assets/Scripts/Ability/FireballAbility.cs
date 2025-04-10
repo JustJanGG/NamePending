@@ -9,6 +9,7 @@ public class FireballAbility : Ability
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         circuits = new List<GameObject>();
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
@@ -24,6 +25,11 @@ public class FireballAbility : Ability
         areaOfEffect = 1f;
         projectileCount = 1;
     }
+    public void Hit(GameObject enemy)
+    {
+        Debug.Log("Fireball Hit");
+        Hit hit = new(enemy, this);
+    }
     public override void UseAbility(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
@@ -34,7 +40,10 @@ public class FireballAbility : Ability
             fireballPrefab.speed = projectileSpeed;
         }
     }
-
+    public override List<BlueCircuit> GetBlueCircuits()
+    {
+        return null;
+    }
     public void ApplyRedCircuits()
     {
         Debug.Log("Applying red circuits to fireball");
