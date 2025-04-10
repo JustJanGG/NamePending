@@ -42,11 +42,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DraggableAbovePlayer
+    uniqueID: 2818340169
+    locked: 0
   - name: EnemyAbovePlayer
     uniqueID: 4279570045
     locked: 0
   - name: Player
     uniqueID: 2425670123
+    locked: 0
+  - name: DraggableBelowPlayer
+    uniqueID: 2699443229
     locked: 0
   - name: EnemyBelowPlayer
     uniqueID: 245407771
