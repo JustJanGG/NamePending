@@ -12,11 +12,44 @@ public class PlayerStats : MonoBehaviour
     public float dashRange = 10.0f;
     public float dashCooldown = 1.0f;
 
+    [Header("DamageStats")]
+    public float fireDamage = 5.0f;
+
+    #region Getters
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public int GetHealthRegen()
+    {
+        return healthRegen;
+    }
+
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
+    }
+
+    public float GetDashRange()
+    {
+        return dashRange;
+    }
+
+    public float GetDashCooldown()
+    {
+        return dashCooldown;
+    }
+    #endregion
+
     void Awake()
     {
-        GetComponent<PlayerController>().movementSpeed = movementSpeed;
-        GetComponent<PlayerController>().dashRange = dashRange;
-        GetComponent<PlayerController>().dashCooldown = dashCooldown;
+        
     }
 
     // Update is called once per frame
