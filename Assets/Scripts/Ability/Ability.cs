@@ -13,11 +13,13 @@ public abstract class Ability : MonoBehaviour
     protected int id;
     protected string abilityName;
     protected string abilityDescription;
-    protected float procCoefficiant;
     protected float cooldown;
     protected List<Tag> tags;
     protected float physicalDamage;
     protected float fireDamage;
+
+    [Header("General Stats")]
+    public float procCoefficiant;
 
     [Header("Projectile Stats")]
     public float projectileSpeed;

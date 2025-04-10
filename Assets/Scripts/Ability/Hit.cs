@@ -20,7 +20,14 @@ public class Hit
 
         foreach (var circuit in circuits)
         {
-            
+            if (circuit.Proc(ability.procCoefficiant))
+            {
+                
+            }
         }
+    }
+    public Hit(GameObject enemy, List<BlueCircuit> circuits)
+    {
+
     }
 }
