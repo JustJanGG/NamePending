@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6306698195015481004}
   - component: {fileID: 7737018491247552470}
   - component: {fileID: 4106441258753187362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireballPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,3 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400442f1c6a63b241bcbae5725149cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  damage: 1
+  projectileCount: 1
+  areaOfEffect: 1
+  castDelay: 1
