@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D rigidBody;
-    private Collider2D playerCollider;
     private PlayerStats playerStats;
+    private Collider2D playerCollider;
 
     [Header("Movement")]
     public Vector2 direction;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         playerStats = GetComponent<PlayerStats>();
+        playerCollider = GetComponentsInChildren<Collider2D>().FirstOrDefault(collider => collider.gameObject.layer == LayerMask.NameToLayer("PlayerCollision"));
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,6 +49,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Dash()
     {
         isDashing = true;
+        playerCollider.enabled = false;
+
         Vector2 dashDirection = direction.normalized;
         if (dashDirection == Vector2.zero)
         {
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         dashTimer = playerStats.GetDashCooldown();
+        playerCollider.enabled = true;
         isDashing = false;
     }
 
