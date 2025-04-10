@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 332618240}
   - component: {fileID: 332618239}
   - component: {fileID: 332618241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -218,9 +218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  movementSpeed: 0
-  dashRange: 0
-  dashCooldown: 0
 --- !u!114 &332618232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +568,7 @@ MonoBehaviour:
   movementSpeed: 5
   dashRange: 10
   dashCooldown: 1
+  fireDamage: 5
 --- !u!114 &332618241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +598,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -820,7 +818,7 @@ GameObject:
   - component: {fileID: 1039637648}
   - component: {fileID: 1039637653}
   - component: {fileID: 1039637652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3799,7 +3797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555936879}
   - component: {fileID: 1555936878}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3849,7 +3847,7 @@ GameObject:
   - component: {fileID: 2075790057}
   - component: {fileID: 2075790056}
   - component: {fileID: 2075790055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

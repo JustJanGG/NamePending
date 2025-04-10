@@ -7,20 +7,22 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rigidBody;
     private Collider2D playerCollider;
+    private PlayerStats playerStats;
 
     [Header("Movement")]
     public Vector2 direction;
-    public float movementSpeed;
-
-    public float dashRange;
-    public float dashCooldown;
     private float dashTimer;
     private bool isDashing;
+
+    private void Awake()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        playerStats = GetComponent<PlayerStats>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
         isDashing = false;
     }
 
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDashing)
         {
-            rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
+            rigidBody.linearVelocity = new Vector2(direction.x * playerStats.GetMovementSpeed(), direction.y * playerStats.GetMovementSpeed());
         }
     }
     private IEnumerator Dash()
@@ -52,11 +54,11 @@ public class PlayerController : MonoBehaviour
             dashDirection = (mousePosition - (Vector2)transform.position).normalized;
         }
 
-        rigidBody.AddForce(dashDirection * dashRange, ForceMode2D.Impulse);
+        rigidBody.AddForce(dashDirection * playerStats.GetDashRange(), ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.2f);
 
-        dashTimer = dashCooldown;
+        dashTimer = playerStats.GetDashCooldown();
         isDashing = false;
     }
 
