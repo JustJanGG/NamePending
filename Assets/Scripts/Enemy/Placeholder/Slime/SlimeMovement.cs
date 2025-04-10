@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlimeMovement : MonoBehaviour
@@ -12,27 +14,24 @@ public class SlimeMovement : MonoBehaviour
     public GameObject player;
     private float distanceToPlayer;
     public Vector2 direction;
-    //private bool isEvading;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        //isEvading = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        CheckSortingLayer();
     }
 
     private void Move()
     {
-        //if (!isEvading)
-        //{
-            movementSpeed = GetComponent<SlimeStats>().movementSpeed;
-            aggroRange = GetComponent<SlimeStats>().aggroRange;
+            movementSpeed = GetComponent<EnemyStats>().movementSpeed;
+            aggroRange = GetComponent<EnemyStats>().aggroRange;
 
             distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             direction = player.transform.position - transform.position;
@@ -47,22 +46,26 @@ public class SlimeMovement : MonoBehaviour
                 rigidBody.linearVelocity = new Vector2(0, 0);
                 direction = Vector2.zero;
             }
-        //}
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.CompareTag("Enemy"))
-    //    {
-    //        StartCoroutine(EvadeOtherEnemy());
-    //    }
-    //}
+    private void CheckSortingLayer()
+    {
+        // TODO: maybe change it so the maxY and minY is not limited!
+        // Calculate the sorting order based on the y position of the enemy
+        float minY = -10f;
+        float maxY = 10f;
+        float normalizedY = (transform.position.y - minY) / (maxY - minY);
+        int sortingOrder = Mathf.Clamp((int)(normalizedY * 100), 0, 100) *-1;
 
-    //private IEnumerator EvadeOtherEnemy()
-    //{
-    //    isEvading = true;
-    //    rigidBody.linearVelocity = new Vector2(2, 2);
-    //    yield return new WaitForSeconds(0.5f);
-    //    isEvading = false;
-    //}
+        GetComponent<Renderer>().sortingOrder = sortingOrder;
+
+        if (player.transform.position.y < this.transform.position.y)
+        {
+            GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("EnemyAbovePlayer");
+        }
+        else
+        {
+            GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("EnemyBelowPlayer");
+        }
+    }
 }

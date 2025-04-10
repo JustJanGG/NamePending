@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [Header("Stats")]
-    public int health = 3;
-    public int maxHealth = 3;
-    public int healthRegen;
+    [Header("Health")]
+    private int health = 3;
+    private int maxHealth = 3;
+    private int healthRegen;
 
     [Header("Movement")]
-    public float movementSpeed = 5.0f;
-    public float dashRange = 10.0f;
-    public float dashCooldown = 1.0f;
+    private float movementSpeed = 5.0f;
+    private float dashRange = 10.0f;
+    private float dashCooldown = 1.0f;
 
-    [Header("DamageStats")]
-    public float fireDamage = 5.0f;
+    [Header("Damage")]
+    private float fireDamage = 5.0f;
 
-    #region Getters
+    #region Getter
     public int GetHealth()
     {
         return health;
@@ -45,17 +45,48 @@ public class PlayerStats : MonoBehaviour
     {
         return dashCooldown;
     }
+    public float GetFireDamage()
+    {
+        return fireDamage;
+    }
     #endregion
 
-    void Awake()
+    #region Setter
+    public void SetHealth(int value)
     {
-        
+        health = value;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMaxHealth(int value)
     {
-        //TODO: give stats to Controller when changed with setter
+        maxHealth = value;
     }
+
+    public void SetHealthRegen(int value)
+    {
+        healthRegen = value;
+    }
+
+    public void SetMovementSpeed(float value)
+    {
+        movementSpeed = value;
+    }
+
+    public void SetDashRange(float value)
+    {
+        dashRange = value;
+    }
+
+    public void SetDashCooldown(float value)
+    {
+        dashCooldown = value;
+    }
+
+    public void SetFireDamage(float value)
+    {
+        fireDamage = value;
+    }
+
+    #endregion
 
 }
