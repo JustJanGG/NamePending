@@ -2,12 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Ember : Ability, IBlueCircuit
+public class Ember : BlueCircuit
 {
-    public int id { get; set; }
-    public string circuitName { get; set; }
-    public string circuitDescription { get; set; }
-    public CircuitType circuitType { get; set; }
+
     public float procCoefficient { get; set; }
     public float procChance { get; set; }
     public Ability socketedAbility { get; set; }

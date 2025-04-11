@@ -28,19 +28,19 @@ public abstract class Ability : MonoBehaviour
     [Header("Area of Effect Stats")]
     public float areaOfEffect;
 
-    public List<IBlueCircuit> GetBlueCircuits()
+    public List<BlueCircuit> GetBlueCircuits()
     {
-        List<IBlueCircuit> blueCircuits = new List<IBlueCircuit>();
+        List<BlueCircuit> blueCircuits = new List<BlueCircuit>();
         foreach (GameObject circuit in circuits)
         {
             if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
             {
-                blueCircuits.Add(circuit.GetComponent<IBlueCircuit>());
+                blueCircuits.Add(circuit.GetComponent<BlueCircuit>());
             }
         }
         return blueCircuits;
     }
-    public void ProcBlueCircuit(Hit hit, IBlueCircuit blueCircuit, GameObject enemy)
+    public void ProcBlueCircuit(Hit hit, BlueCircuit blueCircuit, GameObject enemy)
     {
 
     }

@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class Hit 
 {
-    private GameObject enemy;
     private EnemyStats enemyStats;
-    private Ability ability;
-    private List<IBlueCircuit> circuits;
+    //private float[] damage;
 
-    public Hit(GameObject enemy, Ability ability)
+    public Hit(GameObject enemy, Ability ability, List<BlueCircuit> blueCircuits, float[] damage)
     {
-        this.enemy = enemy;
         enemyStats = enemy.GetComponent<EnemyStats>();
-        this.ability = ability;
-        circuits = ability.GetBlueCircuits();
+        enemyStats.TakeDamage(damage);
 
-        enemyStats.TakeDamage(ability.DealDamage());
+        foreach (var circuit in blueCircuits)
+        {
+            if (circuit.Proc(ability.procCoefficiant))
+            {
 
-        //foreach (var circuit in circuits)
-        //{
-        //    if (circuit.Proc(ability.procCoefficiant))
-        //    {
-                
-        //    }
-        //}
-    }
-    public Hit(GameObject enemy, List<IBlueCircuit> circuits)
-    {
-
+            }
+        }
     }
 }

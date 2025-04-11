@@ -28,7 +28,7 @@ public class FireballAbility : Ability
     public void Hit(GameObject enemy)
     {
         Debug.Log("Fireball Hit");
-        Hit hit = new(enemy, this);
+        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void UseAbility(InputAction.CallbackContext ctx)
     {
