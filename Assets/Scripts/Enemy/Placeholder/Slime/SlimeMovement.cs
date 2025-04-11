@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class SlimeMovement : MonoBehaviour
@@ -14,6 +15,10 @@ public class SlimeMovement : MonoBehaviour
     public GameObject player;
     private float distanceToPlayer;
     public Vector2 direction;
+
+    // TODO: change this position after EnemyList is implemented
+    private static float minPositionY;
+    private static float maxPositionY;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,14 +55,8 @@ public class SlimeMovement : MonoBehaviour
 
     private void CheckSortingLayer()
     {
-        // TODO: maybe change it so the maxY and minY is not limited!
-        // Calculate the sorting order based on the y position of the enemy
-        float minY = -10f;
-        float maxY = 10f;
-        float normalizedY = (transform.position.y - minY) / (maxY - minY);
-        int sortingOrder = Mathf.Clamp((int)(normalizedY * 100), 0, 100) *-1;
-
-        GetComponent<Renderer>().sortingOrder = sortingOrder;
+        // TODO: change -50, 50 to minPositionY, maxPositionY after EnemyList is implemented
+        GetComponent<Renderer>().sortingOrder = MapSortingOrder(transform.position.y, -50, 50, -100, 100) *-1;
 
         if (player.transform.position.y < this.transform.position.y)
         {
@@ -67,5 +66,10 @@ public class SlimeMovement : MonoBehaviour
         {
             GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("EnemyBelowPlayer");
         }
+    }
+
+    private int MapSortingOrder(float x, float in_min, float in_max, float out_min, float out_max)
+    {
+        return (int)((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
     }
 }
