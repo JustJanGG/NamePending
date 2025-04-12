@@ -26,10 +26,16 @@ public class Draggable : MonoBehaviour
             CheckSortingLayer();
         }
 
+        if (isHolding)
+        {
+            transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            player.GetComponent<PlayerController>().gameObject.SetActive(false);
+        }
+
         float distance = Vector3.Distance(player.transform.position, transform.position);
         if (distance < 1.0f)
         {
-            Debug.Log("Show Tooltip");
+            //Debug.Log("Show Tooltip");
             //tooltipText.gameObject.SetActive(true);
             //tooltipText.transform.position = mainCamera.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
         }
@@ -39,25 +45,35 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
-    {
-        // show press F + Tooltip
-    }
+    //private void OnMouseOver()
+    //{
+    //    // show press F + Tooltip
+    //}
 
-    private void OnMouseDown()
+    //private void OnMouseDown()
+    //{
+    //    mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    //    GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("DraggableBelowPlayer");
+    //    isHolding = true;
+    //}
+
+    //private void OnMouseDrag()
+    //{
+    //    if (isHolding)
+    //    {
+    //        transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + mousePositionOffset;
+    //    }
+    //}
+
+    public void Pickup()
     {
-        mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("DraggableBelowPlayer");
         isHolding = true;
     }
 
-    private void OnMouseDrag()
-    {
-        if (isHolding)
-        {
-            transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + mousePositionOffset;
-        }
-    }
+    //private void OnMouseExit()
+    //{
+        
+    //}
 
     private void OnMouseUp()
     {
