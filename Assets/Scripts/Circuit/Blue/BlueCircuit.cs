@@ -19,4 +19,5 @@ public abstract class BlueCircuit : Ability, ICircuit
         }
         return false;
     }
+    public abstract void UseAbility();
 }

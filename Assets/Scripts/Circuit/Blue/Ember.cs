@@ -9,7 +9,7 @@ public class Ember : BlueCircuit
     public float procChance { get; set; }
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
-    public void UseAbility()
+    public override void UseAbility()
     {
         GameObject fireball = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
 
@@ -31,4 +31,5 @@ public class Ember : BlueCircuit
     {
 
     }
+
 }
