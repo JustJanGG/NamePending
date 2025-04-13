@@ -12,7 +12,7 @@ public class SlimeMovement : MonoBehaviour
 
     [Header("Logic")]
     private Rigidbody2D rigidBody;
-    public GameObject player;
+    private GameObject player;
     private float distanceToPlayer;
     public Vector2 direction;
 
@@ -23,6 +23,7 @@ public class SlimeMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
