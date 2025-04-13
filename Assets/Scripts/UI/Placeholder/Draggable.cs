@@ -41,39 +41,13 @@ public class Draggable : MonoBehaviour
         }
         else
         {
-            //tooltipText.gameObject.SetActive(false);
         }
     }
-
-    //private void OnMouseOver()
-    //{
-    //    // show press F + Tooltip
-    //}
-
-    //private void OnMouseDown()
-    //{
-    //    mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    //    GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("DraggableBelowPlayer");
-    //    isHolding = true;
-    //}
-
-    //private void OnMouseDrag()
-    //{
-    //    if (isHolding)
-    //    {
-    //        transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + mousePositionOffset;
-    //    }
-    //}
 
     public void Pickup()
     {
         isHolding = true;
     }
-
-    //private void OnMouseExit()
-    //{
-        
-    //}
 
     private void OnMouseUp()
     {
