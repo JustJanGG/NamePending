@@ -5,10 +5,11 @@ using UnityEngine.Events;
 
 
 public class FireballAbility : Ability
-{    
+{
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         circuits = new List<GameObject>();
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
@@ -23,6 +24,11 @@ public class FireballAbility : Ability
         projectileSpeed = 10f;
         areaOfEffect = 1f;
         projectileCount = 1;
+    }
+    public void Hit(GameObject enemy)
+    {
+        Debug.Log("Fireball Hit");
+        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void UseAbility(InputAction.CallbackContext ctx)
     {
@@ -40,11 +46,19 @@ public class FireballAbility : Ability
         Debug.Log("Applying red circuits to fireball");
         foreach (var circuit in circuits)
         {
-            Circuit currentCircuit = circuit.GetComponent<Circuit>();
-            if (currentCircuit.circuitType == CircuitType.Red)
+            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)
             {
                 circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
             }
         }
+    }
+    public override float[] DealDamage()
+    {
+        float[] damage = new float[4];
+        damage[0] = physicalDamage;
+        damage[1] = fireDamage;
+        damage[2] = 0f; //cold
+        damage[3] = 0f; //Lightning
+        return damage;
     }
 }

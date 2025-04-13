@@ -9,14 +9,17 @@ public abstract class Ability : MonoBehaviour
     public GameObject abilityPrefab;
     public List<GameObject> circuits;
 
-    protected int id;
+    protected GameObject player;
+    //protected int id;
     protected string abilityName;
     protected string abilityDescription;
-    protected float procCoefficiant;
     protected float cooldown;
     protected List<Tag> tags;
     protected float physicalDamage;
     protected float fireDamage;
+
+    [Header("General Stats")]
+    public float procCoefficiant;
 
     [Header("Projectile Stats")]
     public float projectileSpeed;
@@ -25,5 +28,22 @@ public abstract class Ability : MonoBehaviour
     [Header("Area of Effect Stats")]
     public float areaOfEffect;
 
+    public List<BlueCircuit> GetBlueCircuits()
+    {
+        List<BlueCircuit> blueCircuits = new List<BlueCircuit>();
+        foreach (GameObject circuit in circuits)
+        {
+            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
+            {
+                blueCircuits.Add(circuit.GetComponent<BlueCircuit>());
+            }
+        }
+        return blueCircuits;
+    }
+    public void ProcBlueCircuit(Hit hit, BlueCircuit blueCircuit, GameObject enemy)
+    {
+
+    }
     public abstract void UseAbility(InputAction.CallbackContext ctx);
+    public abstract float[] DealDamage();
 }
