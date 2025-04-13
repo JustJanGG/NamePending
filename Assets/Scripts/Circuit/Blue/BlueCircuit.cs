@@ -14,10 +14,27 @@ public abstract class BlueCircuit : Ability, ICircuit
 
     public bool Proc(float procCoefficient)
     {
+        //int rng = Random.Range(1, 101);
+        //Debug.Log("rnf: " + rng + "Proc chance: " + procChance * 100);
+        //if (rng <= procChance * 100)
+        //{
+        //    return true;
+        //}
         if (Random.Range(1, 101) <= procChance * 100)
         {
             return true;
         }
         return false;
     }
+
+    public override void Activate()
+    {
+        //Not supposed to be called
+    }
+    public override void Hit(GameObject enemy)
+    {
+        //Not supposed to be called
+    }
+    public abstract void Hit(GameObject enemy, List<BlueCircuit> reducedList);
+    public abstract void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage);
 }

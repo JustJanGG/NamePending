@@ -7,6 +7,7 @@ public interface ICircuit
     string circuitDescription { get; set; }
     CircuitType circuitType { get; set; }
 
+
 }
 public enum CircuitType
 {

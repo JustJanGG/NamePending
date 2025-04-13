@@ -46,4 +46,5 @@ public abstract class Ability : MonoBehaviour
     }
     public abstract void Activate();
     public abstract float[] DealDamage();
+    public abstract void Hit(GameObject enemy);
 }

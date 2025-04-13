@@ -9,9 +9,7 @@ public class FireballAbility : Ability
 
     public void Start()
     {
-        Debug.Log("Fireball Ability Created");
         player = GameObject.FindGameObjectWithTag("Player");
-        circuits = new List<GameObject>();
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
         tags.Add(Tag.Projectile);
@@ -27,9 +25,16 @@ public class FireballAbility : Ability
         projectileCount = 1;
     }
 
-    public void Hit(GameObject enemy)
+    public override void Hit(GameObject enemy)
     {
-        Debug.Log("Fireball Hit");
+        //foreach (var circuit in circuits)
+        //{
+        //    if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
+        //    {
+        //        Debug.Log("Found blue circuit: " + circuit.GetComponent<BlueCircuit>().circuitName);
+        //    }
+        //}
+        //Debug.Log("Fireball Hit");
         Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void Activate()
@@ -42,7 +47,7 @@ public class FireballAbility : Ability
 
     public void ApplyRedCircuits()
     {
-        Debug.Log("Applying red circuits to fireball");
+        //Debug.Log("Applying red circuits to fireball");
         foreach (var circuit in circuits)
         {
             if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)

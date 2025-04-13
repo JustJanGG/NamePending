@@ -6,4 +6,5 @@ public class GreenCircuit : ICircuit
     public string circuitName { get; set; }
     public string circuitDescription { get; set; }
     public CircuitType circuitType { get; set; }
+
 }
