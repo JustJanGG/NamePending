@@ -22,16 +22,17 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponentsInChildren<Collider2D>().FirstOrDefault(collider => collider.gameObject.layer == LayerMask.NameToLayer("PlayerCollision"));
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isDashing = false;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        dashTimer -= Time.deltaTime;
+        if (dashTimer > -1.0f)
+        {
+            dashTimer -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -43,9 +44,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDashing)
         {
-            rigidBody.linearVelocity = new Vector2(direction.x * playerStats.GetMovementSpeed(), direction.y * playerStats.GetMovementSpeed());
+            rigidBody.linearVelocity = new Vector2(direction.x * playerStats.movementSpeed, direction.y * playerStats.movementSpeed);
         }
     }
+
     private IEnumerator Dash()
     {
         isDashing = true;
@@ -58,11 +60,11 @@ public class PlayerController : MonoBehaviour
             dashDirection = (mousePosition - (Vector2)transform.position).normalized;
         }
 
-        rigidBody.AddForce(dashDirection * playerStats.GetDashRange(), ForceMode2D.Impulse);
+        rigidBody.AddForce(dashDirection * playerStats.dashRange, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.2f);
 
-        dashTimer = playerStats.GetDashCooldown();
+        dashTimer = playerStats.dashCooldown;
         playerCollider.enabled = true;
         isDashing = false;
     }
@@ -77,6 +79,37 @@ public class PlayerController : MonoBehaviour
         if (ctx.performed && dashTimer <= 0)
         {
             StartCoroutine(Dash());
+        }
+    }
+
+    // TODO: change with enemyList
+    public void HandleCircuitPickup(InputAction.CallbackContext ctx)
+    {
+        Collider2D circleCollider = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Circuit"));
+        if (ctx.performed && circleCollider)
+        {
+            Debug.Log("Pickup Circuit");
+            float minDistance = 0f;
+            GameObject circuitToPickup = null;
+            foreach (Transform child in circleCollider.transform)
+            {
+                GameObject circuit = child.gameObject.tag == "Circuit" ? child.gameObject : null;
+                Debug.Log("Circuit: " + circuit.name);
+                if (circuit == null) continue;
+
+                float distanceToCircuit = Vector2.Distance(transform.position, circuit.transform.position);
+                if (minDistance == 0f || distanceToCircuit < minDistance)
+                {
+                    minDistance = distanceToCircuit;
+                    circuitToPickup = circuit;
+                }
+            }
+            // pickup circuitToPickup
+            if (circuitToPickup != null)
+            {
+                Debug.Log("Pickup Circuit: " + circuitToPickup.name);
+                circuitToPickup.GetComponent<Draggable>().Pickup();
+            }
         }
     }
 
