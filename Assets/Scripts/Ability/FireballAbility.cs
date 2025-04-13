@@ -7,8 +7,9 @@ using UnityEngine.Events;
 public class FireballAbility : Ability
 {
 
-    private void Start()
+    public void Start()
     {
+        Debug.Log("Fireball Ability Created");
         player = GameObject.FindGameObjectWithTag("Player");
         circuits = new List<GameObject>();
         tags = new List<Tag>();
@@ -25,20 +26,18 @@ public class FireballAbility : Ability
         areaOfEffect = 1f;
         projectileCount = 1;
     }
+
     public void Hit(GameObject enemy)
     {
         Debug.Log("Fireball Hit");
         Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
-    public override void UseAbility(InputAction.CallbackContext ctx)
+    public override void Activate()
     {
-        if (ctx.performed)
-        {
-            GameObject fireball = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
+        GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
 
-            FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
-            fireballPrefab.speed = projectileSpeed;
-        }
+        FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
+        fireballPrefab.speed = projectileSpeed;
     }
 
     public void ApplyRedCircuits()

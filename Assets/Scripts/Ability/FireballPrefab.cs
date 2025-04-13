@@ -10,7 +10,7 @@ public class FireballPrefab : MonoBehaviour
 
     void Start()
     {
-        fireballAbility = GameObject.FindGameObjectWithTag("Player").GetComponent<FireballAbility>();
+        fireballAbility = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<FireballAbility>();
         direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f); 

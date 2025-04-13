@@ -9,7 +9,8 @@ public class Ember : BlueCircuit
     public float procChance { get; set; }
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
-    public override void UseAbility()
+
+    public override void Activate()
     {
         GameObject fireball = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
 
@@ -26,10 +27,6 @@ public class Ember : BlueCircuit
         damage[2] = 0f; //cold
         damage[3] = 0f; //Lightning
         return damage;
-    }
-    public override void UseAbility(InputAction.CallbackContext ctx)
-    {
-
     }
 
 }

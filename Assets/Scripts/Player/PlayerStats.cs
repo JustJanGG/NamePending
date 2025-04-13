@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Ability")]
-    public Ability[] abilites;
+    public GameObject[] abilites;
 
     [Header("Health")]
     public int health = 3;

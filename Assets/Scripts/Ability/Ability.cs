@@ -44,6 +44,6 @@ public abstract class Ability : MonoBehaviour
     {
 
     }
-    public abstract void UseAbility(InputAction.CallbackContext ctx);
+    public abstract void Activate();
     public abstract float[] DealDamage();
 }

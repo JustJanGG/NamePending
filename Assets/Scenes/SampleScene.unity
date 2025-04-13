@@ -590,6 +590,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294115474}
   m_CullTransparentMesh: 1
+--- !u!1 &308713114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308713115}
+  m_Layer: 6
+  m_Name: Abilites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308713115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308713114}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 571328733}
+  m_Father: {fileID: 332618236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332618230
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,8 +708,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 332618241}
-        m_TargetAssemblyTypeName: Fireball, Assembly-CSharp
-        m_MethodName: UseAbility
+        m_TargetAssemblyTypeName: PlayerAbilityController, Assembly-CSharp
+        m_MethodName: HandleAbilityInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -691,7 +723,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332618241}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Fireball, Assembly-CSharp
         m_MethodName: ApplyRedCircuits
         m_Mode: 1
@@ -937,6 +969,7 @@ Transform:
   m_Children:
   - {fileID: 426873889}
   - {fileID: 519420032}
+  - {fileID: 308713115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &332618238
@@ -985,6 +1018,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774841ca686bd7b41b45ee01fe842730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilites:
+  - {fileID: 571328732}
+  health: 3
+  maxHealth: 3
+  healthRegen: 0
+  movementSpeed: 5
+  dashRange: 10
+  dashCooldown: 1
+  fireDamage: 5
 --- !u!114 &332618241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,14 +1036,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 332618230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ecad4e42f5c774ab736570216c4100, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e43af9a1ee0e0542bf442f9b227c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
-  circuits: []
-  projectileSpeed: 0
-  projectileCount: 0
-  areaOfEffect: 0
 --- !u!1 &393194254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1483,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 332618236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &571328732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571328733}
+  - component: {fileID: 571328734}
+  m_Layer: 6
+  m_Name: Ability1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571328733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571328732}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 308713115}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571328734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571328732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ecad4e42f5c774ab736570216c4100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
+  circuits: []
+  procCoefficiant: 0
+  projectileSpeed: 0
+  projectileCount: 0
+  areaOfEffect: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public abstract class BlueCircuit : Ability, ICircuit
     float procChance;
     Ability socketedInAbility;
     List<RedCircuit> redCircuits;
+
     public bool Proc(float procCoefficient)
     {
         if (Random.Range(1, 101) <= procChance * 100)
@@ -19,5 +20,4 @@ public abstract class BlueCircuit : Ability, ICircuit
         }
         return false;
     }
-    public abstract void UseAbility();
 }

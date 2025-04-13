@@ -9,11 +9,15 @@ public class PlayerAbilityController : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+
     }
 
     public void HandleAbilityInput(InputAction.CallbackContext ctx)
     {
-        
+        if (ctx.performed)
+        {
+            playerStats.abilites[0].GetComponent<Ability>().Activate();
+        }
     }
 
 }
