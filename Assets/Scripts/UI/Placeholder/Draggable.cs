@@ -6,17 +6,17 @@ public class Draggable : MonoBehaviour
     [Header("Components")]
     private GameObject player;
     private Camera mainCamera;
+    private GameObject ui;
 
+    Vector2 draggableWorldPosition;
     Vector3 mousePositionOffset;
     private bool isHolding = false;
-
-    //public TMPro.TextMeshPro tooltipText;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = player.GetComponentInChildren<Camera>();
-        //tooltipText = this.GetComponentInChildren<TMPro.TextMeshPro>();
+        ui = GameObject.FindGameObjectWithTag("UI");
     }
 
     private void Update()
@@ -28,54 +28,39 @@ public class Draggable : MonoBehaviour
 
         if (isHolding)
         {
-            //player.GetComponent<PlayerController>().enabled = false;
-            //this.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset);
             this.transform.position = Vector2.MoveTowards(this.transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset), 50f * Time.deltaTime);
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (ui.GetComponent<UIManager>().IsPointerOverUIElement())
+                {
+                    Debug.Log("Over UI");
+                }
+                else
+                {
+                    DropDraggable();
+                }
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                DropDraggable();
+            }
         }
-        //float distance = Vector3.Distance(player.transform.position, transform.position);
-
-        //if (distance < 1.0f)
-        //{
-        //    //Debug.Log("Show Tooltip");
-        //    //tooltipText.gameObject.SetActive(true);
-        //    //tooltipText.transform.position = mainCamera.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
-        //}
     }
-
-    //private void OnMouseDrag()
-    //{
-    //    if (isHolding)
-    //    {
-    //        this.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset);
-    //    }
-    //}
 
     public void Pickup()
     {
         mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        draggableWorldPosition = gameObject.transform.position;
         isHolding = true;
     }
 
-    //private void OnMouseUp()
-    //{
-    //    isHolding = false;
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    if (isHolding)
-    //    {
-    //        isHolding = false;
-    //    }
-    //}
-
-    //private void OnMouseDown()
-    //{
-    //    if (isHolding)
-    //    {
-    //        isHolding = false;
-    //    }
-    //}
+    private void DropDraggable()
+    {
+        isHolding = false;
+        transform.position = draggableWorldPosition;
+    }
 
     private void CheckSortingLayer()
     {
