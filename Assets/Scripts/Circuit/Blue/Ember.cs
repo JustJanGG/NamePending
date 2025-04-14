@@ -1,21 +1,29 @@
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Ember : BlueCircuit
 {
 
-    public float procCoefficient { get; set; }
-    public float procChance { get; set; }
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
 
-    public override void Activate()
+    private void Start()
     {
-        GameObject fireball = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+        circuitName = "Ember";
+        circuitType = CircuitType.Blue;
+        Debug.Log(circuitName);
+    }
 
-        FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
-        fireballPrefab.speed = projectileSpeed;
+    public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage)
+    {
+        GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+
+        EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
+        emberPrefab.PassList(blueCircuits);
+        emberPrefab.target = enemy.transform;
+        emberPrefab.speed = projectileSpeed;
     }
 
     public override float[] DealDamage()
@@ -28,5 +36,9 @@ public class Ember : BlueCircuit
         damage[3] = 0f; //Lightning
         return damage;
     }
-
+    public override void Hit(GameObject enemy, List<BlueCircuit> reducedList)
+    {
+        //Debug.Log("Ember Hit");
+        Hit hit = new(enemy, this, reducedList, DealDamage());
+    }
 }

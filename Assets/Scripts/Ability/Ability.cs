@@ -40,10 +40,11 @@ public abstract class Ability : MonoBehaviour
         }
         return blueCircuits;
     }
-    public void ProcBlueCircuit(Hit hit, BlueCircuit blueCircuit, GameObject enemy)
+    public void ProcBlueCircuit(BlueCircuit blueCircuit, GameObject enemy, List<BlueCircuit> reducedList, float[] damage)
     {
-
+        blueCircuit.Activate(enemy, reducedList, damage);
     }
     public abstract void Activate();
     public abstract float[] DealDamage();
+    public abstract void Hit(GameObject enemy);
 }
