@@ -45,17 +45,7 @@ public class FireballAbility : Ability
         fireballPrefab.speed = projectileSpeed;
     }
 
-    public void ApplyRedCircuits()
-    {
-        //Debug.Log("Applying red circuits to fireball");
-        foreach (var circuit in circuits)
-        {
-            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)
-            {
-                circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
-            }
-        }
-    }
+
     public override float[] DealDamage()
     {
         float[] damage = new float[4];
