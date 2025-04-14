@@ -28,7 +28,7 @@ public class Hit
             }
             foreach (var circuit in triggered)
             {
-                ability.ProcBlueCircuit(circuit, enemy, reducedList, ability.DealDamage());
+                ability.ProcBlueCircuit(circuit, enemy, reducedList, damage);
             }
 
         }
