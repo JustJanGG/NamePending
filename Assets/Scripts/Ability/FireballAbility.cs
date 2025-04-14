@@ -9,6 +9,7 @@ public class FireballAbility : Ability
 
     public void Start()
     {
+        circuits = new List<GameObject>();
         player = GameObject.FindGameObjectWithTag("Player");
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
@@ -24,7 +25,6 @@ public class FireballAbility : Ability
         areaOfEffect = 1f;
         projectileCount = 1;
 
-        circuits = new List<GameObject>();
     }
 
     public override void Hit(GameObject enemy)
