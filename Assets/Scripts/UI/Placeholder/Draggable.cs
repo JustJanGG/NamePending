@@ -28,31 +28,54 @@ public class Draggable : MonoBehaviour
 
         if (isHolding)
         {
-            transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            player.GetComponent<PlayerController>().gameObject.SetActive(false);
+            //player.GetComponent<PlayerController>().enabled = false;
+            //this.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset), 50f * Time.deltaTime);
         }
+        //float distance = Vector3.Distance(player.transform.position, transform.position);
 
-        float distance = Vector3.Distance(player.transform.position, transform.position);
-        if (distance < 1.0f)
-        {
-            //Debug.Log("Show Tooltip");
-            //tooltipText.gameObject.SetActive(true);
-            //tooltipText.transform.position = mainCamera.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
-        }
-        else
-        {
-        }
+        //if (distance < 1.0f)
+        //{
+        //    //Debug.Log("Show Tooltip");
+        //    //tooltipText.gameObject.SetActive(true);
+        //    //tooltipText.transform.position = mainCamera.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
+        //}
     }
+
+    //private void OnMouseDrag()
+    //{
+    //    if (isHolding)
+    //    {
+    //        this.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset);
+    //    }
+    //}
 
     public void Pickup()
     {
+        mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
         isHolding = true;
     }
 
-    private void OnMouseUp()
-    {
-        isHolding = false;
-    }
+    //private void OnMouseUp()
+    //{
+    //    isHolding = false;
+    //}
+
+    //private void OnMouseExit()
+    //{
+    //    if (isHolding)
+    //    {
+    //        isHolding = false;
+    //    }
+    //}
+
+    //private void OnMouseDown()
+    //{
+    //    if (isHolding)
+    //    {
+    //        isHolding = false;
+    //    }
+    //}
 
     private void CheckSortingLayer()
     {

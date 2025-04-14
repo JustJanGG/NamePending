@@ -82,35 +82,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // TODO: change with enemyList
-    public void HandleCircuitPickup(InputAction.CallbackContext ctx)
-    {
-        Collider2D circleCollider = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Circuit"));
-        if (ctx.performed && circleCollider)
-        {
-            Debug.Log("Pickup Circuit");
-            float minDistance = 0f;
-            GameObject circuitToPickup = null;
-            foreach (Transform child in circleCollider.transform)
-            {
-                GameObject circuit = child.gameObject.tag == "Circuit" ? child.gameObject : null;
-                Debug.Log("Circuit: " + circuit.name);
-                if (circuit == null) continue;
-
-                float distanceToCircuit = Vector2.Distance(transform.position, circuit.transform.position);
-                if (minDistance == 0f || distanceToCircuit < minDistance)
-                {
-                    minDistance = distanceToCircuit;
-                    circuitToPickup = circuit;
-                }
-            }
-            // pickup circuitToPickup
-            if (circuitToPickup != null)
-            {
-                Debug.Log("Pickup Circuit: " + circuitToPickup.name);
-                circuitToPickup.GetComponent<Draggable>().Pickup();
-            }
-        }
-    }
-
 }

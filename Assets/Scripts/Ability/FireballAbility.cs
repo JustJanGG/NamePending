@@ -9,7 +9,6 @@ public class FireballAbility : Ability
 
     public void Start()
     {
-        Debug.Log("Fireball Ability Created");
         player = GameObject.FindGameObjectWithTag("Player");
         circuits = new List<GameObject>();
         tags = new List<Tag>();
@@ -29,7 +28,6 @@ public class FireballAbility : Ability
 
     public void Hit(GameObject enemy)
     {
-        Debug.Log("Fireball Hit");
         Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void Activate()
@@ -42,7 +40,6 @@ public class FireballAbility : Ability
 
     public void ApplyRedCircuits()
     {
-        Debug.Log("Applying red circuits to fireball");
         foreach (var circuit in circuits)
         {
             if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)

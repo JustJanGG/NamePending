@@ -29,7 +29,6 @@ public class EnemyStats : MonoBehaviour
 
         for (int i = 0; i < damage.Length; i++)
         {
-            Debug.Log("Taking damage" + (int)(damage[i] * (1 - resistances[i])));
             health -= (int)(damage[i] * (1 - resistances[i]));
             if (health <= 0)
             {
