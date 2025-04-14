@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-    int UILayer;
+    int uiLayer;
 
     private void Start()
     {
-        UILayer = LayerMask.NameToLayer("UI");
+        uiLayer = LayerMask.NameToLayer("UI");
     }
 
     //Returns 'true' if we touched or hovering on Unity UI element.
@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         for (int index = 0; index < eventSystemRaysastResults.Count; index++)
         {
             RaycastResult curRaysastResult = eventSystemRaysastResults[index];
-            if (curRaysastResult.gameObject.layer == UILayer)
+            if (curRaysastResult.gameObject.layer == uiLayer)
                 return true;
         }
         return false;
