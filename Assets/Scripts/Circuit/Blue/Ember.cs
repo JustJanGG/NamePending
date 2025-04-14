@@ -13,6 +13,7 @@ public class Ember : BlueCircuit
     {
         circuitName = "Ember";
         circuitType = CircuitType.Blue;
+        physicalDamage = 10f;
     }
 
     public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage)

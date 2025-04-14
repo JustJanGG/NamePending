@@ -44,6 +44,16 @@ public abstract class Ability : MonoBehaviour
     {
         blueCircuit.Activate(enemy, reducedList, damage);
     }
+    public void ApplyRedCircuits()
+    {
+        foreach (var circuit in circuits)
+        {
+            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)
+            {
+                circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
+            }
+        }
+    }
     public abstract void Activate();
     public abstract float[] DealDamage();
     public abstract void Hit(GameObject enemy);
