@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 7943630125408087589, guid: 1dcb8f0487aa4634e9532251e3f6f288, type: 3}
   circuits: []
-  procCoefficiant: 0
-  projectileSpeed: 0
-  projectileCount: 0
+  procCoefficiant: 1
+  projectileSpeed: 5
+  projectileCount: 1
   areaOfEffect: 0
+  procChance: 0.25

@@ -180,8 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
-  circuits:
-  - {fileID: 4072953583524998938, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+  circuits: []
   procCoefficiant: 0
   projectileSpeed: 0
   projectileCount: 0
@@ -424,6 +423,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1573926787}
     m_Modifications:
+    - target: {fileID: 2745539083583125286, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: projectileCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745539083583125286, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3610140153761852054, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 501.21027

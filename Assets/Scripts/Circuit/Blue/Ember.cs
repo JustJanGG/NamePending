@@ -6,25 +6,23 @@ using UnityEngine.InputSystem;
 public class Ember : BlueCircuit
 {
 
-    public float procCoefficient { get; set; }
-    public float procChance { get; set; }
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
 
     private void Start()
     {
-        procCoefficient = 1;
-        procChance = 1;
+        circuitName = "Ember";
         circuitType = CircuitType.Blue;
-        //Debug.Log(circuitType);
+        Debug.Log(circuitName);
     }
 
     public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage)
     {
-        GameObject fireball = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+        GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
 
-        EmberPrefab emberPrefab = fireball.GetComponent<EmberPrefab>();
+        EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
         emberPrefab.PassList(blueCircuits);
+        emberPrefab.target = enemy.transform;
         emberPrefab.speed = projectileSpeed;
     }
 
@@ -40,7 +38,7 @@ public class Ember : BlueCircuit
     }
     public override void Hit(GameObject enemy, List<BlueCircuit> reducedList)
     {
-        Debug.Log("Ember Hit");
+        //Debug.Log("Ember Hit");
         Hit hit = new(enemy, this, reducedList, DealDamage());
     }
 }

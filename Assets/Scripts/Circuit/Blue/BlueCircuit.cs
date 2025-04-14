@@ -8,14 +8,18 @@ public abstract class BlueCircuit : Ability, ICircuit
     public string circuitName { get; set; }
     public string circuitDescription { get; set; }
     public CircuitType circuitType { get; set; }
-    float procChance;
+
+    [Header("Blue Circuit Stats")]
+    public float procChance;
+
     Ability socketedInAbility;
     List<RedCircuit> redCircuits;
 
     public bool Proc(float procCoefficient)
     {
         //int rng = Random.Range(1, 101);
-        //Debug.Log("rnf: " + rng + "Proc chance: " + procChance * 100);
+        //Debug.Log("ProcChance: " + procChance);
+        //Debug.Log("rng: " + rng + "Proc chance: " + procChance * 100);
         //if (rng <= procChance * 100)
         //{
         //    return true;

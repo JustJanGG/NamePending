@@ -5,16 +5,18 @@ using UnityEngine;
 public class EmberPrefab : MonoBehaviour
 {
     private Vector2 direction;
-    private Ember fireballAbility;
+    private Ember emberAbility;
     private List<BlueCircuit> reducedList;
 
+    public Transform target;
     [Header("Fireball properties")]
     public float speed = 5.0f;
 
     void Start()
     {
-        fireballAbility = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Ember>();
-        direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position);
+        emberAbility = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Ember>();
+        direction = target.position - gameObject.transform.position;
+        //Debug.Log("Direction: " + direction);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);
     }
@@ -33,7 +35,7 @@ public class EmberPrefab : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            fireballAbility.Hit(collision.gameObject, reducedList);
+            emberAbility.Hit(collision.gameObject, reducedList);
         }
     }
 }

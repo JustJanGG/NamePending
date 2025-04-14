@@ -23,18 +23,18 @@ public class FireballAbility : Ability
         projectileSpeed = 10f;
         areaOfEffect = 1f;
         projectileCount = 1;
+
+        circuits = new List<GameObject>();
     }
 
     public override void Hit(GameObject enemy)
     {
+        //Debug.Log("Fireball Hit");
+         
         //foreach (var circuit in circuits)
         //{
-        //    if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
-        //    {
-        //        Debug.Log("Found blue circuit: " + circuit.GetComponent<BlueCircuit>().circuitName);
-        //    }
+        //    Debug.Log(circuit.GetComponent<ICircuit>().circuitType);
         //}
-        //Debug.Log("Fireball Hit");
         Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void Activate()
