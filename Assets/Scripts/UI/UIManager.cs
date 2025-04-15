@@ -12,6 +12,11 @@ public class UIManager : MonoBehaviour
         uiLayer = LayerMask.NameToLayer("UI");
     }
 
+    public void ReceiveDraggable(GameObject draggable)
+    {
+        // do stuff
+    }
+
     //Returns 'true' if we touched or hovering on Unity UI element.
     public bool IsPointerOverUIElement()
     {

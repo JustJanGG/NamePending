@@ -35,6 +35,7 @@ public class Draggable : MonoBehaviour
                 if (ui.GetComponent<UIManager>().IsPointerOverUIElement())
                 {
                     Debug.Log("Over UI");
+                    ui.GetComponent<UIManager>().ReceiveDraggable(this.gameObject);
                 }
                 else
                 {
