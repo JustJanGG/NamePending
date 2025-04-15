@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [Header("Ability")]
-    public GameObject[] abilites;
-
     [Header("Health")]
     public int health = 3;
     public int maxHealth = 3;

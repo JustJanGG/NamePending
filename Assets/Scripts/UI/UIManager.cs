@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
     int uiLayer;
+    GameObject player;
 
     private void Start()
     {
         uiLayer = LayerMask.NameToLayer("UI");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void ReceiveDraggable(GameObject draggable)
     {
-        // do stuff
+        draggable.transform.SetParent(player.GetComponentInChildren<PlayerAbilities>().gameObject.transform);
     }
 
     //Returns 'true' if we touched or hovering on Unity UI element.

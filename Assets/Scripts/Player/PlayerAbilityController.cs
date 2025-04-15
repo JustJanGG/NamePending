@@ -4,21 +4,21 @@ using UnityEngine.InputSystem;
 public class PlayerAbilityController : MonoBehaviour
 {
     [Header("Components")]
-    private PlayerStats playerStats;
+    private PlayerAbilities playerAbilities;
 
     [Header("InteractionStats")]
     private float pickupRange = 1.5f;
-
+    
     private void Awake()
     {
-        playerStats = GetComponent<PlayerStats>();
+        playerAbilities = GetComponentInChildren<PlayerAbilities>();
     }
 
     public void HandleAbilityInput(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
         {
-            playerStats.abilites[0].GetComponent<Ability>().Activate();
+            playerAbilities.abilities[0].GetComponent<Ability>().Activate();
         }
     }
 
