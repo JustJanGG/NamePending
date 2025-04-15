@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Dash()
     {
         isDashing = true;
-        //playerCollider.enabled = false;
         playerCollider.excludeLayers = LayerMask.GetMask("EnemyCollision");
 
         Vector2 dashDirection = direction.normalized;
@@ -67,7 +66,6 @@ public class PlayerController : MonoBehaviour
 
         dashTimer = playerStats.dashCooldown;
         playerCollider.excludeLayers = LayerMask.GetMask("Nothing");
-        //playerCollider.enabled = true;
         isDashing = false;
     }
 
