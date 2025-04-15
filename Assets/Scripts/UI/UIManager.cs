@@ -17,7 +17,9 @@ public class UIManager : MonoBehaviour
 
     public void ReceiveDraggable(GameObject draggable)
     {
-        draggable.transform.SetParent(player.GetComponentInChildren<PlayerAbilities>().gameObject.transform);
+        // TODO: index 0 is ability slot, need to change to be dynamic
+        Transform playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
+        draggable.transform.SetParent(playerAbilites.GetChild(0));
     }
 
     //Returns 'true' if we touched or hovering on Unity UI element.
