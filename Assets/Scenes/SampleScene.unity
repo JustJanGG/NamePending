@@ -1115,6 +1115,7 @@ GameObject:
   - component: {fileID: 393194255}
   - component: {fileID: 393194257}
   - component: {fileID: 393194256}
+  - component: {fileID: 393194258}
   m_Layer: 5
   m_Name: AbilityBar
   m_TagString: Untagged
@@ -1183,6 +1184,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393194254}
   m_CullTransparentMesh: 1
+--- !u!114 &393194258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393194254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1547e79b948164c9a4c90a95c3d6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416452670
 GameObject:
   m_ObjectHideFlags: 0
@@ -6912,7 +6925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
