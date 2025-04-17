@@ -15,28 +15,21 @@ public class UIManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void ReceiveDraggable(GameObject draggable)
-    {
-        // TODO: index 0 is ability slot, need to change to be dynamic
-        Transform playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
-        draggable.transform.SetParent(playerAbilites.GetChild(0));
-    }
-
     //Returns 'true' if we touched or hovering on Unity UI element.
-    public bool IsPointerOverUIElement()
+    public GameObject IsPointerOverUIElement()
     {
         return IsPointerOverUIElement(GetEventSystemRaycastResults());
     }
 
-    private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
+    private GameObject IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
     {
         for (int index = 0; index < eventSystemRaysastResults.Count; index++)
         {
             RaycastResult curRaysastResult = eventSystemRaysastResults[index];
-            if (curRaysastResult.gameObject.layer == uiLayer)
-                return true;
+            if (curRaysastResult.gameObject.layer == uiLayer && curRaysastResult.gameObject.name.StartsWith("CircuitSlot"))
+                return curRaysastResult.gameObject;
         }
-        return false;
+        return null;
     }
 
     static List<RaycastResult> GetEventSystemRaycastResults()
