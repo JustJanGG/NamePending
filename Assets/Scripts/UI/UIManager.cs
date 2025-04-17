@@ -16,12 +16,12 @@ public class UIManager : MonoBehaviour
     }
 
     //Returns 'true' if we touched or hovering on Unity UI element.
-    public GameObject IsPointerOverUIElement()
+    public GameObject GetPointerOverCircuitSlotUIElement()
     {
-        return IsPointerOverUIElement(GetEventSystemRaycastResults());
+        return IsPointerOverCircuitSlotUIElement(GetEventSystemRaycastResults());
     }
 
-    private GameObject IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
+    private GameObject IsPointerOverCircuitSlotUIElement(List<RaycastResult> eventSystemRaysastResults)
     {
         for (int index = 0; index < eventSystemRaysastResults.Count; index++)
         {
