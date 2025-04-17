@@ -31,7 +31,7 @@ public class PlayerAbilityController : MonoBehaviour
             foreach (GameObject circuit in GameManager.instance.circuitList)
             {
                 float distanceToCircuit = Vector2.Distance(transform.position, circuit.transform.position);
-                if (distanceToCircuit < pickupRange && distanceToCircuit < minDistance)
+                if (distanceToCircuit < pickupRange && distanceToCircuit < minDistance && circuit.GetComponent<Collider2D>().enabled)
                 {
                     circuitToPickup = circuit;
                     minDistance = distanceToCircuit;
@@ -39,7 +39,6 @@ public class PlayerAbilityController : MonoBehaviour
             }
             if (circuitToPickup != null)
             {
-                Debug.Log("Pickup Circuit: " + circuitToPickup.name);
                 circuitToPickup.GetComponent<Draggable>().Pickup();
             }
         }

@@ -32,10 +32,13 @@ public class Draggable : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                if (ui.GetComponent<UIManager>().IsPointerOverUIElement())
+                GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
+                if (circuitSlotUi != null)
                 {
-                    Debug.Log("Over UI");
-                    ui.GetComponent<UIManager>().ReceiveDraggable(this.gameObject);
+                    isHolding = false;
+                    this.GetComponent<Renderer>().enabled = false;
+                    this.GetComponent<Collider2D>().enabled = false;
+                    SetAbilityToPlayer(circuitSlotUi);
                 }
                 else
                 {
@@ -61,6 +64,12 @@ public class Draggable : MonoBehaviour
     {
         isHolding = false;
         transform.position = draggableWorldPosition;
+    }
+
+    private void SetAbilityToPlayer(GameObject circuitSlotUi)
+    {
+        Transform playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
+        transform.SetParent(playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).Find(circuitSlotUi.transform.name));
     }
 
     private void CheckSortingLayer()
