@@ -7,12 +7,10 @@ using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     int uiLayer;
-    GameObject player;
 
     private void Start()
     {
         uiLayer = LayerMask.NameToLayer("UI");
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     //Returns the gameobject of the Ui element hovered if touched.
