@@ -29,7 +29,8 @@ public class Draggable : MonoBehaviour
         if (isHolding)
         {
             this.transform.position = Vector2.MoveTowards(this.transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset), 50f * Time.deltaTime);
-            
+            this.gameObject.layer = LayerMask.NameToLayer("UI");
+
             if (Input.GetMouseButtonDown(0))
             {
                 GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
@@ -62,6 +63,7 @@ public class Draggable : MonoBehaviour
 
     private void DropDraggable()
     {
+        this.gameObject.layer = LayerMask.NameToLayer("Circuit");
         isHolding = false;
         transform.position = draggableWorldPosition;
     }
