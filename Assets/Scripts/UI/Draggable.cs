@@ -29,7 +29,8 @@ public class Draggable : MonoBehaviour
         if (isHolding)
         {
             this.transform.position = Vector2.MoveTowards(this.transform.position, mainCamera.ScreenToWorldPoint(Input.mousePosition + mousePositionOffset), 50f * Time.deltaTime);
-            
+            this.gameObject.layer = LayerMask.NameToLayer("UI");
+
             if (Input.GetMouseButtonDown(0))
             {
                 GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
@@ -39,6 +40,7 @@ public class Draggable : MonoBehaviour
                     this.GetComponent<Renderer>().enabled = false;
                     this.GetComponent<Collider2D>().enabled = false;
                     SetAbilityToPlayer(circuitSlotUi);
+                    transform.position = Vector2.zero;
                 }
                 else
                 {
@@ -62,6 +64,7 @@ public class Draggable : MonoBehaviour
 
     private void DropDraggable()
     {
+        this.gameObject.layer = LayerMask.NameToLayer("Circuit");
         isHolding = false;
         transform.position = draggableWorldPosition;
     }
@@ -69,7 +72,10 @@ public class Draggable : MonoBehaviour
     private void SetAbilityToPlayer(GameObject circuitSlotUi)
     {
         Transform playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
-        transform.SetParent(playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).Find(circuitSlotUi.transform.name));
+        GameObject ability = playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).gameObject;
+
+        transform.SetParent(ability.transform.Find(circuitSlotUi.transform.name));
+        ability.GetComponent<Ability>().ApplyCircuit(this.gameObject);
     }
 
     private void CheckSortingLayer()

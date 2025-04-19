@@ -7,15 +7,13 @@ using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     int uiLayer;
-    GameObject player;
 
     private void Start()
     {
         uiLayer = LayerMask.NameToLayer("UI");
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    //Returns 'true' if we touched or hovering on Unity UI element.
+    //Returns the gameobject of the Ui element hovered if touched.
     public GameObject GetPointerOverCircuitSlotUIElement()
     {
         return IsPointerOverCircuitSlotUIElement(GetEventSystemRaycastResults());
