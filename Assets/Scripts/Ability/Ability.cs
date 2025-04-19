@@ -44,6 +44,76 @@ public abstract class Ability : MonoBehaviour
     {
         blueCircuit.Activate(enemy, reducedList, damage);
     }
+    public void ApplyCircuit(GameObject circuit)
+    {
+        if (circuit.tag == "Circuit")
+        {
+            circuits.Add(circuit);
+            switch (circuit.GetComponent<ICircuit>().circuitType)
+            {
+                case CircuitType.Red:
+                    circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
+                    foreach (var item in circuits)
+                    {
+                        if (item.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
+                        {
+                            item.GetComponent<BlueCircuit>().ApplyCircuit(circuit);
+                        }
+                    }
+                    break;
+                case CircuitType.Blue:
+                    foreach (var item in circuits)
+                    {
+                        if (item.GetComponent<ICircuit>().circuitType == CircuitType.Red)
+                        {
+                            circuit.GetComponent<BlueCircuit>().ApplyCircuit(item);
+                        }
+                    }
+                    break;
+                case CircuitType.Green:
+                    break;
+                default:
+                    Debug.LogError("Invalid circuit type");
+                    break;
+            }
+
+        }
+    }
+    public void RemoveCircuit(GameObject circuit)
+    {
+        if (circuit.tag == "Circuit" && circuits.Contains(circuit))
+        {
+            circuits.Remove(circuit);
+            switch (circuit.GetComponent<ICircuit>().circuitType)
+            {
+                case CircuitType.Red:
+                    circuit.GetComponent<RedCircuit>().RemoveRedCircuit(this);
+                    foreach (var item in circuits)
+                    {
+                        if (item.GetComponent<ICircuit>().circuitType == CircuitType.Blue)
+                        {
+                            item.GetComponent<BlueCircuit>().RemoveCircuit(circuit);
+                        }
+                    }
+                    break;
+                case CircuitType.Blue:
+                    foreach (var item in circuits)
+                    {
+                        if (item.GetComponent<ICircuit>().circuitType == CircuitType.Red)
+                        {
+                            circuit.GetComponent<BlueCircuit>().RemoveCircuit(item);
+                        }
+                    }
+                    break;
+                case CircuitType.Green:
+                    break;
+                default:
+                    Debug.LogError("Invalid circuit type");
+                    break;
+            }
+
+        }
+    }
     public void ApplyRedCircuits()
     {
         foreach (var circuit in circuits)
