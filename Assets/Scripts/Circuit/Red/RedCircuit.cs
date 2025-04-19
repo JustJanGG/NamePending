@@ -10,5 +10,6 @@ public abstract class RedCircuit : MonoBehaviour, ICircuit
     public CircuitType circuitType { get; set; }
     public List<Tag> tags;
     public abstract void ApplyRedCircuit(Ability ability);
+    public abstract void RemoveRedCircuit(Ability ability);
 
 }
