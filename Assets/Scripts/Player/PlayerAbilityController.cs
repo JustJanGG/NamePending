@@ -16,7 +16,7 @@ public class PlayerAbilityController : MonoBehaviour
 
     public void HandleAbilityInput(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
         {
             playerAbilities.abilities[0].GetComponent<Ability>().Activate();
         }
@@ -24,7 +24,7 @@ public class PlayerAbilityController : MonoBehaviour
 
     public void HandleInteractAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
         {
             GameObject circuitToPickup = null;
             float minDistance = pickupRange + 0.1f;
@@ -39,8 +39,21 @@ public class PlayerAbilityController : MonoBehaviour
             }
             if (circuitToPickup != null)
             {
-                circuitToPickup.GetComponent<Draggable>().Pickup();
+                circuitToPickup.GetComponent<Draggable>().Pickup(true);
+                GameManager.instance.SetGameState(GameState.Inventory);
             }
+        }
+    }
+
+    public void HandleInventoryScreen(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
+        {
+            GameManager.instance.SetGameState(GameState.Inventory);
+        }
+        else if (ctx.performed && GameManager.instance.gameState == GameState.Inventory)
+        {
+            GameManager.instance.SetGameState(GameState.InGame);
         }
     }
 

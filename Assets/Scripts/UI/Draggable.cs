@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,7 +12,9 @@ public class Draggable : MonoBehaviour
 
     public Vector2 draggableWorldPosition;
     Vector3 mousePositionOffset;
+
     private bool isHolding = false;
+    private bool fromGround = false;
 
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class Draggable : MonoBehaviour
         {
             CheckSortingLayer();
             draggableWorldPosition = gameObject.transform.position;
+            fromGround = false;
         }
 
         if (isHolding)
@@ -44,10 +48,15 @@ public class Draggable : MonoBehaviour
 
                     if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 0)
                     {
+                        // add circuit to the ability
                         isHolding = false;
                         this.GetComponent<Renderer>().enabled = false;
                         this.GetComponent<Collider2D>().enabled = false;
                         SetAbilityToPlayer(circuitSlotUi);
+                        if (fromGround)
+                        {
+                            GameManager.instance.SetGameState(GameState.InGame);
+                        }
                     }
                 }
                 else
@@ -61,13 +70,20 @@ public class Draggable : MonoBehaviour
                 DropDraggable();
             }
         }
+
+        if (isHolding && GameManager.instance.gameState == GameState.InGame)
+        {
+            DropDraggable();
+        }
     }
 
-    public void Pickup()
+    public void Pickup(bool fromGround)
     {
         mousePositionOffset = gameObject.transform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
         isHolding = true;
+        this.fromGround = fromGround;
         this.GetComponent<Renderer>().enabled = true;
+        GameManager.instance.circuitList.Remove(this.gameObject);
     }
 
     private void DropDraggable()
@@ -76,6 +92,11 @@ public class Draggable : MonoBehaviour
         isHolding = false;
         transform.position = draggableWorldPosition;
         this.GetComponent<Collider2D>().enabled = true;
+        GameManager.instance.circuitList.Add(this.gameObject);
+        if (fromGround)
+        {
+            GameManager.instance.SetGameState(GameState.InGame);
+        }
     }
 
     private void SetAbilityToPlayer(GameObject circuitSlotUi)
