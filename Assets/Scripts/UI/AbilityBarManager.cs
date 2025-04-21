@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class AbilityBarManager : MonoBehaviour
 {
+    [Header("Components")]
     private GameObject player;
     private Transform playerAbilites;
     private GameObject ui;
