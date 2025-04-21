@@ -72,11 +72,15 @@ public class PlayerController : MonoBehaviour
     public void HandleMoveInput(InputAction.CallbackContext ctx)
     {
         direction = ctx.ReadValue<Vector2>().normalized;
+        if (GameManager.instance.gameState == GameState.Inventory)
+        {
+            GameManager.instance.SetGameState(GameState.InGame);
+        }
     }
 
     public void HandleDashInput(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && dashTimer <= 0)
+        if (ctx.performed && dashTimer <= 0 && GameManager.instance.gameState == GameState.InGame)
         {
             StartCoroutine(Dash());
         }

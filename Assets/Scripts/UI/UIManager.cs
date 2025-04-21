@@ -13,6 +13,29 @@ public class UIManager : MonoBehaviour
         uiLayer = LayerMask.NameToLayer("UI");
     }
 
+    private void Update()
+    {
+        if (GameManager.instance.gameState == GameState.Inventory)
+        {
+            GameObject abilityBar = GetComponentInChildren<AbilityBarManager>().gameObject;
+            abilityBar.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+            abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(abilityBar.GetComponent<RectTransform>().anchoredPosition.x, 150);
+            transform.Find("TransparentBackground").gameObject.SetActive(true);
+        }
+        else
+        {
+            ResetAbilityBar();
+        }
+    }
+
+    private void ResetAbilityBar()
+    {
+        GameObject abilityBar = GetComponentInChildren<AbilityBarManager>().gameObject;
+        abilityBar.transform.localScale = new Vector3(1f, 1f, 1f);
+        abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(abilityBar.GetComponent<RectTransform>().anchoredPosition.x, 50);
+        transform.Find("TransparentBackground").gameObject.SetActive(false);
+    }
+
     //Returns the gameobject of the Ui element hovered if touched.
     public GameObject GetPointerOverCircuitSlotUIElement()
     {

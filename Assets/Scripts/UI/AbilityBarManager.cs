@@ -22,7 +22,7 @@ public class AbilityBarManager : MonoBehaviour
 
     private void RemoveCircuit()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && GameManager.instance.gameState == GameState.Inventory)
         {
             GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
             if (circuitSlotUi != null)
@@ -35,7 +35,7 @@ public class AbilityBarManager : MonoBehaviour
                     circuit.transform.SetParent(null);
                     circuitSlotUi.GetComponent<Image>().color = Color.white;
 
-                    circuit.GetComponent<Draggable>().Pickup();
+                    circuit.GetComponent<Draggable>().Pickup(false);
                     Vector3 randomPoint = Random.insideUnitCircle.normalized * Random.Range(0.1f, 0.3f);
                     circuit.GetComponent<Draggable>().draggableWorldPosition = player.transform.position + randomPoint;
                 }
