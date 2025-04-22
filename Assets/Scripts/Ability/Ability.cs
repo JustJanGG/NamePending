@@ -15,8 +15,12 @@ public abstract class Ability : MonoBehaviour
     protected string abilityDescription;
     protected float cooldown;
     protected List<Tag> tags;
-    protected float physicalDamage;
+    //protected float physicalDamage;
     protected float fireDamage;
+    protected Dictionary<DamageType, float> damage;
+
+    [Header("Damage")]
+    public float physicalDamage;
 
     [Header("General Stats")]
     public float procCoefficiant;
@@ -112,16 +116,6 @@ public abstract class Ability : MonoBehaviour
                     break;
             }
 
-        }
-    }
-    public void ApplyRedCircuits()
-    {
-        foreach (var circuit in circuits)
-        {
-            if (circuit.GetComponent<ICircuit>().circuitType == CircuitType.Red)
-            {
-                circuit.GetComponent<RedCircuit>().ApplyRedCircuit(this);
-            }
         }
     }
     public abstract void Activate();

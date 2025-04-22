@@ -17,13 +17,6 @@ public abstract class BlueCircuit : Ability, ICircuit
 
     public bool Proc(float procCoefficient)
     {
-        //int rng = Random.Range(1, 101);
-        //Debug.Log("ProcChance: " + procChance);
-        //Debug.Log("rng: " + rng + "Proc chance: " + procChance * 100);
-        //if (rng <= procChance * 100)
-        //{
-        //    return true;
-        //}
         if (Random.Range(1, 101) <= procChance * 100)
         {
             return true;
@@ -34,10 +27,12 @@ public abstract class BlueCircuit : Ability, ICircuit
     public override void Activate()
     {
         //Not supposed to be called
+        Debug.LogError("BlueCircuit Activate() called without enemy");
     }
     public override void Hit(GameObject enemy)
     {
         //Not supposed to be called
+        Debug.LogError("BlueCircuit Hit() called without reduced list");
     }
     public abstract void Hit(GameObject enemy, List<BlueCircuit> reducedList);
     public abstract void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage);

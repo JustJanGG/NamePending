@@ -38,7 +38,6 @@ public class Ember : BlueCircuit
     }
     public override void Hit(GameObject enemy, List<BlueCircuit> reducedList)
     {
-        //Debug.Log("Ember Hit");
         Hit hit = new(enemy, this, reducedList, DealDamage());
     }
 }

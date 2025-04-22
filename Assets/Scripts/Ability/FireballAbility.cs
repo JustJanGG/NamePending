@@ -15,7 +15,7 @@ public class FireballAbility : Ability
         tags.Add(Tag.AoE);
         tags.Add(Tag.Projectile);
         tags.Add(Tag.Ranged);
-        abilityDescription = "A fireball that explodes on impact, dealing damage to all enemies in the area.";
+        abilityDescription = "A Projectile that travels in a straight line and deals damage on impact";
         abilityName = "Fireball";
         procCoefficiant = 1f;
         cooldown = 0f;
@@ -29,12 +29,6 @@ public class FireballAbility : Ability
 
     public override void Hit(GameObject enemy)
     {
-        //Debug.Log("Fireball Hit");
-         
-        //foreach (var circuit in circuits)
-        //{
-        //    Debug.Log(circuit.GetComponent<ICircuit>().circuitType);
-        //}
         Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void Activate()
