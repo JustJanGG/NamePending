@@ -17,19 +17,12 @@ public class FireballAbility : Ability
         tags.Add(Tag.Ranged);
         abilityDescription = "A Projectile that travels in a straight line and deals damage on impact";
         abilityName = "Fireball";
-        procCoefficiant = 1f;
-        cooldown = 0f;
-        physicalDamage = 0f;
-        fireDamage = 10f;
-        projectileSpeed = 10f;
-        areaOfEffect = 1f;
-        projectileCount = 1;
 
     }
 
     public override void Hit(GameObject enemy)
     {
-        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
+       Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
     public override void Activate()
     {
@@ -39,14 +32,4 @@ public class FireballAbility : Ability
         fireballPrefab.speed = projectileSpeed;
     }
 
-
-    public override float[] DealDamage()
-    {
-        float[] damage = new float[4];
-        damage[0] = physicalDamage;
-        damage[1] = fireDamage;
-        damage[2] = 0f; //cold
-        damage[3] = 0f; //Lightning
-        return damage;
-    }
 }

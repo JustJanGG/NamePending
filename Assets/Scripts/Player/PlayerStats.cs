@@ -13,6 +13,6 @@ public class PlayerStats : MonoBehaviour
     public float dashCooldown = 1.0f;
 
     [Header("Damage")]
-    public float fireDamage = 5.0f;
+    public float baseDamage = 1.0f;
 
 }

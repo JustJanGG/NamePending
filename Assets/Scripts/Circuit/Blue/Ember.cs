@@ -11,12 +11,12 @@ public class Ember : BlueCircuit
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         circuitName = "Ember";
         circuitType = CircuitType.Blue;
-        physicalDamage = 10f;
     }
 
-    public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, float[] damage)
+    public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
         GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
 
@@ -26,16 +26,6 @@ public class Ember : BlueCircuit
         emberPrefab.speed = projectileSpeed;
     }
 
-    public override float[] DealDamage()
-    {
-        //TODO
-        float[] damage = new float[4];
-        damage[0] = physicalDamage;
-        damage[1] = fireDamage;
-        damage[2] = 0f; //cold
-        damage[3] = 0f; //Lightning
-        return damage;
-    }
     public override void Hit(GameObject enemy, List<BlueCircuit> reducedList)
     {
         Hit hit = new(enemy, this, reducedList, DealDamage());

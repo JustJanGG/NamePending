@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,27 +15,27 @@ public class EnemyStats : MonoBehaviour
     [Header("Damage")]
     public float damage;
 
-    public float[] resistances;
+
+    private Dictionary<DamageType, float> resistances = new Dictionary<DamageType, float>
+    {
+        { DamageType.Physical, 0f },
+        { DamageType.Fire, 0f },
+        { DamageType.Cold, 0f },
+        { DamageType.Lightning, 0f }
+    };
 
     private void Start()
     {
-        resistances = new float[4];
-        resistances[0] = 0f; // physical
-        resistances[1] = 0f; // fire
-        resistances[2] = 0f; // cold
-        resistances[3] = 0f; // lightning
-    }
-    public void TakeDamage(float[] damage)
-    {
 
-        for (int i = 0; i < damage.Length; i++)
+    }
+    public void TakeDamage(Dictionary<DamageType, float> damage)
+    {
+        foreach (var item in damage)
         {
-            //Debug.Log("Taking damage" + (int)(damage[i] * (1 - resistances[i])));
-            health -= (int)(damage[i] * (1 - resistances[i]));
-            // show damage popup
-            if ((int)(damage[i] * (1 - resistances[i])) != 0) 
+            health -= (int)(damage[item.Key] * (1 - resistances[item.Key]));
+            if ((int)(damage[item.Key] * (1 - resistances[item.Key])) != 0)
             {
-                GameManager.instance.GetComponent<DamagePopupManager>().ShowDamagePopup((int)(damage[i] * (1 - resistances[i])), transform.position);
+                GameManager.instance.GetComponent<DamagePopupManager>().ShowDamagePopup((int)(damage[item.Key] * (1 - resistances[item.Key])), transform.position);
             }
             if (health <= 0)
             {

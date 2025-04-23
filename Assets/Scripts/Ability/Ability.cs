@@ -15,12 +15,13 @@ public abstract class Ability : MonoBehaviour
     protected string abilityDescription;
     protected float cooldown;
     protected List<Tag> tags;
-    //protected float physicalDamage;
-    protected float fireDamage;
     protected Dictionary<DamageType, float> damage;
 
     [Header("Damage")]
-    public float physicalDamage;
+    public float physicalOfBase = 0;
+    public float fireOfBase = 0;
+    public float coldOfBase = 0;
+    public float lightningOfBase = 0;
 
     [Header("General Stats")]
     public float procCoefficiant;
@@ -44,7 +45,7 @@ public abstract class Ability : MonoBehaviour
         }
         return blueCircuits;
     }
-    public void ProcBlueCircuit(BlueCircuit blueCircuit, GameObject enemy, List<BlueCircuit> reducedList, float[] damage)
+    public void ProcBlueCircuit(BlueCircuit blueCircuit, GameObject enemy, List<BlueCircuit> reducedList, Dictionary<DamageType, float> damage)
     {
         blueCircuit.Activate(enemy, reducedList, damage);
     }
@@ -119,6 +120,15 @@ public abstract class Ability : MonoBehaviour
         }
     }
     public abstract void Activate();
-    public abstract float[] DealDamage();
+    public Dictionary<DamageType, float> DealDamage()
+    {
+        float baseDamage = player.GetComponent<PlayerStats>().baseDamage;
+        Dictionary<DamageType, float> damage = new Dictionary<DamageType, float>();
+        damage.Add(DamageType.Physical, physicalOfBase * baseDamage);
+        damage.Add(DamageType.Fire, fireOfBase * baseDamage);
+        damage.Add(DamageType.Cold, coldOfBase * baseDamage);
+        damage.Add(DamageType.Lightning, lightningOfBase * baseDamage);
+        return damage;
+    }
     public abstract void Hit(GameObject enemy);
 }
