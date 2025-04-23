@@ -17,7 +17,7 @@ public class Hit
         {
             foreach (BlueCircuit circuit in blueCircuits)
             {
-                if (circuit.Proc(ability.procCoefficiant))
+                if (circuit.Proc(ability.procCoefficient))
                 {
                     triggered.Add(circuit);
                 }

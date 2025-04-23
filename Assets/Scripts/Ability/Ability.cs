@@ -18,13 +18,13 @@ public abstract class Ability : MonoBehaviour
     protected Dictionary<DamageType, float> damage;
 
     [Header("Damage")]
-    public float physicalOfBase = 0;
-    public float fireOfBase = 0;
-    public float coldOfBase = 0;
-    public float lightningOfBase = 0;
+    public float physicalOfBase;
+    public float fireOfBase;
+    public float coldOfBase;
+    public float lightningOfBase;
 
     [Header("General Stats")]
-    public float procCoefficiant;
+    public float procCoefficient;
 
     [Header("Projectile Stats")]
     public float projectileSpeed;
