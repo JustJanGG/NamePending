@@ -16,7 +16,6 @@ public class EmberPrefab : MonoBehaviour
     {
         emberAbility = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Ember>();
         direction = target.position - gameObject.transform.position;
-        //Debug.Log("Direction: " + direction);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);
     }
@@ -25,7 +24,6 @@ public class EmberPrefab : MonoBehaviour
         this.reducedList = reducedList;
     }
 
-    // Update is called once per frame
     void Update()
     {
         gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;

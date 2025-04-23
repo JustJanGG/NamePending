@@ -7,7 +7,7 @@ public class Hit
     private EnemyStats enemyStats;
     private List<BlueCircuit> reducedList;
 
-    public Hit(GameObject enemy, Ability ability, List<BlueCircuit> blueCircuits, float[] damage)
+    public Hit(GameObject enemy, Ability ability, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
         reducedList = new List<BlueCircuit>();
         enemyStats = enemy.GetComponent<EnemyStats>();
