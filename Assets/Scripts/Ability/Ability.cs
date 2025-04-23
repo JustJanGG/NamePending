@@ -76,6 +76,7 @@ public abstract class Ability : MonoBehaviour
                     }
                     break;
                 case CircuitType.Green:
+                    // TODO: Implement Green Circuit logic
                     break;
                 default:
                     Debug.LogError("Invalid circuit type");
@@ -111,6 +112,7 @@ public abstract class Ability : MonoBehaviour
                     }
                     break;
                 case CircuitType.Green:
+                    // TODO: Implement Green Circuit logic
                     break;
                 default:
                     Debug.LogError("Invalid circuit type");

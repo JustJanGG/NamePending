@@ -10259,6 +10259,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
+      propertyPath: fireResistance
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3407322028138645961, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_Name
       value: Slime
@@ -10318,13 +10322,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 619394802}
   - {fileID: 1992600503}
-  - {fileID: 1935073919}
   - {fileID: 1555936879}
+  - {fileID: 1018785594}
+  - {fileID: 1558093060}
+  - {fileID: 1935073919}
   - {fileID: 6480036767195688633}
   - {fileID: 139383426}
   - {fileID: 1543392588}
-  - {fileID: 1018785594}
-  - {fileID: 1558093060}
   - {fileID: 332210119}
   - {fileID: 513024387}
   - {fileID: 1459715272}

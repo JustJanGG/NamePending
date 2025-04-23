@@ -48,7 +48,6 @@ public class Draggable : MonoBehaviour
 
                     if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 0)
                     {
-                        // add circuit to the ability
                         isHolding = false;
                         this.GetComponent<Renderer>().enabled = false;
                         this.GetComponent<Collider2D>().enabled = false;
