@@ -15,18 +15,25 @@ public class EnemyStats : MonoBehaviour
     [Header("Damage")]
     public float damage;
 
+    [Header("Resistances")]
+    [Range(0, 1)]
+    public float physicalResistance;
+    [Range(0, 1)]
+    public float fireResistance;
+    [Range(0, 1)]
+    public float coldResistance;
+    [Range(0, 1)]
+    public float lightingResistance;
+    
 
-    private Dictionary<DamageType, float> resistances = new Dictionary<DamageType, float>
-    {
-        { DamageType.Physical, 0f },
-        { DamageType.Fire, 0f },
-        { DamageType.Cold, 0f },
-        { DamageType.Lightning, 0f }
-    };
+    private Dictionary<DamageType, float> resistances = new();
 
     private void Start()
     {
-
+        resistances.Add(DamageType.Physical, physicalResistance);
+        resistances.Add(DamageType.Fire, fireResistance);
+        resistances.Add(DamageType.Cold, coldResistance);
+        resistances.Add(DamageType.Lightning, lightingResistance);
     }
     public void TakeDamage(Dictionary<DamageType, float> damage)
     {
