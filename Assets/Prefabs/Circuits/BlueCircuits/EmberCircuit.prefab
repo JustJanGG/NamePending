@@ -49,8 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 7943630125408087589, guid: 1dcb8f0487aa4634e9532251e3f6f288, type: 3}
   circuits: []
+  physicalOfBase: 0
+  fireOfBase: 10
+  coldOfBase: 0
+  lightningOfBase: 0
   procCoefficiant: 1
-  projectileSpeed: 5
+  projectileSpeed: 25
   projectileCount: 1
   areaOfEffect: 0
   procChance: 0.25
@@ -66,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d516b60f54fe14bbcec740621cf25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggableWorldPosition: {x: 0, y: 0}
 --- !u!61 &-4118960233161993212
 BoxCollider2D:
   m_ObjectHideFlags: 0

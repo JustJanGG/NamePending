@@ -16,7 +16,6 @@ public class FireballPrefab : MonoBehaviour
         Destroy(gameObject, 3f); 
     }
 
-    // Update is called once per frame
     void Update()
     {
         gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;
