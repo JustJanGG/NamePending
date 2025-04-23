@@ -260,11 +260,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 80
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3361222929836210933, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_SortingOrder
@@ -8342,6 +8342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992600503}
   - component: {fileID: 1992600502}
+  - component: {fileID: 1992600504}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8385,6 +8386,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1992600504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992600501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6bad8a663480d46a03b382fd7888fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePopupPrefab: {fileID: 2745973084909882923, guid: 434930f95e28eed44901e9355dc0ba49, type: 3}
 --- !u!1 &1998482244
 GameObject:
   m_ObjectHideFlags: 0
@@ -11041,11 +11055,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3407322028138645961, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_Name

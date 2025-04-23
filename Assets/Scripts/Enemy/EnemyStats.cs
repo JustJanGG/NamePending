@@ -31,6 +31,11 @@ public class EnemyStats : MonoBehaviour
         {
             //Debug.Log("Taking damage" + (int)(damage[i] * (1 - resistances[i])));
             health -= (int)(damage[i] * (1 - resistances[i]));
+            // show damage popup
+            if ((int)(damage[i] * (1 - resistances[i])) != 0) 
+            {
+                GameManager.instance.GetComponent<DamagePopupManager>().ShowDamagePopup((int)(damage[i] * (1 - resistances[i])), transform.position);
+            }
             if (health <= 0)
             {
                 Die();
