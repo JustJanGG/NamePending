@@ -26,8 +26,4 @@ public class Ember : BlueCircuit
         emberPrefab.speed = projectileSpeed;
     }
 
-    public override void Hit(GameObject enemy, List<BlueCircuit> reducedList)
-    {
-        Hit hit = new(enemy, this, reducedList, DealDamage());
-    }
 }
