@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         uiLayer = LayerMask.NameToLayer("UI");
+        transform.Find("TransparentBackground").GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+        transform.Find("TransparentBackground").GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
     }
 
     private void Update()

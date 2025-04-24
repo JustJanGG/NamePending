@@ -10,7 +10,7 @@ public class EmberPrefab : MonoBehaviour
 
     public Transform target;
     [Header("Fireball properties")]
-    public float speed = 5.0f;
+    public float speed;
 
     void Start()
     {
