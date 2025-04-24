@@ -118,7 +118,7 @@ MonoBehaviour:
   fireOfBase: 1
   coldOfBase: 0
   lightningOfBase: 0
-  procCoefficient: 0
+  procCoefficient: 1
   projectileSpeed: 10
   projectileCount: 1
   areaOfEffect: 0

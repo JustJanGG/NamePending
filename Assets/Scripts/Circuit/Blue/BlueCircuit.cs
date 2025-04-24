@@ -8,13 +8,15 @@ public abstract class BlueCircuit : Ability, ICircuit
     public string circuitName { get; set; }
     public string circuitDescription { get; set; }
     public CircuitType circuitType { get; set; }
+    protected Dictionary<DamageType, float> abilityDamage;
+    protected bool damageCalculated = false;
 
     [Header("Blue Circuit Stats")]
     public float procChance;
 
     public bool Proc(float procCoefficient)
     {
-        if (Random.Range(1, 101) <= procChance * 100)
+        if (Random.Range(1, 101) <= procChance * procCoefficient * 100)
         {
             return true;
         }
@@ -31,9 +33,31 @@ public abstract class BlueCircuit : Ability, ICircuit
         //Not supposed to be called
         Debug.LogError("BlueCircuit Hit() called without reduced list");
     }
+    public Dictionary<DamageType, float> DealDamage(Dictionary<DamageType, float> abilityDamage)
+    {
+        if (damageCalculated)
+        {
+            return damage;
+        }
+        float totalDamage = 0;
+        foreach (var item in this.abilityDamage)
+        {
+            totalDamage += item.Value;
+        }
+
+        Dictionary<DamageType, float> rDamage = new();
+        rDamage.Add(DamageType.Physical, totalDamage * physicalOfBase);
+        rDamage.Add(DamageType.Fire, totalDamage * fireOfBase);
+        rDamage.Add(DamageType.Cold, totalDamage * coldOfBase);
+        rDamage.Add(DamageType.Lightning, totalDamage * lightningOfBase);
+
+        damage = rDamage;
+        damageCalculated = true;
+        return rDamage;
+    }
     public void Hit(GameObject enemy, List<BlueCircuit> reducedList)
     {
-        Hit hit = new(enemy, this, reducedList, DealDamage());
+        Hit hit = new(enemy, this, reducedList, DealDamage(damage));
     }
     public abstract void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage);
 }
