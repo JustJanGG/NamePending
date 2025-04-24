@@ -18,7 +18,8 @@ public class Ember : BlueCircuit
 
     public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
-        GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity, this.transform);
+        this.abilityDamage = damage;
+        GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
 
         EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
         emberPrefab.PassList(blueCircuits);
