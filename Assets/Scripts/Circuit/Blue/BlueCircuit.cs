@@ -14,9 +14,6 @@ public abstract class BlueCircuit : Ability, ICircuit
     [Header("Blue Circuit Stats")]
     public float procChance;
 
-    Ability socketedInAbility;
-    List<RedCircuit> redCircuits;
-
     public bool Proc(float procCoefficient)
     {
         if (Random.Range(1, 101) <= procChance * procCoefficient * 100)
