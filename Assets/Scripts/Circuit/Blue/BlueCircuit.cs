@@ -34,6 +34,9 @@ public abstract class BlueCircuit : Ability, ICircuit
         //Not supposed to be called
         Debug.LogError("BlueCircuit Hit() called without reduced list");
     }
-    public abstract void Hit(GameObject enemy, List<BlueCircuit> reducedList);
+    public void Hit(GameObject enemy, List<BlueCircuit> reducedList)
+    {
+        Hit hit = new(enemy, this, reducedList, DealDamage());
+    }
     public abstract void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage);
 }
