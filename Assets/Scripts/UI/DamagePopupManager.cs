@@ -7,11 +7,11 @@ public class DamagePopupManager : MonoBehaviour
     [Header("Damage Popup Prefab")]
     public GameObject damagePopupPrefab;
 
-    public void ShowDamagePopup(float damage, Vector2 enemyPosition)
+    public void ShowDamagePopup(int damage, DamageType damageType, Vector2 enemyPosition)
     {
-        // TODO: add DamageType enum in param to color text
         GameObject damagePopup = Instantiate(damagePopupPrefab, new Vector2(enemyPosition.x, enemyPosition.y + 0.2f), Quaternion.identity);
         damagePopup.GetComponent<TextMeshPro>().SetText(damage.ToString());
+        CheckDamageType(damagePopup, damageType);
         StartCoroutine(MoveTextUpwards(damagePopup, 1f));
         StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 1f));
         Destroy(damagePopup, 1.1f);
@@ -43,5 +43,24 @@ public class DamagePopupManager : MonoBehaviour
             yield return null;
         }
         textMesh.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+    }
+
+    private void CheckDamageType(GameObject damagePopup, DamageType damageType)
+    {
+        switch (damageType)
+        {
+            case DamageType.Physical:
+                damagePopup.GetComponent<TextMeshPro>().color = Color.white;
+                break;
+            case DamageType.Fire:
+                damagePopup.GetComponent<TextMeshPro>().color = Color.red;
+                break;
+            case DamageType.Cold:
+                damagePopup.GetComponent<TextMeshPro>().color = Color.blue;
+                break;
+            case DamageType.Lightning:
+                damagePopup.GetComponent<TextMeshPro>().color = Color.yellow;
+                break;
+        }
     }
 }

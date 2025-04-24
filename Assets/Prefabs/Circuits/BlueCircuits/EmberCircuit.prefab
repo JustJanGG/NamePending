@@ -50,10 +50,10 @@ MonoBehaviour:
   abilityPrefab: {fileID: 7943630125408087589, guid: 1dcb8f0487aa4634e9532251e3f6f288, type: 3}
   circuits: []
   physicalOfBase: 0
-  fireOfBase: 10
+  fireOfBase: 0.8
   coldOfBase: 0
   lightningOfBase: 0
-  procCoefficiant: 1
+  procCoefficient: 0
   projectileSpeed: 25
   projectileCount: 1
   areaOfEffect: 0

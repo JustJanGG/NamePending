@@ -23,7 +23,7 @@ public class EnemyStats : MonoBehaviour
     [Range(0, 1)]
     public float coldResistance;
     [Range(0, 1)]
-    public float lightingResistance;
+    public float lightningResistance;
     
 
     private Dictionary<DamageType, float> resistances = new();
@@ -33,16 +33,17 @@ public class EnemyStats : MonoBehaviour
         resistances.Add(DamageType.Physical, physicalResistance);
         resistances.Add(DamageType.Fire, fireResistance);
         resistances.Add(DamageType.Cold, coldResistance);
-        resistances.Add(DamageType.Lightning, lightingResistance);
+        resistances.Add(DamageType.Lightning, lightningResistance);
     }
     public void TakeDamage(Dictionary<DamageType, float> damage)
     {
         foreach (var item in damage)
         {
-            health -= (int)(damage[item.Key] * (1 - resistances[item.Key]));
-            if ((int)(damage[item.Key] * (1 - resistances[item.Key])) != 0)
+            int damageTaken = (int)(damage[item.Key] * (1 - resistances[item.Key]));
+            health -= damageTaken;
+            if (damageTaken != 0)
             {
-                GameManager.instance.GetComponent<DamagePopupManager>().ShowDamagePopup((int)(damage[item.Key] * (1 - resistances[item.Key])), transform.position);
+                GameManager.instance.GetComponent<DamagePopupManager>().ShowDamagePopup(damageTaken, item.Key, transform.position);
             }
             if (health <= 0)
             {
