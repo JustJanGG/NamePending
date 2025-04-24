@@ -5992,6 +5992,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5e13c950599963c499849b4f19dd5742, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
