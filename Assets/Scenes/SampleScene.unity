@@ -204,11 +204,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: movementSpeed
@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2745539083583125286, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: projectileSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3610140153761852054, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10061,11 +10061,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: movementSpeed
@@ -10521,6 +10521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1935073920}
     m_Modifications:
+    - target: {fileID: 121219083269885101, guid: ca258e18499762a47922def84d941944, type: 3}
+      propertyPath: projectileSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3987611639481424316, guid: ca258e18499762a47922def84d941944, type: 3}
       propertyPath: m_Name
       value: FireballAbility
@@ -10792,11 +10796,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: movementSpeed
@@ -15428,11 +15432,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: movementSpeed

@@ -9,7 +9,6 @@ public abstract class BlueCircuit : Ability, ICircuit
     public string circuitDescription { get; set; }
     public CircuitType circuitType { get; set; }
     protected Dictionary<DamageType, float> abilityDamage;
-    protected bool damageCalculated = false;
 
     [Header("Blue Circuit Stats")]
     public float procChance;
@@ -35,10 +34,6 @@ public abstract class BlueCircuit : Ability, ICircuit
     }
     public Dictionary<DamageType, float> DealDamage(Dictionary<DamageType, float> abilityDamage)
     {
-        if (damageCalculated)
-        {
-            return damage;
-        }
         float totalDamage = 0;
         foreach (var item in this.abilityDamage)
         {
@@ -52,7 +47,6 @@ public abstract class BlueCircuit : Ability, ICircuit
         rDamage.Add(DamageType.Lightning, totalDamage * lightningOfBase);
 
         damage = rDamage;
-        damageCalculated = true;
         return rDamage;
     }
     public void Hit(GameObject enemy, List<BlueCircuit> reducedList)
