@@ -103,7 +103,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -15397251
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 368543389579951487, guid: c9bbe4cd3ab55ac4f9276387f774a304, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef5d7fa28893e34391e2ce733570dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   direction: {x: 0, y: 0}
 --- !u!114 &505817641620433615
 MonoBehaviour:
@@ -154,11 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d825385db3097d74cbd548be877bf294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  maxHealth: 1
+  health: 300
+  maxHealth: 300
   movementSpeed: 2
-  aggroRange: 5
+  aggroRange: 15
   damage: 1
+  physicalResistance: 0
+  fireResistance: 0
+  coldResistance: 0
+  lightningResistance: 0
 --- !u!50 &2123997603343740482
 Rigidbody2D:
   serializedVersion: 5

@@ -53,6 +53,7 @@ public class EnemyStats : MonoBehaviour
     }
     private void Die()
     {
+        GameManager.instance.enemyList.Remove(gameObject);
         Destroy(gameObject);
     }
 }

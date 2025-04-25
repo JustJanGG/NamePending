@@ -7,6 +7,10 @@ using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     int uiLayer;
+    private void Awake()
+    {
+       this.GetComponent<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>();
+    }
 
     private void Start()
     {
