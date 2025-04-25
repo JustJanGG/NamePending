@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7317675688058995754}
-  - component: {fileID: 121219083269885101}
+  - component: {fileID: 3117599710614908308}
   m_Layer: 6
   m_Name: FireballAbility
   m_TagString: Ability
@@ -100,7 +100,7 @@ Transform:
   - {fileID: 3889599766784275800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &121219083269885101
+--- !u!114 &3117599710614908308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,18 +109,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3987611639481424316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ecad4e42f5c774ab736570216c4100, type: 3}
+  m_Script: {fileID: 11500000, guid: e68da04a322781e4b913ea22a9d84835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
   circuits: []
+  stats: {fileID: 2931118507191278399, guid: d65a7cef1001d6e4d9fb9d2057065f40, type: 3}
   physicalOfBase: 0
   fireOfBase: 1
   coldOfBase: 0
   lightningOfBase: 0
   procCoefficient: 1
   projectileSpeed: 10
-  projectileCount: 1
+  projectileCount: 0
   areaOfEffect: 0
 --- !u!1 &6521139798987961663
 GameObject:

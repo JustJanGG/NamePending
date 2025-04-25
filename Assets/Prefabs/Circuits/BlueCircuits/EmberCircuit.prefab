@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 7943630125408087589, guid: 1dcb8f0487aa4634e9532251e3f6f288, type: 3}
   circuits: []
+  stats: {fileID: 4874659829343358823, guid: b8214a0323b069d41bb5095ef19b35bc, type: 3}
   physicalOfBase: 0
   fireOfBase: 0
   coldOfBase: 2

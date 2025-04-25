@@ -8,6 +8,7 @@ public abstract class Ability : MonoBehaviour
 {
     public GameObject abilityPrefab;
     public List<GameObject> circuits;
+    public Stats stats;
 
     protected GameObject player;
     //protected int id;
@@ -32,7 +33,11 @@ public abstract class Ability : MonoBehaviour
 
     [Header("Area of Effect Stats")]
     public float areaOfEffect;
-
+    private void Awake()
+    {
+        circuits = new List<GameObject>();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     public List<BlueCircuit> GetBlueCircuits()
     {
         List<BlueCircuit> blueCircuits = new List<BlueCircuit>();

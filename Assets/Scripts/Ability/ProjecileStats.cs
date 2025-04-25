@@ -1,7 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ProjecileStats", menuName = "Scriptable Objects/ProjecileStats")]
-public class ProjecileStats : ScriptableObject
+public class ProjecileStats : Stats
 {
-    
+    public float projectileSpeed;
+    public int pierce;
+    public int projectileCount;
 }

@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400442f1c6a63b241bcbae5725149cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  prefabOf: {fileID: 0}
+  isBlueCircuit: 0
+  projecileStats: {fileID: 2931118507191278399, guid: d65a7cef1001d6e4d9fb9d2057065f40, type: 3}
+  fireballAbility: {fileID: 0}
 --- !u!61 &8838516800398939112
 BoxCollider2D:
   m_ObjectHideFlags: 0

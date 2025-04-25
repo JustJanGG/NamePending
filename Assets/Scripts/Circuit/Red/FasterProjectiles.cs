@@ -15,10 +15,12 @@ public class FasterProjectiles : RedCircuit
 
     public override void ApplyRedCircuit(Ability ability)
     {
-        ability.projectileSpeed *= 1.5f;
+        ((ProjecileStats)ability.stats).projectileSpeed *= 1.5f;
+        //ability.projectileSpeed *= 1.5f;
     }
     public override void RemoveRedCircuit(Ability ability)
     {
-        ability.projectileSpeed /= 1.5f;
+        ((ProjecileStats)ability.stats).projectileSpeed /= 1.5f;
+        //ability.projectileSpeed /= 1.5f;
     }
 }

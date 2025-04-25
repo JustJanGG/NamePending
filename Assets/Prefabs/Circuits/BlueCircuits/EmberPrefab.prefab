@@ -147,4 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd5b4edcba013042aa4047e7a1dc619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  prefabOf: {fileID: 0}
+  isBlueCircuit: 1
+  projecileStats: {fileID: 4874659829343358823, guid: b8214a0323b069d41bb5095ef19b35bc, type: 3}
+  target: {fileID: 0}

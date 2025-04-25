@@ -4,18 +4,16 @@ using System.Collections.Generic;
 
 public class FireballAbility : Ability
 {
-
+    //public ProjecileStats projecileStats;
     public void Start()
     {
-        circuits = new List<GameObject>();
-        player = GameObject.FindGameObjectWithTag("Player");
+
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
         tags.Add(Tag.Projectile);
         tags.Add(Tag.Ranged);
         abilityDescription = "A Projectile that travels in a straight line and deals damage on impact";
         abilityName = "Fireball";
-
     }
 
     public override void Hit(GameObject enemy)
@@ -25,9 +23,8 @@ public class FireballAbility : Ability
     public override void Activate()
     {
         GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
-
         FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
-        fireballPrefab.speed = projectileSpeed;
+        fireballPrefab.prefabOf = this.gameObject;
     }
 
 }
