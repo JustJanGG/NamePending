@@ -1,12 +1,8 @@
 using UnityEngine;
 
-public class FireballPrefab : MonoBehaviour
+public class FireballPrefab : Projectile
 {
-    private Vector2 direction;
     private FireballAbility fireballAbility;
-
-    [Header("Fireball properties")]
-    public float speed = 5.0f;
 
     void Start()
     {
@@ -14,11 +10,6 @@ public class FireballPrefab : MonoBehaviour
         direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f); 
-    }
-
-    void Update()
-    {
-        gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

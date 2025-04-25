@@ -2,16 +2,13 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmberPrefab : MonoBehaviour
+public class EmberPrefab : Projectile
 {
-    private Vector2 direction;
     private List<BlueCircuit> reducedList;
     private Dictionary<DamageType, float> damage;
     public Ember emberAbility;
 
     public Transform target;
-    [Header("Fireball properties")]
-    public float speed;
 
     void Start()
     {
@@ -27,11 +24,6 @@ public class EmberPrefab : MonoBehaviour
     {
         this.damage = damage;
     }
-    void Update()
-    {
-        gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
