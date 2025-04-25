@@ -20,8 +20,9 @@ public class Ember : BlueCircuit
     {
         this.abilityDamage = damage;
         GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
-
         EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
+
+        emberPrefab.emberAbility = this;
         emberPrefab.PassList(blueCircuits);
         emberPrefab.target = enemy.transform;
         emberPrefab.speed = projectileSpeed;
