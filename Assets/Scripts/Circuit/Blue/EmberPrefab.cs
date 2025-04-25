@@ -6,6 +6,7 @@ public class EmberPrefab : MonoBehaviour
 {
     private Vector2 direction;
     private List<BlueCircuit> reducedList;
+    private Dictionary<DamageType, float> damage;
     public Ember emberAbility;
 
     public Transform target;
@@ -14,7 +15,6 @@ public class EmberPrefab : MonoBehaviour
 
     void Start()
     {
-        //emberAbility = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Ember>();
         direction = target.position - gameObject.transform.position;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);
@@ -23,7 +23,10 @@ public class EmberPrefab : MonoBehaviour
     {
         this.reducedList = reducedList;
     }
-
+    public void PassDamage(Dictionary<DamageType, float> damage)
+    {
+        this.damage = damage;
+    }
     void Update()
     {
         gameObject.transform.position += new Vector3(direction.x, direction.y, 0).normalized * speed * Time.deltaTime;
@@ -33,7 +36,7 @@ public class EmberPrefab : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            emberAbility.Hit(collision.gameObject, reducedList);
+            emberAbility.Hit(collision.gameObject, reducedList, damage);
         }
     }
 }

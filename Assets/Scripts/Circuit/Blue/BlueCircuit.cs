@@ -35,7 +35,7 @@ public abstract class BlueCircuit : Ability, ICircuit
     public Dictionary<DamageType, float> DealDamage(Dictionary<DamageType, float> abilityDamage)
     {
         float totalDamage = 0;
-        foreach (var item in this.abilityDamage)
+        foreach (var item in abilityDamage)
         {
             totalDamage += item.Value;
         }
@@ -46,10 +46,9 @@ public abstract class BlueCircuit : Ability, ICircuit
         rDamage.Add(DamageType.Cold, totalDamage * coldOfBase);
         rDamage.Add(DamageType.Lightning, totalDamage * lightningOfBase);
 
-        damage = rDamage;
         return rDamage;
     }
-    public void Hit(GameObject enemy, List<BlueCircuit> reducedList)
+    public void Hit(GameObject enemy, List<BlueCircuit> reducedList, Dictionary<DamageType,float> damage)
     {
         Hit hit = new(enemy, this, reducedList, DealDamage(damage));
     }
