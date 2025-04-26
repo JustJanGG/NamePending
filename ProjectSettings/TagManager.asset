@@ -66,6 +66,9 @@ TagManager:
   - name: CameraSortingLayer
     uniqueID: 2029637549
     locked: 0
+  - name: EnvironmentEffect
+    uniqueID: 1116929509
+    locked: 0
   - name: UI
     uniqueID: 3878520257
     locked: 0
