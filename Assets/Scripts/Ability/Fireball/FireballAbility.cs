@@ -7,9 +7,6 @@ public class FireballAbility : Ability
     public void Start()
     {
         tags = new List<Tag>();
-        tags.Add(Tag.AoE);
-        tags.Add(Tag.Projectile);
-        tags.Add(Tag.Ranged);
         abilityDescription = "A Projectile that travels in a straight line and deals damage on impact";
         abilityName = "Fireball";
     }
