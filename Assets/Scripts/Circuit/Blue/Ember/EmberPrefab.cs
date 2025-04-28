@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 {
+    [HideInInspector]
     public Transform target;
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }

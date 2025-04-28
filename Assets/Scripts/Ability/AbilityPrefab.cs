@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AbilityPrefab : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject prefabOf;
     public bool isBlueCircuit;
 
