@@ -15,8 +15,9 @@ public abstract class Ability : MonoBehaviour
     protected string abilityName;
     protected string abilityDescription;
     protected float cooldown;
-    protected List<Tag> tags;
     protected Dictionary<DamageType, float> damage;
+
+    public List<Tag> tags;
 
     [Header("Damage")]
     public float physicalOfBase;
