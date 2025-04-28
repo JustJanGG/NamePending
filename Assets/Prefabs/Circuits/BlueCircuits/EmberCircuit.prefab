@@ -49,14 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 7943630125408087589, guid: 1dcb8f0487aa4634e9532251e3f6f288, type: 3}
   circuits: []
+  stats: {fileID: 5112641895508789045, guid: b8214a0323b069d41bb5095ef19b35bc, type: 3}
   physicalOfBase: 0
   fireOfBase: 0
   coldOfBase: 2
   lightningOfBase: 0
   procCoefficient: 1
-  projectileSpeed: 15
-  projectileCount: 1
-  areaOfEffect: 0
   procChance: 0.25
 --- !u!114 &3294440596133984102
 MonoBehaviour:
