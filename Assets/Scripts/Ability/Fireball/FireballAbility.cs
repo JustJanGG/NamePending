@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 public class FireballAbility : Ability
 {
-    //public ProjecileStats projecileStats;
     public void Start()
     {
-
         tags = new List<Tag>();
         tags.Add(Tag.AoE);
         tags.Add(Tag.Projectile);
@@ -25,6 +23,7 @@ public class FireballAbility : Ability
         GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
         FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
         fireballPrefab.prefabOf = this.gameObject;
+        fireballPrefab.projecileStats = stats.GetComponent<ProjecileStats>();
     }
 
 }

@@ -13,4 +13,11 @@ public interface IBlueCircuitPrefab
     {
         this.damage = damage;
     }
+    public void DefaultBlueCircuitOnTriggerEnter2D(Collider2D collision, GameObject prefabOf)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            prefabOf.GetComponent<BlueCircuit>().Hit(collision.gameObject, reducedList, damage);
+        }
+    }
 }

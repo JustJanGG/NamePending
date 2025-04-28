@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 1584603602410823806, guid: 8c895f551ccb6e4479c25f83fa613bdb, type: 3}
   circuits: []
-  stats: {fileID: 2931118507191278399, guid: d65a7cef1001d6e4d9fb9d2057065f40, type: 3}
+  stats: {fileID: 3225528687100894607, guid: d65a7cef1001d6e4d9fb9d2057065f40, type: 3}
   physicalOfBase: 0
   fireOfBase: 1
   coldOfBase: 0
