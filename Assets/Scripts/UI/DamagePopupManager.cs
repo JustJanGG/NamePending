@@ -45,7 +45,7 @@ public class DamagePopupManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             damagePopup.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / popDuration);
 
-            float rotationAngle = Mathf.Sin(elapsedTime * 25f) * 7f;
+            float rotationAngle = Mathf.Sin(elapsedTime * 25f) * 8f;
             damagePopup.transform.rotation = originalRotation * Quaternion.Euler(0, 0, rotationAngle);
 
             currentDamage = Mathf.RoundToInt(Mathf.Lerp(damage / 2, damage, elapsedTime / popDuration));
