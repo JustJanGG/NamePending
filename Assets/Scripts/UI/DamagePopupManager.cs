@@ -9,12 +9,53 @@ public class DamagePopupManager : MonoBehaviour
 
     public void ShowDamagePopup(int damage, DamageType damageType, Vector2 enemyPosition)
     {
-        GameObject damagePopup = Instantiate(damagePopupPrefab, new Vector2(enemyPosition.x, enemyPosition.y + 0.2f), Quaternion.identity);
+        Vector2 randomOffset = new Vector2(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f));
+        Vector2 spawnPosition = enemyPosition + randomOffset + new Vector2(0, 0.2f);
+
+        GameObject damagePopup = Instantiate(damagePopupPrefab, spawnPosition, Quaternion.identity);
         damagePopup.GetComponent<TextMeshPro>().SetText(damage.ToString());
         CheckDamageType(damagePopup, damageType);
+        StartCoroutine(HandlePopupEffects(damagePopup, damage));
+    }
+
+    private IEnumerator HandlePopupEffects(GameObject damagePopup, int damage)
+    {
+        yield return StartCoroutine(PopText(damagePopup, 0.3f, 1.3f, damage));
+
+        yield return new WaitForSeconds(0.05f);
+
         StartCoroutine(MoveTextUpwards(damagePopup, 1f));
-        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 1f));
+        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 0.6f));
+
         Destroy(damagePopup, 1.1f);
+    }
+
+    private IEnumerator PopText(GameObject damagePopup, float popDuration, float maxScale, int damage)
+    {
+        Vector3 originalScale = damagePopup.transform.localScale;
+        Vector3 targetScale = originalScale * maxScale;
+        Quaternion originalRotation = damagePopup.transform.rotation;
+
+        TextMeshPro textMesh = damagePopup.GetComponent<TextMeshPro>();
+        int currentDamage = 0;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < popDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            damagePopup.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / popDuration);
+
+            float rotationAngle = Mathf.Sin(elapsedTime * 25f) * 8f;
+            damagePopup.transform.rotation = originalRotation * Quaternion.Euler(0, 0, rotationAngle);
+
+            currentDamage = Mathf.RoundToInt(Mathf.Lerp(damage / 2, damage, elapsedTime / popDuration));
+            textMesh.SetText(currentDamage.ToString());
+
+            yield return null;
+        }
+        damagePopup.transform.localScale = targetScale;
+        damagePopup.transform.rotation = originalRotation;
+        textMesh.SetText(damage.ToString());
     }
 
     private IEnumerator MoveTextUpwards(GameObject damagePopup, float duration)
@@ -56,7 +97,7 @@ public class DamagePopupManager : MonoBehaviour
                 damagePopup.GetComponent<TextMeshPro>().color = Color.red;
                 break;
             case DamageType.Cold:
-                damagePopup.GetComponent<TextMeshPro>().color = Color.blue;
+                damagePopup.GetComponent<TextMeshPro>().color = Color.cyan;
                 break;
             case DamageType.Lightning:
                 damagePopup.GetComponent<TextMeshPro>().color = Color.yellow;
