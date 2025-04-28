@@ -4,7 +4,6 @@ public class AbilityPrefab : MonoBehaviour
 {
     [HideInInspector]
     public GameObject prefabOf;
-    public bool isBlueCircuit;
 
     protected void DefaultOnTriggerEnter2D(Collider2D collision)
     {
