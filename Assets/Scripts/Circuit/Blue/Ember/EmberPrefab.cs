@@ -25,5 +25,6 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ((IBlueCircuitPrefab)this).DefaultBlueCircuitOnTriggerEnter2D(collision, prefabOf);
+        ((IProjectile)this).ProjectileHit(gameObject);
     }
 }

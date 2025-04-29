@@ -4,6 +4,7 @@ public class FireballPrefab : AbilityPrefab, IProjectile
 {
     public ProjecileStats projecileStats { get; set; }
     public Vector2 direction { get; set; }
+    public int pierceCount { get; set; }
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class FireballPrefab : AbilityPrefab, IProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         DefaultOnTriggerEnter2D(collision);
+        ((IProjectile)this).ProjectileHit(gameObject);
     }
 }
