@@ -17,8 +17,7 @@ public class FireballAbility : Ability
         GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
         FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
         fireballPrefab.prefabOf = this.gameObject;
-        //fireballPrefab.projecileStats = stats.GetComponent<ProjecileStats>();
-        fireballPrefab.projecileStats = Instantiate(stats.GetComponent<ProjecileStats>(),fireball.transform);
+        fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
     }
 
 }

@@ -10,9 +10,10 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     public Dictionary<DamageType, float> damage { get; set; }
     public ProjecileStats projecileStats { get; set; }
     public Vector2 direction { get; set; }
-
+    public int pierceCount { get; set; }
     void Start()
     {
+        ((IProjectile)this).InitiateProjectile();
         direction = target.position - gameObject.transform.position;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);

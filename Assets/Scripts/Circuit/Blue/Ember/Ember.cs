@@ -25,7 +25,8 @@ public class Ember : BlueCircuit
         emberPrefab.prefabOf = this.gameObject;
         ((IBlueCircuitPrefab)emberPrefab).PassList(blueCircuits);
         emberPrefab.target = enemy.transform;
-        emberPrefab.projecileStats = Instantiate(stats.GetComponent<ProjecileStats>(), ember.transform);
+        emberPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
+
 
     }
 

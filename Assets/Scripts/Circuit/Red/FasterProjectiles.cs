@@ -17,7 +17,7 @@ public class FasterProjectiles : RedCircuit
     {
         if(ability.tags.Contains(Tag.Projectile))
         {
-            ability.stats.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
+            ability.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
         }
     }
 
@@ -25,7 +25,7 @@ public class FasterProjectiles : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.stats.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
+            ability.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
         }
     }
 }

@@ -8,7 +8,6 @@ public abstract class Ability : MonoBehaviour
 {
     public GameObject abilityPrefab;
     public List<GameObject> circuits;
-    public GameObject stats;
 
     protected GameObject player;
     //protected int id;
