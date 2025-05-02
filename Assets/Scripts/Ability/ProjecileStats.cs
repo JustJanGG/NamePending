@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjecileStats : Stats
+public class ProjecileStats : MonoBehaviour
 {
     public float projectileSpeed;
     public int pierce;
