@@ -1,12 +1,9 @@
 using UnityEngine;
-using System.Collections.Generic;
-
 
 public class FireballAbility : Ability
 {
     public void Start()
     {
-        tags = new List<Tag>();
         abilityDescription = "A Projectile that travels in a straight line and deals damage on impact";
         abilityName = "Fireball";
     }

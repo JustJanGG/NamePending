@@ -15,11 +15,17 @@ public class FasterProjectiles : RedCircuit
 
     public override void ApplyRedCircuit(Ability ability)
     {
-        ability.stats.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
+        if(ability.tags.Contains(Tag.Projectile))
+        {
+            ability.stats.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
+        }
     }
+
     public override void RemoveRedCircuit(Ability ability)
     {
-        ability.stats.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
-
+        if (ability.tags.Contains(Tag.Projectile))
+        {
+            ability.stats.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
+        }
     }
 }
