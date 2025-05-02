@@ -11,4 +11,5 @@ public enum Tag
     Duration,
     Channeling,
     Travel
+    // Add more tags as needed except of Attack and Spell
 }
