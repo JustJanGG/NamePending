@@ -13,6 +13,7 @@ public class FireballPrefab : AbilityPrefab, IProjectile
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);
     }
+
     void Update()
     {
         ((IProjectile)this).DefaultProjectileMovement(gameObject);

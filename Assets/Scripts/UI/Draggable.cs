@@ -42,7 +42,6 @@ public class Draggable : MonoBehaviour
                 GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
                 if (circuitSlotUi != null)
                 {
-                    playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
                     GameObject ability = playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).gameObject;
 
                     if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 0)

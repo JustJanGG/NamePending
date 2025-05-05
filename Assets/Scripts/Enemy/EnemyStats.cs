@@ -35,6 +35,7 @@ public class EnemyStats : MonoBehaviour
         resistances.Add(DamageType.Cold, coldResistance);
         resistances.Add(DamageType.Lightning, lightningResistance);
     }
+
     public void TakeDamage(Dictionary<DamageType, float> damage)
     {
         foreach (var item in damage)
@@ -51,6 +52,7 @@ public class EnemyStats : MonoBehaviour
             }
         }
     }
+
     private void Die()
     {
         GameManager.instance.enemyList.Remove(gameObject);

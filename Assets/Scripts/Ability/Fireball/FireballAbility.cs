@@ -12,6 +12,7 @@ public class FireballAbility : Ability
     {
        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
+
     public override void Activate()
     {
         GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
