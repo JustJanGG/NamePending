@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Ember : BlueCircuit
 {
-
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
 
@@ -26,8 +25,6 @@ public class Ember : BlueCircuit
         ((IBlueCircuitPrefab)emberPrefab).PassList(blueCircuits);
         emberPrefab.target = enemy.transform;
         emberPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
-
-
     }
 
 }

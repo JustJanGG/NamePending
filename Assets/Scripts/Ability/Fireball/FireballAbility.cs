@@ -15,13 +15,12 @@ public class FireballAbility : Ability
     public override void Activate()
     {
         int projectileCount = gameObject.GetComponent<ProjecileStats>().projectileCount;
-        float spreadAngle = 45;
+        //float spreadAngle = 45;
 
-        for (int i = 0; i < projectileCount; i++)
-        {
+        //for (int i = 0; i < projectileCount; i++)
+        //{
             
-        }
-
+        //}
         GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
         FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
         fireballPrefab.direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position);
