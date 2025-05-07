@@ -333,6 +333,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101961436}
   m_CullTransparentMesh: 1
+--- !u!1001 &107339692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525151032613478128, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531626265452180645, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531626265452180645, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531626265452180645, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531626265452180645, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531626265452180645, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416458944343430672, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+      propertyPath: m_Name
+      value: Pierce
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+--- !u!1 &107339693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416458944343430672, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
+  m_PrefabInstance: {fileID: 107339692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139383426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1105,6 +1187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmberCircuit
       objectReference: {fileID: 0}
+    - target: {fileID: 5718872073943518306, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1576,6 +1662,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 9101405040375716193, guid: 5cea3a3f81a8898449e65546a1a56b9c, type: 3}
+    - target: {fileID: 6538391883291042432, guid: bf0412b71b2500549b572d7905352929, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7092893012169339253, guid: bf0412b71b2500549b572d7905352929, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -1983,6 +2073,10 @@ PrefabInstance:
     - target: {fileID: 4072953583524998938, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_Name
       value: EmberCircuit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718872073943518306, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -60670,6 +60764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FasterProjectileCircuit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6538391883291042432, guid: bf0412b71b2500549b572d7905352929, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7092893012169339253, guid: bf0412b71b2500549b572d7905352929, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -66639,6 +66737,7 @@ MonoBehaviour:
   - {fileID: 352667658}
   - {fileID: 2093763115}
   - {fileID: 1132759019}
+  - {fileID: 107339693}
 --- !u!4 &1992600503
 Transform:
   m_ObjectHideFlags: 0
@@ -120177,7 +120276,6 @@ SceneRoots:
   - {fileID: 1992600503}
   - {fileID: 1555936879}
   - {fileID: 1018785594}
-  - {fileID: 674387529}
   - {fileID: 1558093060}
   - {fileID: 1935073919}
   - {fileID: 6480036767195688633}
@@ -120188,5 +120286,7 @@ SceneRoots:
   - {fileID: 760459163}
   - {fileID: 513024387}
   - {fileID: 1459715272}
+  - {fileID: 107339692}
   - {fileID: 509252585}
   - {fileID: 1628397530}
+  - {fileID: 674387529}
