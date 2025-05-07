@@ -3,12 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [ExecuteInEditMode()]
-public class Tooltip : MonoBehaviour
+public class UICircuitTooltipInventory : MonoBehaviour
 {
     public TextMeshProUGUI headerText;
     public TextMeshProUGUI contentText;
     public LayoutElement layoutElement;
-
 
     void Update()
     {

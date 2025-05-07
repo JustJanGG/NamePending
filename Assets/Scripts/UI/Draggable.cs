@@ -10,11 +10,12 @@ public class Draggable : MonoBehaviour
     private GameObject ui;
     private Transform playerAbilites;
 
-    public Vector2 draggableWorldPosition;
-    Vector3 mousePositionOffset;
-
+    private Vector3 mousePositionOffset;
     private bool isHolding = false;
     private bool fromGround = false;
+
+    [HideInInspector]
+    public Vector2 draggableWorldPosition;
 
     private void Awake()
     {
@@ -112,6 +113,11 @@ public class Draggable : MonoBehaviour
         ability.GetComponent<Ability>().ApplyCircuit(this.gameObject);
 
         ui.GetComponentInChildren<AbilityBarManager>().ShowCircuitsInAbilitybar(circuitSlotUi);
+    }
+
+    public bool CheckIfIsHolding()
+    {
+        return isHolding;
     }
 
     private void CheckSortingLayer()
