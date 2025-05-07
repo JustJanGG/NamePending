@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class CircuitTooltip : MonoBehaviour
@@ -5,12 +6,16 @@ public class CircuitTooltip : MonoBehaviour
     [Header("Components")]
     private GameObject player;
     public GameObject tooltipObject;
+    private TextMeshProUGUI headerText;
 
+    [Header("Tooltip Values")]
     public float tooltipRadius;
+    public string circuitName;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        headerText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Update()
@@ -19,17 +24,15 @@ public class CircuitTooltip : MonoBehaviour
 
         if (distanceToPlayer <= tooltipRadius)
         {
-            // Show the tooltip when within range
             if (!tooltipObject.activeSelf)
             {
                 tooltipObject.SetActive(true);
+                headerText.text = circuitName;
             }
             tooltipObject.transform.position = this.transform.position;
-            Debug.Log($"Tooltip position: {tooltipObject.transform.position}");
         }
         else
         {
-            // Hide the tooltip when out of range
             if (tooltipObject.activeSelf)
             {
                 tooltipObject.SetActive(false);

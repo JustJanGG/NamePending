@@ -1105,6 +1105,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmberCircuit
       objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1674,7 +1694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &674387527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,6 +1983,26 @@ PrefabInstance:
     - target: {fileID: 4072953583524998938, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
       propertyPath: m_Name
       value: EmberCircuit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763629072408891108, guid: be0b14d01ccea4b4f8b3f96e7b706fb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
