@@ -10,11 +10,12 @@ public class Draggable : MonoBehaviour
     private GameObject ui;
     private Transform playerAbilites;
 
-    public Vector2 draggableWorldPosition;
-    Vector3 mousePositionOffset;
-
+    private Vector3 mousePositionOffset;
     private bool isHolding = false;
     private bool fromGround = false;
+
+    [HideInInspector]
+    public Vector2 draggableWorldPosition;
 
     private void Awake()
     {
@@ -42,7 +43,6 @@ public class Draggable : MonoBehaviour
                 GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
                 if (circuitSlotUi != null)
                 {
-                    playerAbilites = player.GetComponentInChildren<PlayerAbilities>().gameObject.transform;
                     GameObject ability = playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).gameObject;
 
                     if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 0)
@@ -113,6 +113,11 @@ public class Draggable : MonoBehaviour
         ability.GetComponent<Ability>().ApplyCircuit(this.gameObject);
 
         ui.GetComponentInChildren<AbilityBarManager>().ShowCircuitsInAbilitybar(circuitSlotUi);
+    }
+
+    public bool CheckIfIsHolding()
+    {
+        return isHolding;
     }
 
     private void CheckSortingLayer()

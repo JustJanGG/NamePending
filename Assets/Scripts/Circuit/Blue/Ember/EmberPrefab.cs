@@ -11,6 +11,7 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     public ProjecileStats projecileStats { get; set; }
     public Vector2 direction { get; set; }
     public int pierceCount { get; set; }
+
     void Start()
     {
         ((IProjectile)this).InitiateProjectile();
@@ -18,6 +19,7 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, 3f);
     }
+
     void Update()
     {
         ((IProjectile)this).DefaultProjectileMovement(gameObject);
