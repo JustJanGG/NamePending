@@ -22,9 +22,14 @@ public class CircuitTooltip : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
+        if (GetComponent<Draggable>().CheckIfIsHolding())
+        {
+            tooltipObject.SetActive(false);
+        }
+
         if (distanceToPlayer <= tooltipRadius)
         {
-            if (!tooltipObject.activeSelf)
+            if (!tooltipObject.activeSelf && !GetComponent<Draggable>().CheckIfIsHolding())
             {
                 tooltipObject.SetActive(true);
                 headerText.text = circuitName;

@@ -17,10 +17,14 @@ public class PlayerAbilities : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            GameObject ability = child.GetComponentInChildren<Ability>().gameObject;
-            if (ability.CompareTag("Ability"))
+            Ability abilityComponent = child.GetComponentInChildren<Ability>();
+            if (abilityComponent != null)
             {
-                abilities.Add(ability);
+                GameObject ability = abilityComponent.gameObject;
+                if (ability.CompareTag("Ability"))
+                {
+                    abilities.Add(ability);
+                }
             }
         }
     }
