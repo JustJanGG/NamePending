@@ -8,14 +8,16 @@ public class SlashPrefab : AbilityPrefab, IMelee
     void Start()
     {
         ((IMelee)this).InitiateMelee();
+
         direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-        Destroy(gameObject, 1f);
+
+        ((IMelee)this).DefaultMeleeBehaviour(gameObject);
+        Destroy(gameObject, meleeStats.meleeDuration + 0.01f);
     }
 
-    void Update()
+    private void Update()
     {
-        ((IMelee)this).DefaultMeleeBehaviour(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

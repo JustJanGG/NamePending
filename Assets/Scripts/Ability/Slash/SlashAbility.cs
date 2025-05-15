@@ -9,7 +9,7 @@ public class SlashAbility : Ability
 
     public override void Activate()
     {
-        GameObject slash = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
+        GameObject slash = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity, player.gameObject.transform);
         SlashPrefab slashPrefab = slash.GetComponent<SlashPrefab>();
         slashPrefab.prefabOf = this.gameObject;
         slashPrefab.meleeStats = this.gameObject.GetComponent<MeleeStats>();

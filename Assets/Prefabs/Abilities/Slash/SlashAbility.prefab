@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeSpeed: 2
   meleeSize: 1
+  meleeDuration: 0.2
 --- !u!1 &8949594565929853775
 GameObject:
   m_ObjectHideFlags: 0
