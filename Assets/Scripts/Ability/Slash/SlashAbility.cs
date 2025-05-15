@@ -1,0 +1,17 @@
+using UnityEngine;
+
+public class SlashAbility : Ability
+{
+    public override void Hit(GameObject enemy)
+    {
+        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
+    }
+
+    public override void Activate()
+    {
+        GameObject slash = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
+        SlashPrefab slashPrefab = slash.GetComponent<SlashPrefab>();
+        slashPrefab.prefabOf = this.gameObject;
+        slashPrefab.meleeStats = this.gameObject.GetComponent<MeleeStats>();
+    }
+}

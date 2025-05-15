@@ -14,11 +14,32 @@ public class PlayerAbilityController : MonoBehaviour
         playerAbilities = GetComponentInChildren<PlayerAbilities>();
     }
 
-    public void HandleAbilityInput(InputAction.CallbackContext ctx)
+    public void HandleAttackInputOne(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
         {
             playerAbilities.abilities[0].GetComponent<Ability>().Activate();
+        }
+    }
+    public void HandleAttackInputTwo(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
+        {
+            playerAbilities.abilities[1].GetComponent<Ability>().Activate();
+        }
+    }
+    public void HandleAttackInputThree(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
+        {
+            playerAbilities.abilities[2].GetComponent<Ability>().Activate();
+        }
+    }
+    public void HandleAttackInputFour(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
+        {
+            playerAbilities.abilities[3].GetComponent<Ability>().Activate();
         }
     }
 

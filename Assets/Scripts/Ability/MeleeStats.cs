@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class MeleeStats : MonoBehaviour
 {
-    // melee stats
+    public float meleeSpeed;
+    public float meleeSize;
 }
