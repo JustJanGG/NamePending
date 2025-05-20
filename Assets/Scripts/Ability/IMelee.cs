@@ -22,6 +22,10 @@ public interface IMelee
         float arcAngle = 120f;
         float swingDuration = meleeStats.meleeDuration;
 
+        Vector3 originalScale = gameObject.transform.localScale;
+        Vector3 scaledSize = originalScale * meleeStats.meleeSize;
+        gameObject.transform.localScale = scaledSize;
+
         Quaternion initialRotation = gameObject.transform.localRotation;
         Quaternion startRotation = initialRotation * Quaternion.Euler(0, 0, arcAngle / 2);
         Quaternion endRotation = initialRotation * Quaternion.Euler(0, 0, -arcAngle / 2);

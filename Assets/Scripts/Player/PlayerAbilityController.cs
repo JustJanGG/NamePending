@@ -14,6 +14,7 @@ public class PlayerAbilityController : MonoBehaviour
         playerAbilities = GetComponentInChildren<PlayerAbilities>();
     }
 
+    // Left Mouse Button
     public void HandleAttackInputOne(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
@@ -21,6 +22,8 @@ public class PlayerAbilityController : MonoBehaviour
             playerAbilities.abilities[0].GetComponent<Ability>().Activate();
         }
     }
+
+    // Right Mouse BUtton
     public void HandleAttackInputTwo(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
@@ -28,6 +31,8 @@ public class PlayerAbilityController : MonoBehaviour
             playerAbilities.abilities[1].GetComponent<Ability>().Activate();
         }
     }
+
+    // Shift
     public void HandleAttackInputThree(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
@@ -35,6 +40,8 @@ public class PlayerAbilityController : MonoBehaviour
             playerAbilities.abilities[2].GetComponent<Ability>().Activate();
         }
     }
+
+    // R
     public void HandleAttackInputFour(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
@@ -43,6 +50,7 @@ public class PlayerAbilityController : MonoBehaviour
         }
     }
 
+    // E
     public void HandleInteractAction(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
@@ -66,6 +74,7 @@ public class PlayerAbilityController : MonoBehaviour
         }
     }
 
+    // TAB
     public void HandleInventoryScreen(InputAction.CallbackContext ctx)
     {
         if (ctx.performed && GameManager.instance.gameState == GameState.InGame)
