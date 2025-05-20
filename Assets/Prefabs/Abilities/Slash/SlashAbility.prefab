@@ -213,7 +213,9 @@ MonoBehaviour:
   fireOfBase: 0
   coldOfBase: 0
   lightningOfBase: 0
-  cooldown: 0
+  attackSpeed: 0
+  castTime: 0
+  cooldown: 0.01
   procCoefficient: 1
 --- !u!114 &3031375278907682880
 MonoBehaviour:
@@ -227,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb992550363d405459d0b31711d2377e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeSpeed: 2
   meleeSize: 1
   meleeDuration: 0.2
 --- !u!1 &8949594565929853775

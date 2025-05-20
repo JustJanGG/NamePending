@@ -662,7 +662,7 @@ MonoBehaviour:
   healthRegen: 0
   movementSpeed: 5
   dashRange: 10
-  dashCooldown: 1
+  dashCooldown: 0.7
   baseDamage: 10
 --- !u!114 &4918749834855743183
 MonoBehaviour:
