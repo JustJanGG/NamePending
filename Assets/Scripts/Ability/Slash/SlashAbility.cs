@@ -13,5 +13,6 @@ public class SlashAbility : Ability
         SlashPrefab slashPrefab = slash.GetComponent<SlashPrefab>();
         slashPrefab.prefabOf = this.gameObject;
         slashPrefab.meleeStats = this.gameObject.GetComponent<MeleeStats>();
+        SetCooldown();
     }
 }

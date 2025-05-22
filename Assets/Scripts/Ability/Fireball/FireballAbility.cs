@@ -13,6 +13,7 @@ public class FireballAbility : Ability
         FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
         fireballPrefab.prefabOf = this.gameObject;
         fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
+        SetCooldown();
     }
 
 }
