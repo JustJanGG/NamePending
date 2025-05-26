@@ -3,8 +3,8 @@ using UnityEngine;
 public class FireballAbility : Ability
 {
     public override void Hit(GameObject enemy)
-    {
-       Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
+    {   
+        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
 
     public override void Activate()
