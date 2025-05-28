@@ -4,15 +4,19 @@ public class BlastPrefab : AbilityPrefab, IAoE
 {
     public AoEStats aoeStats { get; set; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
+    {
+        ((IAoE)this).InitiateAoe();
+        Destroy(gameObject, 2f);
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        DefaultOnTriggerEnter2D(collision);
     }
 }

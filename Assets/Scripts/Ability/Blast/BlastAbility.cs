@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class BlastAbility : MonoBehaviour
+public class BlastAbility : Ability
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Hit(GameObject enemy)
     {
-        
+        Hit hit = new(enemy, this, GetBlueCircuits(), DealDamage());
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Activate()
     {
-        
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+        GameObject blast = Instantiate(abilityPrefab, mouseWorldPos, Quaternion.identity);
+        BlastPrefab blastPrefab = blast.GetComponent<BlastPrefab>();
+        blastPrefab.prefabOf = this.gameObject;
+        blastPrefab.aoeStats = this.gameObject.GetComponent<AoEStats>();
+        SetCooldown();
     }
 }
