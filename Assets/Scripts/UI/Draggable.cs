@@ -14,7 +14,6 @@ public class Draggable : MonoBehaviour
     private Vector3 mousePositionOffset;
     private bool isHolding = false;
     private bool fromGround = false;
-    //private static bool isSwapping = false;
 
     [HideInInspector]
     public Vector2 draggableWorldPosition;
@@ -60,14 +59,6 @@ public class Draggable : MonoBehaviour
                             GameManager.instance.SetGameState(GameState.InGame);
                         }
                     }
-
-                    // swap circuits
-                    else if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 1)
-                    {
-                        //isSwapping = true;
-                        StartCoroutine(SwapCircuits(circuitSlotUi, ability));
-                        //SwapCircuits(circuitSlotUi, ability);
-                    }
                 }
                 else
                 {
@@ -109,33 +100,6 @@ public class Draggable : MonoBehaviour
         {
             GameManager.instance.SetGameState(GameState.InGame);
         }
-    }
-
-    private IEnumerator SwapCircuits(GameObject circuitSlotUi, GameObject ability)
-    {
-        isHolding = false;
-        GameObject circuit = ability.transform.Find(circuitSlotUi.transform.name).GetChild(0).gameObject;
-
-        // remove old circuit
-        ability.GetComponent<Ability>().RemoveCircuit(circuit);
-        circuit.transform.SetParent(null);
-        Debug.Log("removed old " + circuit.name);
-
-        // add new circuit
-        this.GetComponent<Renderer>().enabled = false;
-        this.GetComponent<Collider2D>().enabled = false;
-        SetAbilityToPlayer(circuitSlotUi);
-        Debug.Log("added new " + this.name);
-
-        // pickup old circuit
-        circuit.GetComponent<Draggable>().Pickup(false);
-        Vector3 randomPoint = Random.insideUnitCircle.normalized * Random.Range(0.1f, 0.3f);
-        circuit.GetComponent<Draggable>().draggableWorldPosition = player.transform.position + randomPoint;
-        Debug.Log("pickup old " + circuit.name);
-        Debug.Log("______________");
-
-        yield return null;
-        //isSwapping = false;
     }
 
     private void SetAbilityToPlayer(GameObject circuitSlotUi)
