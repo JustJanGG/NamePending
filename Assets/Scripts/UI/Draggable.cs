@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +14,7 @@ public class Draggable : MonoBehaviour
     private Vector3 mousePositionOffset;
     private bool isHolding = false;
     private bool fromGround = false;
-    private static bool isSwapping = false;
+    //private static bool isSwapping = false;
 
     [HideInInspector]
     public Vector2 draggableWorldPosition;
@@ -61,10 +62,11 @@ public class Draggable : MonoBehaviour
                     }
 
                     // swap circuits
-                    else if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 1 && !isSwapping)
+                    else if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 1)
                     {
-                        isSwapping = true;
-                        SwapCircuits(circuitSlotUi, ability);
+                        //isSwapping = true;
+                        StartCoroutine(SwapCircuits(circuitSlotUi, ability));
+                        //SwapCircuits(circuitSlotUi, ability);
                     }
                 }
                 else
@@ -109,7 +111,7 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private void SwapCircuits(GameObject circuitSlotUi, GameObject ability)
+    private IEnumerator SwapCircuits(GameObject circuitSlotUi, GameObject ability)
     {
         isHolding = false;
         GameObject circuit = ability.transform.Find(circuitSlotUi.transform.name).GetChild(0).gameObject;
@@ -132,7 +134,8 @@ public class Draggable : MonoBehaviour
         Debug.Log("pickup old " + circuit.name);
         Debug.Log("______________");
 
-        isSwapping = false;
+        yield return null;
+        //isSwapping = false;
     }
 
     private void SetAbilityToPlayer(GameObject circuitSlotUi)
