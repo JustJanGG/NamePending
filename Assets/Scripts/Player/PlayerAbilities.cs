@@ -7,7 +7,7 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Ability")]
     public List<GameObject> abilities;
 
-    private void Start()
+    private void Awake()
     {
         abilities = new List<GameObject>();
         AddAbilitesFromChildren();

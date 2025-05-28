@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -45,8 +46,10 @@ public class Draggable : MonoBehaviour
                 {
                     GameObject ability = playerAbilites.Find(circuitSlotUi.transform.parent.name).GetChild(0).gameObject;
 
+                    // add circuit in empty slot
                     if (ability.transform.Find(circuitSlotUi.transform.name).childCount == 0)
                     {
+                        // add new circuit
                         isHolding = false;
                         this.GetComponent<Renderer>().enabled = false;
                         this.GetComponent<Collider2D>().enabled = false;
@@ -61,11 +64,6 @@ public class Draggable : MonoBehaviour
                 {
                     DropDraggable();
                 }
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                DropDraggable();
             }
         }
 

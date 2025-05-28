@@ -147,8 +147,8 @@ GameObject:
   - component: {fileID: 3610140153761852054}
   - component: {fileID: -4118960233161993212}
   - component: {fileID: -7226210840193302867}
-  - component: {fileID: 3294440596133984102}
   - component: {fileID: 2745539083583125286}
+  - component: {fileID: 3294440596133984102}
   - component: {fileID: 4192570045673381517}
   - component: {fileID: 6599665650870190820}
   m_Layer: 16
@@ -275,19 +275,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3294440596133984102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4072953583524998938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d516b60f54fe14bbcec740621cf25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  draggableWorldPosition: {x: 0, y: 0}
 --- !u!114 &2745539083583125286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,9 +294,24 @@ MonoBehaviour:
   fireOfBase: 0
   coldOfBase: 2
   lightningOfBase: 0
+  attackSpeed: 0
+  castTime: 0
   cooldown: 0
   procCoefficient: 1
   procChance: 0.25
+--- !u!114 &3294440596133984102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072953583524998938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d516b60f54fe14bbcec740621cf25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggableWorldPosition: {x: 0, y: 0}
 --- !u!114 &4192570045673381517
 MonoBehaviour:
   m_ObjectHideFlags: 0

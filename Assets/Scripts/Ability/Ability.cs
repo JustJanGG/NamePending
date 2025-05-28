@@ -22,13 +22,27 @@ public abstract class Ability : MonoBehaviour
     public float lightningOfBase;
 
     [Header("General Stats")]
-    public float cooldown;
+    public float attackSpeed; // duration of ability
+    public float castTime; // time to cast a ability
+    public float cooldown; // cooldown until ability can be pressed again
     public float procCoefficient;
+
+    [Header("Logic")]
+    private float cooldownTimer;
 
     private void Awake()
     {
+        cooldownTimer = 0;
         circuits = new List<GameObject>();
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Update()
+    {
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
     }
 
     public List<BlueCircuit> GetBlueCircuits()
@@ -121,6 +135,16 @@ public abstract class Ability : MonoBehaviour
             }
 
         }
+    }
+
+    public bool CheckCooldown()
+    {
+        return cooldownTimer <= 0f;
+    }
+        
+    public void SetCooldown()
+    {
+        cooldownTimer = cooldown;
     }
 
     public abstract void Activate();

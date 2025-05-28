@@ -16,10 +16,6 @@ public class SlashPrefab : AbilityPrefab, IMelee
         Destroy(gameObject, meleeStats.meleeDuration + 0.01f);
     }
 
-    private void Update()
-    {
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DefaultOnTriggerEnter2D(collision);
