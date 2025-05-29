@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7943630125408087589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 501.21027, y: 415.09332, z: 5.15757}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,6 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabOf: {fileID: 0}
-  isBlueCircuit: 1
-  projecileStats: {fileID: 4874659829343358823, guid: b8214a0323b069d41bb5095ef19b35bc, type: 3}
   target: {fileID: 0}

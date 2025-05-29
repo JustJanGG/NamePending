@@ -11,6 +11,6 @@ public interface IAoE
 
     public void DefaultAoEBehaviour(GameObject gameObject)
     {
-        gameObject.GetComponent<CircleCollider2D>().radius = aoeStats.areaSize;
+        gameObject.transform.localScale = new Vector3(aoeStats.areaSize, aoeStats.areaSize, 1f);
     }
 }

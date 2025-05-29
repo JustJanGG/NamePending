@@ -13,7 +13,6 @@ public class BlastPrefab : AbilityPrefab, IAoE
     void Update()
     {
         ((IAoE)this).DefaultAoEBehaviour(gameObject);
-        GetComponentInChildren<SpriteRenderer>().transform.localScale = new Vector3(aoeStats.areaSize * 1.2f, aoeStats.areaSize * 1.2f, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

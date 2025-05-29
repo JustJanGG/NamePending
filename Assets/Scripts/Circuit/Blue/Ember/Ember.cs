@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Ember : BlueCircuit
 {
-
-    public Ability socketedAbility { get; set; }
-    public List<RedCircuit> redCircuits { get; set; }
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
