@@ -9,9 +9,9 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
     public ProjecileStats projecileStats { get; set; }
+    public AoEStats aoeStats { get; set; }
     public Vector2 direction { get; set; }
     public int pierceCount { get; set; }
-    public AoEStats aoeStats { get; set; }
 
     private void Start()
     {
