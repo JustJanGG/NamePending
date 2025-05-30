@@ -53,16 +53,17 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
                 transform.rotation = Quaternion.Euler(0, 0, angle);
             }
 
-            // shadow
+            // Update shadow position (on ground, below projectile)
             if (shadow != null)
             {
                 Vector3 shadowPos = pos;
-                shadowPos.y = Mathf.Min(start.y, target.y); // ground level (could also use start.y if always flat)
-                shadow.position = shadowPos;
+                shadowPos.y = target.y;
+                shadowPos.x = target.x;
+                shadow.position = Vector2.MoveTowards(pos, shadowPos, duration);
 
                 // Optional: scale shadow based on height above ground
                 float height = pos.y - shadowPos.y;
-                float minScale = 0.5f, maxScale = 1.0f;
+                float minScale = 0.4f, maxScale = 0.7f;
                 float scale = Mathf.Lerp(maxScale, minScale, height / arcHeight);
                 shadow.localScale = new Vector3(scale, scale, 1f);
             }
