@@ -16,23 +16,76 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     private void Start()
     {
         ((IProjectile)this).InitiateProjectile();
-        float randomX = Random.Range(-1, 1);
-        float randomY = Random.Range(-1, 1);
-        direction = new Vector3(randomX, randomY, 0f);
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
-    }
-
-    private void Update()
-    {
         StartCoroutine(MoltenRockBehaviour());
+        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
     private IEnumerator MoltenRockBehaviour()
     {
-        // change to parabolic arc until second behaviour
-        ((IProjectile)this).DefaultProjectileMovement(gameObject);
-        yield return new WaitForSeconds(1f);
+        // circle values
+        float radius = 3f;
+        Vector2 randomCircle = Random.insideUnitCircle * radius;
+        Vector3 start = transform.position;
+        Vector3 target = start + new Vector3(randomCircle.x, randomCircle.y, 0f);
+
+        // parabolic arc values
+        float duration = 1f / projecileStats.projectileSpeed;
+        float elapsed = 0f;
+        float arcHeight = radius * 0.5f;
+        Vector3 prevPos = start;
+
+        // Shadow setup
+        Transform shadow = transform.Find("Shadow");
+        if (shadow != null)
+            shadow.gameObject.SetActive(true);
+
+        // move in an arc towards the target
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            Vector3 pos = Vector3.Lerp(start, target, t);
+            pos.y += arcHeight * 4 * t * (1 - t);
+
+            Vector3 velocity = pos - prevPos;
+            if (velocity.sqrMagnitude > 0.000001f)
+            {
+                float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+
+            // shadow
+            if (shadow != null)
+            {
+                Vector3 shadowPos = pos;
+                shadowPos.y = Mathf.Min(start.y, target.y); // ground level (could also use start.y if always flat)
+                shadow.position = shadowPos;
+
+                // Optional: scale shadow based on height above ground
+                float height = pos.y - shadowPos.y;
+                float minScale = 0.5f, maxScale = 1.0f;
+                float scale = Mathf.Lerp(maxScale, minScale, height / arcHeight);
+                shadow.localScale = new Vector3(scale, scale, 1f);
+            }
+
+            transform.position = pos;
+            prevPos = pos;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // final position, direction and rotation
+        transform.position = target;
+        Vector3 finalDir = target - prevPos;
+        if (finalDir.sqrMagnitude > 0.000001f)
+        {
+            float angle = Mathf.Atan2(finalDir.y, finalDir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        // Hide shadow after landing
+        if (shadow != null)
+            shadow.gameObject.SetActive(false);
+
         // change to AoE behaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
