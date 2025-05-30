@@ -11,9 +11,6 @@ public abstract class Ability : MonoBehaviour
 
     protected GameObject player;
     //protected int id;
-    protected string abilityName;
-    protected string abilityDescription;
-    protected float cooldown;
     protected Dictionary<DamageType, float> damage;
 
     public List<Tag> tags;
@@ -25,12 +22,29 @@ public abstract class Ability : MonoBehaviour
     public float lightningOfBase;
 
     [Header("General Stats")]
+    public float attackSpeed; // duration of ability
+    public float castTime; // time to cast a ability
+    public float cooldown; // cooldown until ability can be pressed again
     public float procCoefficient;
+
+    [Header("Logic")]
+    private float cooldownTimer;
+
     private void Awake()
     {
+        cooldownTimer = 0;
         circuits = new List<GameObject>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    private void Update()
+    {
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+    }
+
     public List<BlueCircuit> GetBlueCircuits()
     {
         List<BlueCircuit> blueCircuits = new List<BlueCircuit>();
@@ -43,10 +57,12 @@ public abstract class Ability : MonoBehaviour
         }
         return blueCircuits;
     }
+
     public void ProcBlueCircuit(BlueCircuit blueCircuit, GameObject enemy, List<BlueCircuit> reducedList, Dictionary<DamageType, float> damage)
     {
         blueCircuit.Activate(enemy, reducedList, damage);
     }
+
     public void ApplyCircuit(GameObject circuit)
     {
         if (circuit.tag == "Circuit")
@@ -83,6 +99,7 @@ public abstract class Ability : MonoBehaviour
 
         }
     }
+
     public void RemoveCircuit(GameObject circuit)
     {
         if (circuit.tag == "Circuit" && circuits.Contains(circuit))
@@ -119,7 +136,19 @@ public abstract class Ability : MonoBehaviour
 
         }
     }
+
+    public bool CheckCooldown()
+    {
+        return cooldownTimer <= 0f;
+    }
+        
+    public void SetCooldown()
+    {
+        cooldownTimer = cooldown;
+    }
+
     public abstract void Activate();
+
     public Dictionary<DamageType, float> DealDamage()
     {
         float baseDamage = player.GetComponent<PlayerStats>().baseDamage;
@@ -130,5 +159,6 @@ public abstract class Ability : MonoBehaviour
         damage.Add(DamageType.Lightning, lightningOfBase * baseDamage);
         return damage;
     }
+
     public abstract void Hit(GameObject enemy);
 }

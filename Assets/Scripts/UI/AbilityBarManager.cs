@@ -18,12 +18,15 @@ public class AbilityBarManager : MonoBehaviour
 
     private void Update()
     {
-        RemoveCircuit();
+        if (Input.GetMouseButtonDown(1))
+        {
+            RemoveCircuit();    
+        }
     }
 
     private void RemoveCircuit()
     {
-        if (Input.GetMouseButtonDown(1) && GameManager.instance.gameState == GameState.Inventory)
+        if (GameManager.instance.gameState == GameState.Inventory)
         {
             GameObject circuitSlotUi = ui.GetComponent<UIManager>().GetPointerOverCircuitSlotUIElement();
             if (circuitSlotUi != null)

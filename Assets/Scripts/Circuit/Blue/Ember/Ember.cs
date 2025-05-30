@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Ember : BlueCircuit
 {
+
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
 
@@ -17,14 +18,18 @@ public class Ember : BlueCircuit
 
     public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
-        GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
-        EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
+        if (CheckCooldown())
+        {
+            GameObject ember = Instantiate(abilityPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+            EmberPrefab emberPrefab = ember.GetComponent<EmberPrefab>();
 
-        ((IBlueCircuitPrefab)emberPrefab).PassDamage(damage);
-        emberPrefab.prefabOf = this.gameObject;
-        ((IBlueCircuitPrefab)emberPrefab).PassList(blueCircuits);
-        emberPrefab.target = enemy.transform;
-        emberPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
+            ((IBlueCircuitPrefab)emberPrefab).PassDamage(damage);
+            emberPrefab.prefabOf = this.gameObject;
+            ((IBlueCircuitPrefab)emberPrefab).PassList(blueCircuits);
+            emberPrefab.target = enemy.transform;
+            emberPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
+            SetCooldown();
+        }
     }
 
 }
