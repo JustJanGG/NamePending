@@ -145,13 +145,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3610140153761852054}
-  - component: {fileID: -3719851519096486361}
   - component: {fileID: -4118960233161993212}
   - component: {fileID: -7226210840193302867}
   - component: {fileID: 3294440596133984102}
   - component: {fileID: 6599665650870190820}
   m_Layer: 16
-  m_Name: ChainLightningCircuit
+  m_Name: CircuitBlueprint
   m_TagString: Circuit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,32 +172,6 @@ Transform:
   - {fileID: 365072977040415868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3719851519096486361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4072953583524998938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c8d2723be2ff54c9925c15ad071d4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1754298571932845959, guid: 758d645241ae26044bb67c4c72dd34f1, type: 3}
-  circuits: []
-  tags: 
-  physicalOfBase: 0
-  fireOfBase: 0
-  coldOfBase: 0
-  lightningOfBase: 1
-  attackSpeed: 0
-  castTime: 0
-  cooldown: 0
-  lifetime: 3
-  procCoefficient: 1
-  procChance: 1
-  chainCount: 3
 --- !u!61 &-4118960233161993212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -327,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipObject: {fileID: 5718872073943518306}
   tooltipRadius: 1.5
-  circuitName: Chain Lightning
+  circuitName: Put name here
 --- !u!1 &5718872073943518306
 GameObject:
   m_ObjectHideFlags: 0
