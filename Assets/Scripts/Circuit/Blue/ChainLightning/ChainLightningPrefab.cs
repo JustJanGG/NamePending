@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,24 +11,34 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab
     private List<GameObject> alreadyHit;
     public int chainCount;
     public GameObject lastEnemyHit;
+
+
     private void Start()
     {
+        StartCoroutine(ChainLightningBehaviour());
         Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
+    }
+
+    private IEnumerator ChainLightningBehaviour()
+    {
         prefabOf.GetComponent<BlueCircuit>().Hit(lastEnemyHit, reducedList, damage);
         alreadyHit = new List<GameObject>();
         alreadyHit.Add(lastEnemyHit);
         GameObject closestEnemy;
+
         for (int i = 0; i < chainCount; i++)
         {
+            yield return new WaitForSeconds(0.2f);
             closestEnemy = FindClosestEnemy(lastEnemyHit.transform, chainRange);
             if (closestEnemy == lastEnemyHit)
             {
                 break;
             }
-
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, closestEnemy.transform.position, chainRange);
             alreadyHit.Add(closestEnemy);
-            prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage);
+            prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage); 
         }
+        yield return null;
     }
     private GameObject FindClosestEnemy(Transform startPoint, float range)
     {
@@ -47,12 +58,6 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab
                 closestEnemy = enemy;
             }
         }
-        //if(closestEnemy == lastEnemyHit)
-        //{
-        //    return null; // No new enemy found within range
-        //}
-        //alreadyHit.Add(closestEnemy);
-        //prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage);
         return closestEnemy;
     }
 }
