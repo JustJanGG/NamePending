@@ -56,14 +56,16 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
             // Update shadow position (on ground, below projectile)
             if (shadow != null)
             {
-                Vector3 shadowPos = pos;
-                shadowPos.y = target.y;
-                shadowPos.x = target.x;
-                shadow.position = Vector2.MoveTowards(pos, shadowPos, duration);
+                Vector3 shadowTargetPos = pos;
+                shadowTargetPos.y = target.y;
+                shadowTargetPos.x = target.x;
+                Vector3 shadowArcOffset = pos;
+                shadowArcOffset.y -= arcHeight * 4 * t * (1 - t);
+                shadow.position = Vector2.MoveTowards(shadowArcOffset, shadowTargetPos, duration * Time.deltaTime);
 
                 // Optional: scale shadow based on height above ground
-                float height = pos.y - shadowPos.y;
-                float minScale = 0.4f, maxScale = 0.7f;
+                float height = pos.y - shadow.position.y;
+                float minScale = 0.3f, maxScale = 0.7f;
                 float scale = Mathf.Lerp(maxScale, minScale, height / arcHeight);
                 shadow.localScale = new Vector3(scale, scale, 1f);
             }
