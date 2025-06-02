@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FasterProjectiles : RedCircuit
+public class FasterProjectilesCircuit : RedCircuit
 {
-    public FasterProjectiles()
+    public FasterProjectilesCircuit()
     {
         id = 1;
         circuitName = "Faster Projectiles";

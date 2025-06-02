@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pierce : RedCircuit
+public class PierceCircuit : RedCircuit
 {
-    public Pierce()
+    public PierceCircuit()
     {
         id = 1;
         circuitName = "Pierce";
