@@ -119,6 +119,88 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &22871881
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 886398850264789737, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886398850264789737, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886398850264789737, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886398850264789737, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886398850264789737, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.594595
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.659267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555749344631313840, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522349919392939409, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+      propertyPath: m_Name
+      value: MultipleProjectilesCircuit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+--- !u!1 &22871882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2522349919392939409, guid: 250a7b1229ed538498bce16bf6fa5fe4, type: 3}
+  m_PrefabInstance: {fileID: 22871881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &41709932
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8416458944343430672, guid: f89472ca468e83a4a88bb6591adf20ae, type: 3}
       propertyPath: m_Name
-      value: Pierce
+      value: PierceCircuit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -67147,6 +67229,7 @@ MonoBehaviour:
   - {fileID: 107339693}
   - {fileID: 827567448}
   - {fileID: 1936648064926346968}
+  - {fileID: 22871882}
 --- !u!4 &1992600503
 Transform:
   m_ObjectHideFlags: 0
@@ -120712,6 +120795,7 @@ SceneRoots:
   - {fileID: 1459715272}
   - {fileID: 2435875354871679651}
   - {fileID: 107339692}
+  - {fileID: 22871881}
   - {fileID: 509252585}
   - {fileID: 1628397530}
   - {fileID: 674387529}

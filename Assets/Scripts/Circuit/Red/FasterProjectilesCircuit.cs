@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pierce : RedCircuit
+public class FasterProjectilesCircuit : RedCircuit
 {
-    public Pierce()
+    public FasterProjectilesCircuit()
     {
         id = 1;
-        circuitName = "Pierce";
-        circuitDescription = "Increases Pierce count by 2.";
+        circuitName = "Faster Projectiles";
+        circuitDescription = "Increases the speed of projectiles by 50%.";
         circuitType = CircuitType.Red;
         tags = new List<Tag>();
         tags.Add(Tag.Projectile);
@@ -17,7 +17,7 @@ public class Pierce : RedCircuit
     {
         if(ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().pierce += 2;
+            ability.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
         }
     }
 
@@ -25,7 +25,7 @@ public class Pierce : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().pierce -= 2;
+            ability.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
         }
     }
 }

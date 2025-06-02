@@ -9,11 +9,23 @@ public class FireballAbility : Ability
 
     public override void Activate()
     {
-        GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
-        FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
-        fireballPrefab.prefabOf = this.gameObject;
-        fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
-        SetCooldown();
+        float arcAngle = 45f;
+        for (int i = 0; i < this.GetComponent<ProjecileStats>().projectileCount; i++)
+        {
+            GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
+            FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
+            fireballPrefab.prefabOf = this.gameObject;
+            fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
+
+            Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 projectileStartPostion = gameObject.transform.position;
+            Vector2 baseDirection = (cursorPosition - projectileStartPostion).normalized;
+
+            Vector2[] directions = fireballPrefab.GetComponent<IProjectile>().CalculateProjectileArc(GetComponent<ProjecileStats>().projectileCount, arcAngle, gameObject.transform.position, baseDirection);
+            fireballPrefab.direction = directions[i];
+
+            SetCooldown();
+        }
     }
 
 }

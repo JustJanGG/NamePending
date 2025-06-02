@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 8913226444826196258}
   - component: {fileID: 7437398008559841098}
   m_Layer: 16
-  m_Name: Pierce
+  m_Name: PierceCircuit
   m_TagString: Circuit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
