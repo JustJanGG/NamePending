@@ -10,7 +10,8 @@ public enum Tag
     Recovery,
     Duration,
     Channeling,
-    Travel
+    Travel,
+    Chaining
 
     // Add more tags as needed except of Attack and Spell
 }
