@@ -156,15 +156,15 @@ MonoBehaviour:
   circuits: []
   tags: 0000000001000000
   physicalOfBase: 0
-  fireOfBase: 2
+  fireOfBase: 3
   coldOfBase: 0
   lightningOfBase: 0
   attackSpeed: 0
   castTime: 0
   cooldown: 0
   lifetime: 2
-  procCoefficient: 1
-  procChance: 1
+  procCoefficient: 0.7
+  procChance: 0.3
 --- !u!114 &7617125972757741140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1
   pierce: 0
-  projectileCount: 1
+  projectileCount: 3
 --- !u!114 &1567266442404741427
 MonoBehaviour:
   m_ObjectHideFlags: 0

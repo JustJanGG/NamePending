@@ -5,7 +5,6 @@ using UnityEngine;
 public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 {
     [HideInInspector]
-    public Transform target;
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
     public ProjecileStats projecileStats { get; set; }
@@ -15,8 +14,6 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     void Start()
     {
         ((IProjectile)this).InitiateProjectile();
-        direction = target.position - gameObject.transform.position;
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 

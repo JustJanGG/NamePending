@@ -9,7 +9,6 @@ public class FireballPrefab : AbilityPrefab, IProjectile
     void Start()
     {
         ((IProjectile)this).InitiateProjectile();
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
