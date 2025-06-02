@@ -48,8 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabOf: {fileID: 0}
-  chainRange: 1000
-  chainCount: 0
   lastEnemyHit: {fileID: 0}
 --- !u!95 &7182924160639362462
 Animator:
@@ -173,7 +171,7 @@ TrailRenderer:
   m_SortingLayerID: -345044587
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -183,7 +181,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.10416603
         inSlope: 0
         outSlope: 0
         tangentMode: 0

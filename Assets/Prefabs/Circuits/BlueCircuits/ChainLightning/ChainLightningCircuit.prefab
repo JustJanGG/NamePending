@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chainCount: 3
   chainRange: 20
+  chainDelay: 0.1
 --- !u!114 &-3719851519096486361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 1754298571932845959, guid: 758d645241ae26044bb67c4c72dd34f1, type: 3}
   circuits: []
-  tags: 
+  tags: 0a000000
   physicalOfBase: 0
   fireOfBase: 0
   coldOfBase: 0

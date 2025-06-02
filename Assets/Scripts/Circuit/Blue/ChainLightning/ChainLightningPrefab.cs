@@ -8,7 +8,6 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
     public ChainingStats chainingStats { get; set; }
-
     private List<GameObject> alreadyHit;
     public GameObject lastEnemyHit;
     private Vector3 lastEnemyTrans;
@@ -31,8 +30,8 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
 
         for (int i = 0; i < chainingStats.chainCount; i++)
         {
-            yield return new WaitForSeconds(0.2f);
-            closestEnemy = FindClosestEnemy(chainingStats.chainRange);
+            yield return new WaitForSeconds(chainingStats.chainDelay);
+            closestEnemy = ((IChaining)this).FindClosestEnemy(chainingStats.chainRange, lastEnemyHit, lastEnemyTrans, alreadyHit);
             if (closestEnemy == lastEnemyHit || closestEnemy == null)
             {
                 break;
@@ -42,33 +41,5 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
             prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage);
         }
         yield return null;
-    }
-    private GameObject FindClosestEnemy(float range)
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy = lastEnemyHit;
-        float closestDistance = Mathf.Infinity;
-        foreach (GameObject enemy in enemies)
-        {
-            if (enemy != null)
-            {
-                float distance = Vector3.Distance(lastEnemyTrans, enemy.transform.position);
-                if (distance < closestDistance
-                    && distance <= range
-                    && !alreadyHit.Contains(enemy))
-                {
-                    closestDistance = distance;
-                    closestEnemy = enemy;
-                }
-            }
-        }
-        if (closestEnemy == null)
-        {
-            return null;
-        }
-
-        lastEnemyTrans = new Vector3(closestEnemy.transform.position.x, closestEnemy.transform.position.y, 0f);
-        return closestEnemy;
-        
     }
 }
