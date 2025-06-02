@@ -60,16 +60,19 @@ public class DamagePopupManager : MonoBehaviour
 
     private IEnumerator MoveTextUpwards(GameObject damagePopup, float duration)
     {
-        Vector3 startPosition = damagePopup.transform.position;
-        Vector3 endPosition = startPosition + new Vector3(0, 1f, 0);
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
+        if (damagePopup != null)
         {
-            elapsedTime += Time.deltaTime;
-            damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
-            yield return null;
+            Vector3 startPosition = damagePopup.transform.position;
+            Vector3 endPosition = startPosition + new Vector3(0, 1f, 0);
+            float elapsedTime = 0f;
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.deltaTime;
+                damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
+                yield return null;
+            }
+            damagePopup.transform.position = endPosition;
         }
-        damagePopup.transform.position = endPosition;
     }
 
     private IEnumerator FadeOutText(TextMeshPro textMesh, float duration)
