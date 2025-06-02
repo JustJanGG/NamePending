@@ -11,7 +11,7 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     public ProjecileStats projecileStats { get; set; }
     public AoEStats aoeStats { get; set; }
     public Vector2 direction { get; set; }
-    public int pierceCount { get; set; }
+    public int pierceCount { get; set; } // molten Rock does not use this stat
 
     private void Start()
     {
