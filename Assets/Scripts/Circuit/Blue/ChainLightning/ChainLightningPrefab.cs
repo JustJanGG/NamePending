@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab
+public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
 {
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
-    public float chainRange = 1000f;
-    //public GameObject initialEnemy;
+    public ChainingStats chainingStats { get; set; }
+
     private List<GameObject> alreadyHit;
-    public int chainCount;
     public GameObject lastEnemyHit;
     private Vector3 lastEnemyTrans;
 
@@ -30,15 +29,15 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab
         GameObject closestEnemy;
 
 
-        for (int i = 0; i < chainCount; i++)
+        for (int i = 0; i < chainingStats.chainCount; i++)
         {
             yield return new WaitForSeconds(0.2f);
-            closestEnemy = FindClosestEnemy(chainRange);
+            closestEnemy = FindClosestEnemy(chainingStats.chainRange);
             if (closestEnemy == lastEnemyHit || closestEnemy == null)
             {
                 break;
             }
-            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, closestEnemy.transform.position, chainRange);
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, closestEnemy.transform.position, chainingStats.chainRange);
             alreadyHit.Add(closestEnemy);
             prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage);
         }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChainLightning : BlueCircuit
+public class ChainLightningCircuit : BlueCircuit
 {
     public Ability socketedAbility { get; set; }
     public List<RedCircuit> redCircuits { get; set; }
@@ -20,7 +20,7 @@ public class ChainLightning : BlueCircuit
         ((IBlueCircuitPrefab)chainLightningPrefab).PassDamage(damage);
         chainLightningPrefab.prefabOf = this.gameObject;
         ((IBlueCircuitPrefab)chainLightningPrefab).PassList(blueCircuits);
+        ((IChaining)chainLightningPrefab).chainingStats = this.gameObject.GetComponent<ChainingStats>();
         chainLightningPrefab.lastEnemyHit = enemy;
-        chainLightningPrefab.chainCount = this.chainCount;
     }
 }
