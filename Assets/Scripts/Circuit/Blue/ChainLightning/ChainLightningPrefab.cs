@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
 {
+    [HideInInspector]
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
     public ChainingStats chainingStats { get; set; }
