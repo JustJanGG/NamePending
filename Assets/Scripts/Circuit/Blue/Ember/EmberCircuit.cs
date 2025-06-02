@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 
-public class Ember : BlueCircuit
+public class EmberCircuit : BlueCircuit
 {
     private void Start()
     {

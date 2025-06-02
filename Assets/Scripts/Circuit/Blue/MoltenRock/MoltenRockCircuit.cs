@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoltenRock : BlueCircuit
+public class MoltenRockCircuit : BlueCircuit
 {
     private void Start()
     {
