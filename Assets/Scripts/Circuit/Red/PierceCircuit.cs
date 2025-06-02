@@ -5,7 +5,7 @@ public class PierceCircuit : RedCircuit
 {
     public PierceCircuit()
     {
-        id = 1;
+        id = 2;
         circuitName = "Pierce";
         circuitDescription = "Increases Pierce count by 2.";
         circuitType = CircuitType.Red;
