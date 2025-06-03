@@ -6,14 +6,6 @@ public interface IChaining
 {
     public ChainingStats chainingStats { get; set; }
 
-    //public int chainCount { get; set; }
-    //public float chainRange { get; set; }
-    //public void InitiateChaining()
-    //{
-    //    chainCount = chainingStats.chainCount;
-    //    chainRange = chainingStats.chainRange;
-    //}
-
     public GameObject FindClosestEnemy(float range, GameObject lastEnemyHit, Vector3 lastEnemyTrans, List<GameObject> alreadyHit)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

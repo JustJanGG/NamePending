@@ -11,11 +11,14 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     public ProjecileStats projecileStats { get; set; }
     public AoEStats aoeStats { get; set; }
     public Vector2 direction { get; set; }
+    public List<GameObject> alreadyHitEnemies { get; set; } // molten Rock does not use this stat
     public int pierceCount { get; set; } // molten Rock does not use this stat
+    public int chainCount { get; set; } // molten Rock does not use this stat
+    public GameObject projectile { get; set; } // molten Rock does not use this stat
 
     private void Start()
     {
-        ((IProjectile)this).InitiateProjectile();
+        ((IProjectile)this).InitiateProjectile(this.gameObject);
         StartCoroutine(MoltenRockBehaviour());
         Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }

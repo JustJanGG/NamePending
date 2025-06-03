@@ -140,6 +140,7 @@ MonoBehaviour:
   projectileSpeed: 10
   pierce: 0
   projectileCount: 1
+  chainCount: 0
 --- !u!1 &6521139798987961663
 GameObject:
   m_ObjectHideFlags: 0
