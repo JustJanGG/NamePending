@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class ChainLightningCircuit : BlueCircuit
 {
-    public Ability socketedAbility { get; set; }
-    public List<RedCircuit> redCircuits { get; set; }
-    public int chainCount;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
