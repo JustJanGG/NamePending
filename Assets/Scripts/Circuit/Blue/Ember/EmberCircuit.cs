@@ -17,6 +17,7 @@ public class EmberCircuit : BlueCircuit
     {
         if (CheckCooldown())
         {
+            Vector3 enemyPosition = enemy.transform.position;
             float arcAngle = 45f;
             for (int i = 0; i < this.GetComponent<ProjecileStats>().projectileCount; i++)
             {
@@ -28,7 +29,7 @@ public class EmberCircuit : BlueCircuit
                 ((IBlueCircuitPrefab)emberPrefab).PassList(blueCircuits);
                 emberPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
 
-                Vector2[] directions = emberPrefab.GetComponent<IProjectile>().CalculateProjectileArc(GetComponent<ProjecileStats>().projectileCount, arcAngle, gameObject.transform.position, enemy.transform.position - emberPrefab.transform.position);
+                Vector2[] directions = emberPrefab.GetComponent<IProjectile>().CalculateProjectileArc(GetComponent<ProjecileStats>().projectileCount, arcAngle, gameObject.transform.position, enemyPosition - emberPrefab.transform.position);
                 emberPrefab.direction = directions[i];
 
                 SetCooldown();

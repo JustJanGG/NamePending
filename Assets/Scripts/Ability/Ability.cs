@@ -61,7 +61,10 @@ public abstract class Ability : MonoBehaviour
 
     public void ProcBlueCircuit(BlueCircuit blueCircuit, GameObject enemy, List<BlueCircuit> reducedList, Dictionary<DamageType, float> damage)
     {
-        blueCircuit.Activate(enemy, reducedList, damage);
+        if (enemy != null)
+        {
+            blueCircuit.Activate(enemy, reducedList, damage);
+        }
     }
 
     public void ApplyCircuit(GameObject circuit)

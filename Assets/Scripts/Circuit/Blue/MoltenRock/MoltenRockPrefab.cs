@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPrefab
 {
     [HideInInspector]
-    public Transform enemy;
     public List<BlueCircuit> reducedList { get; set; }
     public Dictionary<DamageType, float> damage { get; set; }
     public ProjecileStats projecileStats { get; set; }
