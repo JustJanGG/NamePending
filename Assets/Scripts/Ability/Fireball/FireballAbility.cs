@@ -9,7 +9,7 @@ public class FireballAbility : Ability
 
     public override void Activate()
     {
-        float arcAngle = 45f;
+        float arcAngle = 30f;
         for (int i = 0; i < this.GetComponent<ProjecileStats>().projectileCount; i++)
         {
             GameObject fireball = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity);
