@@ -12,6 +12,7 @@ public class MultipleProjectilesCircuit : RedCircuit
         tags = new List<Tag>();
         tags.Add(Tag.Projectile);
     }
+
     public override void ApplyRedCircuit(Ability ability)
     {
         if (ability.tags.Contains(Tag.Projectile))

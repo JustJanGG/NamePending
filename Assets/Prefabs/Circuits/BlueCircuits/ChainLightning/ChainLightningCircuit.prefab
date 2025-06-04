@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chainCount: 3
-  chainRange: 20
+  chainRange: 15
   chainDelay: 0.1
 --- !u!114 &-3719851519096486361
 MonoBehaviour:
@@ -214,7 +214,6 @@ MonoBehaviour:
   lifetime: 3
   procCoefficient: 1
   procChance: 1
-  chainCount: 3
 --- !u!61 &-4118960233161993212
 BoxCollider2D:
   m_ObjectHideFlags: 0
