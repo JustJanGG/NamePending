@@ -26,7 +26,7 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     private IEnumerator MoltenRockBehaviour()
     {
         // circle values
-        float radius = 3f;
+        float radius = aoeStats.areaSize * 3f;
         Vector2 randomCircle = Random.insideUnitCircle * radius;
         Vector3 start = transform.position;
         Vector3 target = start + new Vector3(randomCircle.x, randomCircle.y, 0f);

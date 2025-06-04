@@ -10,8 +10,11 @@ public class Hit
     public Hit(GameObject enemy, Ability ability, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
         reducedList = new List<BlueCircuit>();
-        enemyStats = enemy.GetComponent<EnemyStats>();
-        enemyStats.TakeDamage(damage);
+        if (enemy != null)
+        {
+            enemyStats = enemy.GetComponent<EnemyStats>();
+            enemyStats.TakeDamage(damage);
+        }
         List<BlueCircuit> triggered = new List<BlueCircuit>();
         if (blueCircuits != null && blueCircuits.Count > 0)
         {

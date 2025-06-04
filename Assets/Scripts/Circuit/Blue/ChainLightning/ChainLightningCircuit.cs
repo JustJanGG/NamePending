@@ -9,15 +9,21 @@ public class ChainLightningCircuit : BlueCircuit
         circuitName = "Chain Lighting";
         circuitType = CircuitType.Blue;
     }
+
     public override void Activate(GameObject enemy, List<BlueCircuit> blueCircuits, Dictionary<DamageType, float> damage)
     {
-        GameObject chainLightning = Instantiate(abilityPrefab, enemy.transform.position, Quaternion.identity);
-        ChainLightningPrefab chainLightningPrefab = chainLightning.GetComponent<ChainLightningPrefab>();
+        if (CheckCooldown())
+        {
+            GameObject chainLightning = Instantiate(abilityPrefab, enemy.transform.position, Quaternion.identity);
+            ChainLightningPrefab chainLightningPrefab = chainLightning.GetComponent<ChainLightningPrefab>();
 
-        ((IBlueCircuitPrefab)chainLightningPrefab).PassDamage(damage);
-        chainLightningPrefab.prefabOf = this.gameObject;
-        ((IBlueCircuitPrefab)chainLightningPrefab).PassList(blueCircuits);
-        ((IChaining)chainLightningPrefab).chainingStats = this.gameObject.GetComponent<ChainingStats>();
-        chainLightningPrefab.lastEnemyHit = enemy;
+            ((IBlueCircuitPrefab)chainLightningPrefab).PassDamage(damage);
+            chainLightningPrefab.prefabOf = this.gameObject;
+            ((IBlueCircuitPrefab)chainLightningPrefab).PassList(blueCircuits);
+            ((IChaining)chainLightningPrefab).chainingStats = this.gameObject.GetComponent<ChainingStats>();
+            chainLightningPrefab.lastEnemyHit = enemy;
+            SetCooldown();
+        }
     }
+
 }
