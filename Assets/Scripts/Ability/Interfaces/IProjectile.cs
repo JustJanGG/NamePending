@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IProjectile
@@ -5,10 +7,16 @@ public interface IProjectile
     Vector2 direction { get; set; }
     ProjecileStats projecileStats { get; set; }
     int pierceCount { get; set; }
+    int chainCount { get; set; }
+    List<GameObject> alreadyHitEnemies { get; set; }
+    GameObject projectile { get; set; }
 
-    public void InitiateProjectile()
+    public void InitiateProjectile(GameObject projectile)
     {
+        this.projectile = projectile;
+        alreadyHitEnemies = new List<GameObject>();
         pierceCount = projecileStats.pierce;
+        chainCount = projecileStats.chainCount;
     }
 
     public void DefaultProjectileMovement(GameObject gameObject)
@@ -18,18 +26,68 @@ public interface IProjectile
         gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    public void ProjectileHit(GameObject projectile)
+    public void ProjectileHit(GameObject projectile, GameObject hit)
     {
+        alreadyHitEnemies.Add(hit);
         if (pierceCount <= 0)
         {
-            GameObject.Destroy(projectile);
+            if (chainCount <= 0)
+            {
+                GameObject.Destroy(projectile);
+            }
+            else
+            {
+                direction = FindClosestsEnemyDirection(hit);
+                chainCount--;
+            }
         }
         else
         {
             pierceCount--;
         }
     }
+    private Vector2 FindClosestsEnemyDirection(GameObject excludedEnemy)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length == 0)
+        {
+            // No enemies found, return the current direction
+            return direction;
+        }
 
+        GameObject closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+        Vector2 currentPosition = (Vector2)projectile.transform.position;
+
+        foreach (GameObject enemy in enemies)
+        {
+            // Skip the excluded enemy and enemies already hit
+            if (enemy == excludedEnemy || alreadyHitEnemies.Contains(enemy))
+            {
+                continue;
+            }
+
+            float distance = Vector2.Distance(currentPosition, (Vector2)enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
+        }
+
+        if (closestEnemy != null)
+        {
+            // Add the closest enemy to the list of already hit enemies
+            alreadyHitEnemies.Add(closestEnemy);
+
+            // Calculate the direction toward the closest enemy
+            Vector2 directionToEnemy = ((Vector2)closestEnemy.transform.position - currentPosition).normalized;
+            return directionToEnemy;
+        }
+
+        // Fallback in case no valid enemy is found
+        return direction;
+    }
     public Vector2[] CalculateProjectileArc(int projectileCount, float arcAngle, Vector2 origin, Vector2 baseDirection)
     {
         Vector2[] directions = new Vector2[projectileCount];

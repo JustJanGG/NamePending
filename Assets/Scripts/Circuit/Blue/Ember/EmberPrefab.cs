@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
@@ -10,10 +11,12 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     public ProjecileStats projecileStats { get; set; }
     public Vector2 direction { get; set; }
     public int pierceCount { get; set; }
-
+    public int chainCount { get; set; }
+    public List<GameObject> alreadyHitEnemies { get; set; }
+    public GameObject projectile { get; set; }
     void Start()
     {
-        ((IProjectile)this).InitiateProjectile();
+        ((IProjectile)this).InitiateProjectile(this.gameObject);
         Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
@@ -25,6 +28,6 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ((IBlueCircuitPrefab)this).DefaultBlueCircuitOnTriggerEnter2D(collision, prefabOf);
-        ((IProjectile)this).ProjectileHit(gameObject);
+        ((IProjectile)this).ProjectileHit(gameObject, collision.GameObject());
     }
 }
