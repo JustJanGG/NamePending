@@ -582,11 +582,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: aggroRange
@@ -61266,11 +61266,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: aggroRange
@@ -61286,11 +61286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 13.84
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -120947,11 +120947,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: health
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 505817641620433615, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: aggroRange
@@ -120975,11 +120975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 9.23
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 5075677655276035390, guid: dd67309dfdb211144bc61168996acae9, type: 3}
       propertyPath: m_LocalPosition.z

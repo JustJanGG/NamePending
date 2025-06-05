@@ -36,11 +36,13 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
             {
                 break;
             }
-            GetComponentInChildren<ParticleSystem>().Play();
             yield return StartCoroutine(MoveToPosition(closestEnemy.transform.position, chainingStats.chainRange * 2f));
+            GetComponentInChildren<ParticleSystem>().Play();
             alreadyHit.Add(closestEnemy);
             prefabOf.GetComponent<BlueCircuit>().Hit(closestEnemy, reducedList, damage);
         }
+
+        GetComponentInChildren<ParticleSystem>().Play();
         yield return null;
     }
 
