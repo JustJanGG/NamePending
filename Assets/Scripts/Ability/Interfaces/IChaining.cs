@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public interface IChaining
@@ -9,6 +11,10 @@ public interface IChaining
     public GameObject FindClosestEnemy(float range, GameObject lastEnemyHit, Vector3 lastEnemyTrans, List<GameObject> alreadyHit)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length == 0)
+        {
+            return null;
+        }
         GameObject closestEnemy = lastEnemyHit;
         float closestDistance = Mathf.Infinity;
         foreach (GameObject enemy in enemies)
