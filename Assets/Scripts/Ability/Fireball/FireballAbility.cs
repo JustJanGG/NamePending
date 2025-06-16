@@ -17,8 +17,8 @@ public class FireballAbility : Ability
             fireballPrefab.prefabOf = this.gameObject;
             fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
 
-            fireballPrefab.castSound = this.castSound;
-            fireballPrefab.hitSound = this.hitSound;
+            //fireballPrefab.castSound = this.castSound;
+            //fireballPrefab.hitSound = this.hitSound;
 
             Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 projectileStartPostion = gameObject.transform.position;
