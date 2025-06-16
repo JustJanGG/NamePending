@@ -67,9 +67,12 @@ public class DamagePopupManager : MonoBehaviour
             float elapsedTime = 0f;
             while (elapsedTime < duration)
             {
-                elapsedTime += Time.deltaTime;
-                damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
-                yield return null;
+                if (damagePopup != null)
+                {
+                    elapsedTime += Time.deltaTime;
+                    damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
+                    yield return null;
+                }
             }
             damagePopup.transform.position = endPosition;
         }
