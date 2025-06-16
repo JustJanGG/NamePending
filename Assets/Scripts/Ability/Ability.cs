@@ -25,7 +25,7 @@ public abstract class Ability : MonoBehaviour
     public float attackSpeed; // duration of ability
     public float castTime; // time to cast a ability
     public float cooldown; // cooldown until ability can be pressed again
-    public float lifetime;
+    public float afterLifetime; // time the prefab lingers after effect
     public float procCoefficient;
 
     [Header("Logic")]

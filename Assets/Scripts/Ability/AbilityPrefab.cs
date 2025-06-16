@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AbilityPrefab : MonoBehaviour
@@ -14,5 +15,29 @@ public class AbilityPrefab : MonoBehaviour
         {
             prefabOf.GetComponent<Ability>().Hit(collision.gameObject);
         }
+    }
+
+    protected IEnumerator DestroyAfterDuration(float afterLifeTime)
+    {
+        SpriteRenderer spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
+        Collider2D collider = this.gameObject.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        //ParticleSystem particleSystem = this.gameObject.GetComponent<ParticleSystem>();
+        //if (particleSystem != null)
+        //{
+        //    particleSystem.Stop();
+        //}
+
+        yield return new WaitForSeconds(afterLifeTime);
+        Destroy(this.gameObject);
     }
 }

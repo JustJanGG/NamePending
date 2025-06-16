@@ -123,7 +123,7 @@ MonoBehaviour:
   attackSpeed: 0
   castTime: 0
   cooldown: 0.5
-  lifetime: 3
+  afterLifetime: 1
   procCoefficient: 1
   castSound: {fileID: 8300000, guid: 33f15630a01a39647841d82c40cc131f, type: 3}
   hitSound: {fileID: 8300000, guid: 33f15630a01a39647841d82c40cc131f, type: 3}
@@ -143,6 +143,7 @@ MonoBehaviour:
   pierce: 0
   projectileCount: 1
   chainCount: 0
+  duration: 0
 --- !u!1 &6521139798987961663
 GameObject:
   m_ObjectHideFlags: 0

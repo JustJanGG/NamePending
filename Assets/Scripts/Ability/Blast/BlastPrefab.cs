@@ -7,7 +7,7 @@ public class BlastPrefab : AbilityPrefab, IAoE
     void Start()
     {
         ((IAoE)this).InitiateAoE();
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
+        Destroy(gameObject, prefabOf.GetComponent<Ability>().afterLifetime);
     }
 
     void Update()

@@ -216,8 +216,8 @@ MonoBehaviour:
   attackSpeed: 0
   castTime: 0
   cooldown: 0.01
-  lifetime: 0.2
-  procCoefficient: 1
+  afterLifetime: 0.2
+  procCoefficient: 0.4
 --- !u!114 &3031375278907682880
 MonoBehaviour:
   m_ObjectHideFlags: 0

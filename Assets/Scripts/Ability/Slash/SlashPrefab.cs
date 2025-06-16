@@ -13,7 +13,7 @@ public class SlashPrefab : AbilityPrefab, IMelee
         gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 
         ((IMelee)this).DefaultMeleeBehaviour(gameObject);
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime + 0.01f);
+        Destroy(gameObject, prefabOf.GetComponent<Ability>().afterLifetime + 0.01f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

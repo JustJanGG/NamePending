@@ -11,16 +11,9 @@ public class FireballPrefab : AbilityPrefab, IProjectile
     public List<GameObject> alreadyHitEnemies { get; set; }
     public GameObject projectile { get; set; }
 
-    [HideInInspector]
-    public AudioClip castSound;
-    [HideInInspector]
-    public AudioClip hitSound;
-
     void Start()
     {
         ((IProjectile)this).InitiateProjectile(this.gameObject);
-        audioSource.PlayOneShot(castSound);
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
     void Update()
@@ -30,8 +23,11 @@ public class FireballPrefab : AbilityPrefab, IProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.PlayOneShot(hitSound);
         DefaultOnTriggerEnter2D(collision);
-        ((IProjectile)this).ProjectileHit(gameObject, collision.GameObject());
+        if (((IProjectile)this).ProjectileHit(gameObject, collision.GameObject()))
+        {
+            StartCoroutine(DestroyAfterDuration(prefabOf.GetComponent<Ability>().afterLifetime));
+            direction = Vector2.zero;
+        }
     }
 }

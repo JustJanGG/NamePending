@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
+public class WaterBoltPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 {
     [HideInInspector]
     public List<BlueCircuit> reducedList { get; set; }
@@ -14,10 +14,11 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
     public int chainCount { get; set; }
     public List<GameObject> alreadyHitEnemies { get; set; }
     public GameObject projectile { get; set; }
+
     void Start()
     {
         ((IProjectile)this).InitiateProjectile(this.gameObject);
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
+        GetComponent<ParticleSystem>().Play();
     }
 
     void Update()
@@ -27,7 +28,13 @@ public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        transform.Find("Particle Explosion").gameObject.SetActive(true);
+        GetComponentInChildren<ParticleSystem>().Play();
         ((IBlueCircuitPrefab)this).DefaultBlueCircuitOnTriggerEnter2D(collision, prefabOf);
-        ((IProjectile)this).ProjectileHit(gameObject, collision.GameObject());
+        if (((IProjectile)this).ProjectileHit(gameObject, collision.GameObject()))
+        {
+            StartCoroutine(DestroyAfterDuration(prefabOf.GetComponent<Ability>().afterLifetime));
+            direction = Vector2.zero;
+        }
     }
 }
