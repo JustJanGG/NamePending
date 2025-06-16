@@ -207,12 +207,12 @@ MonoBehaviour:
   physicalOfBase: 0
   fireOfBase: 0
   coldOfBase: 0
-  lightningOfBase: 1
+  lightningOfBase: 0.5
   attackSpeed: 0
   castTime: 0
   cooldown: 0
   afterLifetime: 1
-  procCoefficient: 1
+  procCoefficient: 0.3
   procChance: 0.3
 --- !u!61 &-4118960233161993212
 BoxCollider2D:

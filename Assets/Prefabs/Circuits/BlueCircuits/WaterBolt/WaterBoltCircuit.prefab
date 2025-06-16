@@ -292,7 +292,7 @@ MonoBehaviour:
   tags: 01000000
   physicalOfBase: 0
   fireOfBase: 0
-  coldOfBase: 2
+  coldOfBase: 1.5
   lightningOfBase: 0
   attackSpeed: 0
   castTime: 0
