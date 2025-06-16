@@ -297,7 +297,7 @@ MonoBehaviour:
   attackSpeed: 0
   castTime: 0
   cooldown: 0
-  lifetime: 3
+  afterLifetime: 1
   procCoefficient: 1
   procChance: 0.25
 --- !u!114 &3294440596133984102
@@ -328,6 +328,8 @@ MonoBehaviour:
   projectileSpeed: 5
   pierce: 0
   projectileCount: 1
+  chainCount: 0
+  duration: 0
 --- !u!114 &6599665650870190820
 MonoBehaviour:
   m_ObjectHideFlags: 0

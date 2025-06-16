@@ -19,7 +19,6 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
     {
         ((IProjectile)this).InitiateProjectile(this.gameObject);
         StartCoroutine(MoltenRockBehaviour());
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
     private IEnumerator MoltenRockBehaviour()
@@ -96,6 +95,7 @@ public class MoltenRockPrefab : AbilityPrefab, IProjectile, IAoE, IBlueCircuitPr
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
         transform.Find("ExplosionSprite").gameObject.SetActive(true);
         ((IAoE)this).DefaultAoEBehaviour(gameObject);
+        Destroy(gameObject, prefabOf.GetComponent<Ability>().afterLifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

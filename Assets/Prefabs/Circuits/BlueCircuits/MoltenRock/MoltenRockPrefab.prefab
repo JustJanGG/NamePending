@@ -246,7 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabOf: {fileID: 0}
-  enemy: {fileID: 0}
 --- !u!212 &3337348558120653840
 SpriteRenderer:
   m_ObjectHideFlags: 0

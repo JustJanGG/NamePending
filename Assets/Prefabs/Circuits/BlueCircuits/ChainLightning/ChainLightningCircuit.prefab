@@ -211,9 +211,9 @@ MonoBehaviour:
   attackSpeed: 0
   castTime: 0
   cooldown: 0
-  lifetime: 3
+  afterLifetime: 1
   procCoefficient: 1
-  procChance: 1
+  procChance: 0.3
 --- !u!61 &-4118960233161993212
 BoxCollider2D:
   m_ObjectHideFlags: 0
