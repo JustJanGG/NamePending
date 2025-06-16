@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EmberPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
+public class WaterBoltPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 {
     [HideInInspector]
     public List<BlueCircuit> reducedList { get; set; }

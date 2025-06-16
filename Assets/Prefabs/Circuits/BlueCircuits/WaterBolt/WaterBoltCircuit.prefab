@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 4192570045673381517}
   - component: {fileID: 6599665650870190820}
   m_Layer: 16
-  m_Name: EmberCircuit
+  m_Name: WaterBoltCircuit
   m_TagString: Circuit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   projectileSpeed: 5
   pierce: 0
   projectileCount: 1
-  chainCount: 0
+  chainCount: 1
   duration: 0
 --- !u!114 &6599665650870190820
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipObject: {fileID: 5718872073943518306}
   tooltipRadius: 1.5
-  circuitName: Ember
+  circuitName: Water Bolt
 --- !u!1 &5718872073943518306
 GameObject:
   m_ObjectHideFlags: 0

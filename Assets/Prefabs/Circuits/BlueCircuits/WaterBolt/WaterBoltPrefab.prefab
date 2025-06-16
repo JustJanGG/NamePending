@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6352921870868889653}
   - component: {fileID: 6352615499376573246}
   m_Layer: 8
-  m_Name: EmberPrefab
+  m_Name: WaterBoltPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
