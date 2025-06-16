@@ -14,7 +14,6 @@ public class FireballPrefab : AbilityPrefab, IProjectile
     void Start()
     {
         ((IProjectile)this).InitiateProjectile(this.gameObject);
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
     void Update()
@@ -25,6 +24,10 @@ public class FireballPrefab : AbilityPrefab, IProjectile
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DefaultOnTriggerEnter2D(collision);
-        ((IProjectile)this).ProjectileHit(gameObject, collision.GameObject());
+        if (((IProjectile)this).ProjectileHit(gameObject, collision.GameObject()))
+        {
+            StartCoroutine(DestroyAfterDuration(prefabOf.GetComponent<Ability>().afterLifetime));
+            direction = Vector2.zero;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,14 +27,14 @@ public interface IProjectile
         gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    public void ProjectileHit(GameObject projectile, GameObject hit)
+    public bool ProjectileHit(GameObject projectile, GameObject hit)
     {
         alreadyHitEnemies.Add(hit);
         if (pierceCount <= 0)
         {
             if (chainCount <= 0)
             {
-                GameObject.Destroy(projectile);
+                return true;
             }
             else
             {
@@ -45,7 +46,9 @@ public interface IProjectile
         {
             pierceCount--;
         }
+        return false;
     }
+
     private Vector2 FindClosestsEnemyDirection(GameObject excludedEnemy)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

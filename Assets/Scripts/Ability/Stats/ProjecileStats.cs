@@ -6,4 +6,5 @@ public class ProjecileStats : MonoBehaviour
     public int pierce;
     public int projectileCount;
     public int chainCount;
+    public float duration;
 }

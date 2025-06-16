@@ -16,7 +16,6 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
     private void Start()
     {
         StartCoroutine(ChainLightningBehaviour());
-        Destroy(gameObject, prefabOf.GetComponent<Ability>().lifetime);
     }
 
     private IEnumerator ChainLightningBehaviour()
@@ -44,6 +43,7 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
 
         GetComponentInChildren<ParticleSystem>().Play();
         yield return null;
+        Destroy(gameObject, prefabOf.GetComponent<Ability>().afterLifetime);
     }
 
     private IEnumerator MoveToPosition(Vector3 targetPosition, float speed)
