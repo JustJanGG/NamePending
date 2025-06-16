@@ -25,7 +25,7 @@ public class DamagePopupManager : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
 
         StartCoroutine(MoveTextUpwards(damagePopup, 1f));
-        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 0.6f));
+        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 0.3f));
 
         Destroy(damagePopup, 1.1f);
     }
