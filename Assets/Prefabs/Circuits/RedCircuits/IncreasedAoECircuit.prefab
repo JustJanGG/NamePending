@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 00000000
+  areaSizeMultiplier: 1.5
 --- !u!114 &4331930229737778102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PierceCircuit : RedCircuit
 {
+    public int pierceCountIncrease;
     public PierceCircuit()
     {
         id = 2;
@@ -17,7 +18,7 @@ public class PierceCircuit : RedCircuit
     {
         if(ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().pierce += 2;
+            ability.GetComponent<ProjecileStats>().pierce += pierceCountIncrease;
         }
     }
 
@@ -25,7 +26,7 @@ public class PierceCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().pierce -= 2;
+            ability.GetComponent<ProjecileStats>().pierce -= pierceCountIncrease;
         }
     }
 }

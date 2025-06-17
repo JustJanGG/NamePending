@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ChainCircuit : RedCircuit
 {
+    public int chainCount;
     public ChainCircuit()
     {
         id = 22;
@@ -18,11 +19,11 @@ public class ChainCircuit : RedCircuit
     {
         if(ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().chainCount += 2;
+            ability.GetComponent<ProjecileStats>().chainCount += chainCount;
         }
         else if (ability.tags.Contains(Tag.Chaining))
         {
-            ability.GetComponent<ChainingStats>().chainCount += 2;
+            ability.GetComponent<ChainingStats>().chainCount += chainCount;
         }
     }
 
@@ -30,11 +31,11 @@ public class ChainCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().chainCount -= 2;
+            ability.GetComponent<ProjecileStats>().chainCount -= chainCount;
         }
         else if (ability.tags.Contains(Tag.Chaining))
         {
-            ability.GetComponent<ChainingStats>().chainCount -= 2;
+            ability.GetComponent<ChainingStats>().chainCount -= chainCount;
         }
     }
 
