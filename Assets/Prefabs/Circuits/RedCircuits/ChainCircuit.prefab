@@ -480,3 +480,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 010000000a000000
+  chainCount: 2

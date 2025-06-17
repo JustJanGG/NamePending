@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class IncreasedAoECircuit : RedCircuit
 {
+    public float areaSizeMultiplier;
     public IncreasedAoECircuit()
     {
         id = 4;
@@ -16,7 +17,7 @@ public class IncreasedAoECircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.AoE))
         {
-            ability.GetComponent<AoEStats>().areaSize *= 1.5f;
+            ability.GetComponent<AoEStats>().areaSize *= areaSizeMultiplier;
         }
     }
 
@@ -24,7 +25,7 @@ public class IncreasedAoECircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.AoE))
         {
-            ability.GetComponent<AoEStats>().areaSize /= 1.5f;
+            ability.GetComponent<AoEStats>().areaSize /= areaSizeMultiplier;
         }
     }
 }

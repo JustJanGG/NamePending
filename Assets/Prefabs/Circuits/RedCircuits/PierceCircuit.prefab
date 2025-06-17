@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 01000000
+  pierceCountIncrease: 2
 --- !u!114 &8913226444826196258
 MonoBehaviour:
   m_ObjectHideFlags: 0

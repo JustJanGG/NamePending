@@ -125,6 +125,8 @@ MonoBehaviour:
   cooldown: 0.5
   afterLifetime: 1
   procCoefficient: 1
+  castSound: {fileID: 8300000, guid: 33f15630a01a39647841d82c40cc131f, type: 3}
+  hitSound: {fileID: 8300000, guid: 33f15630a01a39647841d82c40cc131f, type: 3}
 --- !u!114 &-8349658172702336141
 MonoBehaviour:
   m_ObjectHideFlags: 0
