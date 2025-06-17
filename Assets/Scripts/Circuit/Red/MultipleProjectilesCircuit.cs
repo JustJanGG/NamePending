@@ -17,7 +17,8 @@ public class MultipleProjectilesCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileCount += 2;
+            ability.GetComponent<ProjecileStats>().projectileCount += 2; // add count
+            ability.procCoefficient *= 0.5f; // reduce proc coefficient
         }
     }
 
@@ -25,7 +26,8 @@ public class MultipleProjectilesCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileCount -= 2;
+            ability.GetComponent<ProjecileStats>().projectileCount -= 2; // remove count
+            ability.procCoefficient *= 2f; // increase proc coefficient
         }
     }
 
