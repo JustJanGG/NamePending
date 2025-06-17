@@ -25,7 +25,7 @@ public class DamagePopupManager : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
 
         StartCoroutine(MoveTextUpwards(damagePopup, 1f));
-        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 0.6f));
+        StartCoroutine(FadeOutText(damagePopup.GetComponent<TextMeshPro>(), 0.3f));
 
         Destroy(damagePopup, 1.1f);
     }
@@ -67,9 +67,12 @@ public class DamagePopupManager : MonoBehaviour
             float elapsedTime = 0f;
             while (elapsedTime < duration)
             {
-                elapsedTime += Time.deltaTime;
-                damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
-                yield return null;
+                if (damagePopup != null)
+                {
+                    elapsedTime += Time.deltaTime;
+                    damagePopup.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
+                    yield return null;
+                }
             }
             damagePopup.transform.position = endPosition;
         }
