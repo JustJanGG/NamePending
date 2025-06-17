@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MultipleProjectilesCircuit : RedCircuit
 {
+    public int projectileCountIncrease;
+    public float procCoefficientReductionMultiplier;
     public MultipleProjectilesCircuit()
     {
         id = 3;
@@ -17,8 +19,8 @@ public class MultipleProjectilesCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileCount += 2; // add count
-            ability.procCoefficient *= 0.5f; // reduce proc coefficient
+            ability.GetComponent<ProjecileStats>().projectileCount += projectileCountIncrease; // add count
+            ability.procCoefficient /= procCoefficientReductionMultiplier; // reduce proc coefficient
         }
     }
 
@@ -26,8 +28,8 @@ public class MultipleProjectilesCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileCount -= 2; // remove count
-            ability.procCoefficient *= 2f; // increase proc coefficient
+            ability.GetComponent<ProjecileStats>().projectileCount -= projectileCountIncrease; // remove count
+            ability.procCoefficient *= procCoefficientReductionMultiplier; // increase proc coefficient
         }
     }
 

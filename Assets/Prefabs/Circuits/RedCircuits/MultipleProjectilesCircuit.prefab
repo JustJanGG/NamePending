@@ -150,6 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0c28450610f6341a397c43b1851b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tags: 01000000
+  projectileCountIncrease: 2
+  procCoefficientReductionMultiplier: 2
 --- !u!114 &4331930229737778102
 MonoBehaviour:
   m_ObjectHideFlags: 0

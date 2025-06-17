@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FasterProjectilesCircuit : RedCircuit
 {
+    public float speedMultiplier;
     public FasterProjectilesCircuit()
     {
         id = 1;
@@ -17,7 +18,7 @@ public class FasterProjectilesCircuit : RedCircuit
     {
         if(ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileSpeed *= 1.5f;
+            ability.GetComponent<ProjecileStats>().projectileSpeed *= speedMultiplier;
         }
     }
 
@@ -25,7 +26,7 @@ public class FasterProjectilesCircuit : RedCircuit
     {
         if (ability.tags.Contains(Tag.Projectile))
         {
-            ability.GetComponent<ProjecileStats>().projectileSpeed /= 1.5f;
+            ability.GetComponent<ProjecileStats>().projectileSpeed /= speedMultiplier;
         }
     }
 }
