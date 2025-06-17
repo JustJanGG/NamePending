@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 5
-  pierce: 0
+  pierce: 1
   projectileCount: 1
-  chainCount: 1
+  chainCount: 0
   duration: 0
 --- !u!114 &6599665650870190820
 MonoBehaviour:

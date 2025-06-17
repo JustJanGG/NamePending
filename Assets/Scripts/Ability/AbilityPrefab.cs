@@ -31,12 +31,6 @@ public class AbilityPrefab : MonoBehaviour
             collider.enabled = false;
         }
 
-        //ParticleSystem particleSystem = this.gameObject.GetComponent<ParticleSystem>();
-        //if (particleSystem != null)
-        //{
-        //    particleSystem.Stop();
-        //}
-
         yield return new WaitForSeconds(afterLifeTime);
         Destroy(this.gameObject);
     }
