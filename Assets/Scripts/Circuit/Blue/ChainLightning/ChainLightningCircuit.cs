@@ -19,6 +19,7 @@ public class ChainLightningCircuit : BlueCircuit
 
             ((IBlueCircuitPrefab)chainLightningPrefab).PassDamage(damage);
             chainLightningPrefab.prefabOf = this.gameObject;
+            chainLightningPrefab.audioClips = this.audioClips;
             ((IBlueCircuitPrefab)chainLightningPrefab).PassList(blueCircuits);
             ((IChaining)chainLightningPrefab).chainingStats = this.gameObject.GetComponent<ChainingStats>();
             chainLightningPrefab.lastEnemyHit = enemy;

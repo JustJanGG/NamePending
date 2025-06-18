@@ -18,6 +18,7 @@ public class SlashPrefab : AbilityPrefab, IMelee
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         DefaultOnTriggerEnter2D(collision);
     }
 }

@@ -23,6 +23,7 @@ public class FireballPrefab : AbilityPrefab, IProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        audioSource.PlayOneShot(audioClips[2]);
         DefaultOnTriggerEnter2D(collision);
         if (((IProjectile)this).ProjectileHit(gameObject, collision.GameObject()))
         {

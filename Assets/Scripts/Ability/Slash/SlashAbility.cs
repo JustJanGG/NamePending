@@ -9,10 +9,12 @@ public class SlashAbility : Ability
 
     public override void Activate()
     {
+        audioSource.PlayOneShot(audioClips[0]);
         GameObject slash = Instantiate(abilityPrefab, player.transform.position, Quaternion.identity, player.gameObject.transform);
         SlashPrefab slashPrefab = slash.GetComponent<SlashPrefab>();
         slashPrefab.prefabOf = this.gameObject;
         slashPrefab.meleeStats = this.gameObject.GetComponent<MeleeStats>();
+        slashPrefab.audioClips = this.audioClips;
         SetCooldown();
     }
 }

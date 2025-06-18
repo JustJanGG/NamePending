@@ -9,6 +9,7 @@ public class FireballAbility : Ability
 
     public override void Activate()
     {
+        audioSource.PlayOneShot(audioClips[0]);
         float arcAngle = 30f;
         for (int i = 0; i < this.GetComponent<ProjecileStats>().projectileCount; i++)
         {
@@ -16,9 +17,7 @@ public class FireballAbility : Ability
             FireballPrefab fireballPrefab = fireball.GetComponent<FireballPrefab>();
             fireballPrefab.prefabOf = this.gameObject;
             fireballPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
-
-            //fireballPrefab.castSound = this.castSound;
-            //fireballPrefab.hitSound = this.hitSound;
+            fireballPrefab.audioClips = this.audioClips;
 
             Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 projectileStartPostion = gameObject.transform.position;
