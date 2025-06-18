@@ -15,6 +15,7 @@ public class SlimeMovement : MonoBehaviour
     private GameObject player;
     private float distanceToPlayer;
     public Vector2 direction;
+    private bool isAttacking;
 
     [Header("Animation")]
     private Animator animator;
@@ -22,6 +23,7 @@ public class SlimeMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isAttacking = false;
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,8 +32,15 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Animate();
+        if (!isAttacking)
+        {
+            Move();
+            Animate();
+        }
+        if (distanceToPlayer < aggroRange && distanceToPlayer < 1.5f && !isAttacking)
+        {
+            StartCoroutine(AttackPlayer());
+        }
         CheckSortingLayer();
     }
 
@@ -44,17 +53,13 @@ public class SlimeMovement : MonoBehaviour
         direction = player.transform.position - transform.position;
         direction.Normalize();
 
-        if (distanceToPlayer < aggroRange && distanceToPlayer > 1.5f)
+        if (distanceToPlayer < aggroRange && distanceToPlayer > 1.5f && !isAttacking)
         {
             rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
         }
-        else if (distanceToPlayer < aggroRange && distanceToPlayer < 1.5f)
+        else
         {
-            StartCoroutine(AttackPlayer());
-        }
-        else if (distanceToPlayer > aggroRange)
-        {
-            rigidBody.linearVelocity = new Vector2(0, 0);
+            rigidBody.linearVelocity = Vector2.zero;
             direction = Vector2.zero;
         }
     }
@@ -67,8 +72,50 @@ public class SlimeMovement : MonoBehaviour
 
     private IEnumerator AttackPlayer()
     {
+        isAttacking = true;
+        rigidBody.linearVelocity = Vector2.zero;
+
+        Vector2 attackDir = player.transform.position - transform.position;
+        direction = attackDir; // Update direction for animation
+
+        // Set blend tree parameters for attack direction
+        animator.SetFloat("XSpeed", direction.x);
+        animator.SetFloat("YSpeed", direction.y);
+
         animator.SetTrigger("attacking");
-        yield return new WaitForSeconds(0.5f);
+
+        // Lunge parameters
+        float lungeDistance = 0.7f;
+        float lungeDuration = 0.05f; // Forward lunge duration
+        float returnDuration = 0.1f; // Backward return duration
+
+        Vector2 startPos = GetComponent<SpriteRenderer>().transform.position;
+        Vector2 endPos = startPos + direction * lungeDistance;
+
+        // Forward lunge
+        float elapsed = 0f;
+        while (elapsed < lungeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / lungeDuration);
+            GetComponent<SpriteRenderer>().transform.position = Vector2.Lerp(startPos, endPos, t);
+            yield return null;
+        }
+
+        // Backward return
+        elapsed = 0f;
+        while (elapsed < returnDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / returnDuration);
+            GetComponent<SpriteRenderer>().transform.position = Vector2.Lerp(endPos, startPos, t);
+            yield return null;
+        }
+
+        // Optionally, wait for the rest of the attack animation
+        yield return new WaitForSeconds(0.4f);
+
+        isAttacking = false;
     }
 
     private void CheckSortingLayer()
