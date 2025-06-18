@@ -16,17 +16,22 @@ public class SlimeMovement : MonoBehaviour
     private float distanceToPlayer;
     public Vector2 direction;
 
+    [Header("Animation")]
+    private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Animate();
         CheckSortingLayer();
     }
 
@@ -43,11 +48,27 @@ public class SlimeMovement : MonoBehaviour
         {
             rigidBody.linearVelocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
         }
-        else
+        else if (distanceToPlayer < aggroRange && distanceToPlayer < 1.5f)
+        {
+            StartCoroutine(AttackPlayer());
+        }
+        else if (distanceToPlayer > aggroRange)
         {
             rigidBody.linearVelocity = new Vector2(0, 0);
             direction = Vector2.zero;
         }
+    }
+
+    private void Animate()
+    {
+        animator.SetFloat("XSpeed", direction.x);
+        animator.SetFloat("YSpeed", direction.y);
+    }
+
+    private IEnumerator AttackPlayer()
+    {
+        animator.SetTrigger("attacking");
+        yield return new WaitForSeconds(0.5f);
     }
 
     private void CheckSortingLayer()
