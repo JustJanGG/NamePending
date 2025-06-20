@@ -8,6 +8,7 @@ public class AbilityPrefab : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource audioSource;
+    public AudioClip[] audioClips; //[0] Cast/Activation Sound, [1] flight Sound, [2] Hit Sound
 
     protected void DefaultOnTriggerEnter2D(Collider2D collision)
     {

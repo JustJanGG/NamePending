@@ -34,6 +34,7 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
             {
                 break;
             }
+            audioSource.PlayOneShot(audioClips[2]);
             yield return StartCoroutine(MoveToPosition(closestEnemy.transform.position, chainingStats.chainRange * 2f));
             GetComponentInChildren<ParticleSystem>().Play();
             alreadyHit.Add(closestEnemy);

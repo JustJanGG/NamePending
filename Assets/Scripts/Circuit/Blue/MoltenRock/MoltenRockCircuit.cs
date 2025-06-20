@@ -22,6 +22,7 @@ public class MoltenRockCircuit : BlueCircuit
 
                 ((IBlueCircuitPrefab)moltenRockPrefab).PassDamage(damage);
                 moltenRockPrefab.prefabOf = this.gameObject;
+                moltenRockPrefab.audioClips = this.audioClips;
                 ((IBlueCircuitPrefab)moltenRockPrefab).PassList(blueCircuits);
                 moltenRockPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
                 moltenRockPrefab.aoeStats = this.gameObject.GetComponent<AoEStats>();

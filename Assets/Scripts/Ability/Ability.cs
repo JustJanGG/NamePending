@@ -30,8 +30,8 @@ public abstract class Ability : MonoBehaviour
     private float cooldownTimer;
 
     [Header("Audio")]
-    public AudioClip castSound;
-    public AudioClip hitSound;
+    public AudioSource audioSource;
+    public AudioClip[] audioClips; //[0] Cast/Activation Sound, [1] flight Sound, [2] Hit Sound
 
     private void Awake()
     {
