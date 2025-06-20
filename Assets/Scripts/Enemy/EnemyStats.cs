@@ -13,7 +13,10 @@ public class EnemyStats : MonoBehaviour
     public float aggroRange;
 
     [Header("Damage")]
-    public float damage;
+    public float physicalDamage;
+    public float fireDamage;
+    public float coldDamage;
+    public float lightningDamage;
 
     [Header("Resistances")]
     [Range(0, 1)]
@@ -24,8 +27,6 @@ public class EnemyStats : MonoBehaviour
     public float coldResistance;
     [Range(0, 1)]
     public float lightningResistance;
-    
-
     private Dictionary<DamageType, float> resistances = new();
 
     private void Start()
@@ -51,6 +52,16 @@ public class EnemyStats : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    public Dictionary<DamageType, float> DealDamage()
+    {
+        Dictionary<DamageType, float> damage = new Dictionary<DamageType, float>();
+        damage.Add(DamageType.Physical, physicalDamage);
+        damage.Add(DamageType.Fire, fireDamage);
+        damage.Add(DamageType.Cold, coldDamage);
+        damage.Add(DamageType.Lightning, lightningDamage);
+        return damage;
     }
 
     private void Die()
