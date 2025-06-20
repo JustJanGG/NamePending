@@ -23,6 +23,8 @@ public class WaterBoltCircuit : BlueCircuit
 
                 ((IBlueCircuitPrefab)waterBoltPrefab).PassDamage(damage);
                 waterBoltPrefab.prefabOf = this.gameObject;
+                waterBoltPrefab.audioClips = this.audioClips;
+                audioSource.PlayOneShot(audioClips[0]);
                 ((IBlueCircuitPrefab)waterBoltPrefab).PassList(blueCircuits);
                 waterBoltPrefab.projecileStats = this.gameObject.GetComponent<ProjecileStats>();
 
