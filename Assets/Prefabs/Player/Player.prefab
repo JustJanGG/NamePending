@@ -416,7 +416,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -688,6 +688,10 @@ MonoBehaviour:
   dashRange: 10
   dashCooldown: 0.7
   baseDamage: 10
+  physicalResistance: 0
+  fireResistance: 0
+  coldResistance: 0
+  lightningResistance: 0
 --- !u!114 &4918749834855743183
 MonoBehaviour:
   m_ObjectHideFlags: 0
