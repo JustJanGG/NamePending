@@ -15,6 +15,8 @@ public class SlashAbility : Ability
         slashPrefab.prefabOf = this.gameObject;
         slashPrefab.meleeStats = this.gameObject.GetComponent<MeleeStats>();
         slashPrefab.audioClips = this.audioClips;
+        audioSource.PlayOneShot(audioClips[0]);
+
         SetCooldown();
     }
 }

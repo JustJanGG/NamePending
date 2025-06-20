@@ -27,6 +27,7 @@ public class WaterBoltPrefab : AbilityPrefab, IProjectile, IBlueCircuitPrefab
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        audioSource.PlayOneShot(audioClips[2]);
         transform.Find("Particle Explosion").gameObject.SetActive(true);
         GetComponentInChildren<ParticleSystem>().Play();
         ((IBlueCircuitPrefab)this).DefaultBlueCircuitOnTriggerEnter2D(collision, prefabOf);

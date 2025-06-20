@@ -218,7 +218,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: f4b73039b1217fa45a3ef849caaa5d72, type: 3}
   procChance: 0.3
 --- !u!61 &-4118960233161993212
 BoxCollider2D:

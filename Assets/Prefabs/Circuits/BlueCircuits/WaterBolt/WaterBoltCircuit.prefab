@@ -301,7 +301,10 @@ MonoBehaviour:
   afterLifetime: 1
   procCoefficient: 1
   audioSource: {fileID: 1467875957408640280}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: a63c224936cfce14e9249f11c730e478, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 0a15934a883dd964b8686e67ec72ab9c, type: 3}
   procChance: 0.25
 --- !u!114 &3294440596133984102
 MonoBehaviour:

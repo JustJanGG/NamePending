@@ -221,7 +221,7 @@ MonoBehaviour:
   procCoefficient: 0.4
   audioSource: {fileID: 6883052839904416789}
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4861d65ab3b3a9d4086c14c7fc9dbcf8, type: 3}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &3031375278907682880
