@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,15 +12,22 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
 
     [Header("Lists")]
+    public List<GameObject> LootTable;
     public List<GameObject> enemyList;
     public List<GameObject> circuitList;
+
+    [Header("Location")]
+    public Transform DropLocation;
+
+
+    private int previousEnemyCount = 0;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             // TODO: later start in main menu
             gameState = GameState.InGame;
         }
@@ -27,7 +36,22 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Update()
+    {
+        if (enemyList.Count == 0 && previousEnemyCount > 0)
+        {
+            GenerateLoot(DropLocation.position);
+        }
+        previousEnemyCount = enemyList.Count;
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("WaveDing");
+        }
+    }
     public void SetGameState(GameState newGameState)
     {
         gameState = newGameState;
@@ -42,8 +66,11 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    public void GenerateLoot(Vector3 dropPosition)
+    {
+        circuitList.Add(Instantiate(LootTable[Random.Range(0, LootTable.Count)], dropPosition, Quaternion.identity));
+    }
 }
-
 public enum GameState
 {
     //MainMenu,
