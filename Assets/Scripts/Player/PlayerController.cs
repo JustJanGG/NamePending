@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private PlayerStats playerStats;
     private Collider2D playerCollider;
+    private Animator animator;
 
     [Header("Movement")]
     public Vector2 direction;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         playerStats = GetComponent<PlayerStats>();
         playerCollider = GetComponentsInChildren<Collider2D>().FirstOrDefault(collider => collider.gameObject.layer == LayerMask.NameToLayer("PlayerCollision"));
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -29,6 +31,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("XSpeed", direction.x);
+        animator.SetFloat("YSpeed", direction.y);
+
+        if (direction.x > 0 || direction.y > 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
         if (dashTimer > -1.0f)
         {
             dashTimer -= Time.deltaTime;

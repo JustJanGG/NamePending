@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: a587dfb4f07b656499085b3cef38f395
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2352187829576806601
+    second: swamp-brawler-anim-sprint-color_0
+  - first:
+      213: 2047635123667696798
+    second: swamp-brawler-anim-sprint-color_1
+  - first:
+      213: -2593615131987189956
+    second: swamp-brawler-anim-sprint-color_2
+  - first:
+      213: 3874721328966466933
+    second: swamp-brawler-anim-sprint-color_3
+  - first:
+      213: 4338582151165295582
+    second: swamp-brawler-anim-sprint-color_4
+  - first:
+      213: 6881976035887175125
+    second: swamp-brawler-anim-sprint-color_5
+  - first:
+      213: -4728138633310746237
+    second: swamp-brawler-anim-sprint-color_6
+  - first:
+      213: -6427427688316107976
+    second: swamp-brawler-anim-sprint-color_7
+  - first:
+      213: 1280390287234694517
+    second: swamp-brawler-anim-sprint-color_8
+  - first:
+      213: 400619861187902294
+    second: swamp-brawler-anim-sprint-color_9
+  - first:
+      213: -3782342065360583559
+    second: swamp-brawler-anim-sprint-color_10
+  - first:
+      213: 1082265022228027192
+    second: swamp-brawler-anim-sprint-color_11
+  - first:
+      213: 4210249089343122818
+    second: swamp-brawler-anim-sprint-color_12
+  - first:
+      213: 4733875382049485647
+    second: swamp-brawler-anim-sprint-color_13
+  - first:
+      213: -869931448401806779
+    second: swamp-brawler-anim-sprint-color_14
+  - first:
+      213: 6159181607620081824
+    second: swamp-brawler-anim-sprint-color_15
+  - first:
+      213: -8830516800849872336
+    second: swamp-brawler-anim-sprint-color_16
+  - first:
+      213: 8224159708455051158
+    second: swamp-brawler-anim-sprint-color_17
+  - first:
+      213: -2282112669991009502
+    second: swamp-brawler-anim-sprint-color_18
+  - first:
+      213: -8785871556424085711
+    second: swamp-brawler-anim-sprint-color_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 216
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fc315a1a95b5fd0800000000000000
+      internalID: -2352187829576806601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 221
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c73dfcb49aa6c10800000000000000
+      internalID: 2047635123667696798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 218
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f53dd67c0a10cd0800000000000000
+      internalID: -2593615131987189956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 221
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57dfca00586c5c530800000000000000
+      internalID: 3874721328966466933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 223
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbbe0dca7db53c30800000000000000
+      internalID: 4338582151165295582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 146
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d55ecb0eb0b18f50800000000000000
+      internalID: 6881976035887175125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 151
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38946b8b6f6426eb0800000000000000
+      internalID: -4728138633310746237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 148
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833886a42903dc6a0800000000000000
+      internalID: -6427427688316107976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 151
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57dfb74be2cd4c110800000000000000
+      internalID: 1280390287234694517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_9
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 153
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b321424a94f8500800000000000000
+      internalID: 400619861187902294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 76
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9744a276eeb628bc0800000000000000
+      internalID: -3782342065360583559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 73
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8375bbabd4af40f00800000000000000
+      internalID: 1082265022228027192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 79
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d653a6d3fcd6a30800000000000000
+      internalID: 4210249089343122818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_13
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 73
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43b60e249a12b140800000000000000
+      internalID: 4733875382049485647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_14
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 81
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ab11fe4f16de3f0800000000000000
+      internalID: -869931448401806779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_15
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 6
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a870551a0fc97550800000000000000
+      internalID: 6159181607620081824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_16
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 3
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a793671c3b37580800000000000000
+      internalID: -8830516800849872336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_17
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 9
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f1b8e6ea5122270800000000000000
+      internalID: 8224159708455051158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_18
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 3
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22384c72e9e4450e0800000000000000
+      internalID: -2282112669991009502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-sprint-color_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 11
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f42257e50521680800000000000000
+      internalID: -8785871556424085711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      swamp-brawler-anim-sprint-color_0: -2352187829576806601
+      swamp-brawler-anim-sprint-color_1: 2047635123667696798
+      swamp-brawler-anim-sprint-color_10: -3782342065360583559
+      swamp-brawler-anim-sprint-color_11: 1082265022228027192
+      swamp-brawler-anim-sprint-color_12: 4210249089343122818
+      swamp-brawler-anim-sprint-color_13: 4733875382049485647
+      swamp-brawler-anim-sprint-color_14: -869931448401806779
+      swamp-brawler-anim-sprint-color_15: 6159181607620081824
+      swamp-brawler-anim-sprint-color_16: -8830516800849872336
+      swamp-brawler-anim-sprint-color_17: 8224159708455051158
+      swamp-brawler-anim-sprint-color_18: -2282112669991009502
+      swamp-brawler-anim-sprint-color_19: -8785871556424085711
+      swamp-brawler-anim-sprint-color_2: -2593615131987189956
+      swamp-brawler-anim-sprint-color_3: 3874721328966466933
+      swamp-brawler-anim-sprint-color_4: 4338582151165295582
+      swamp-brawler-anim-sprint-color_5: 6881976035887175125
+      swamp-brawler-anim-sprint-color_6: -4728138633310746237
+      swamp-brawler-anim-sprint-color_7: -6427427688316107976
+      swamp-brawler-anim-sprint-color_8: 1280390287234694517
+      swamp-brawler-anim-sprint-color_9: 400619861187902294
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

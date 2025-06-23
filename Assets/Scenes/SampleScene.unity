@@ -67172,6 +67172,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5934296361402808945, guid: fcf73aeec79e30042bdce9885ac2fccb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934296361402808945, guid: fcf73aeec79e30042bdce9885ac2fccb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934296361402808945, guid: fcf73aeec79e30042bdce9885ac2fccb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -67568,6 +67576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  LootTable: []
   enemyList:
   - {fileID: 1078847955}
   - {fileID: 490249873}
@@ -67583,6 +67592,7 @@ MonoBehaviour:
   - {fileID: 1797517549}
   - {fileID: 212201261}
   - {fileID: 1226470364}
+  DropLocation: {fileID: 0}
 --- !u!4 &1992600503
 Transform:
   m_ObjectHideFlags: 0
