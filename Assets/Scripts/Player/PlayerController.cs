@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 direction;
     private float dashTimer;
     private bool isDashing;
+    private Vector2 lastMoveDirection;
 
     private void Awake()
     {
@@ -27,20 +28,20 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isDashing = false;
+        lastMoveDirection = Vector2.right;
     }
 
     private void Update()
     {
         animator.SetFloat("XSpeed", direction.x);
         animator.SetFloat("YSpeed", direction.y);
+        animator.SetFloat("velocity", direction.magnitude);
 
-        if (direction.x > 0 || direction.y > 0)
+        if (direction.magnitude > 0.01f)
         {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
+            lastMoveDirection = direction;
+            animator.SetFloat("lastXSpeed", lastMoveDirection.x);
+            animator.SetFloat("lastYSpeed", lastMoveDirection.y);
         }
 
         if (dashTimer > -1.0f)
