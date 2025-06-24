@@ -43,6 +43,7 @@ public class PlayerStats : MonoBehaviour
             health -= damageTaken;
             if (health <= 0)
             {
+                GameManager.instance.GameOver();
                 Die();
             }
         }

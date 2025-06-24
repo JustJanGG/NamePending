@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.gameState == GameState.Dead)
+        {
+            rigidBody.linearVelocity = Vector2.zero;
+            return;
+        }
         if (dashTimer > -1.0f)
         {
             dashTimer -= Time.deltaTime;
@@ -42,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if (GameManager.instance.gameState == GameState.Dead)
+        {
+            return;
+        }
         if (!isDashing)
         {
             rigidBody.linearVelocity = new Vector2(direction.x * playerStats.movementSpeed, direction.y * playerStats.movementSpeed);
@@ -71,6 +80,10 @@ public class PlayerController : MonoBehaviour
 
     public void HandleMoveInput(InputAction.CallbackContext ctx)
     {
+        if (GameManager.instance.gameState == GameState.Dead)
+        {
+            return;
+        }
         direction = ctx.ReadValue<Vector2>().normalized;
         if (GameManager.instance.gameState == GameState.Inventory)
         {
@@ -80,6 +93,10 @@ public class PlayerController : MonoBehaviour
 
     public void HandleDashInput(InputAction.CallbackContext ctx)
     {
+        if (GameManager.instance.gameState == GameState.Dead)
+        {
+            return;
+        }
         if (ctx.performed && dashTimer <= 0 && GameManager.instance.gameState == GameState.InGame)
         {
             StartCoroutine(Dash());

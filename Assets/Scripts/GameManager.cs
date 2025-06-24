@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,13 +11,18 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
 
     [Header("Lists")]
-    public List<GameObject> LootTable;
+    public List<GameObject> lootTable;
     public List<GameObject> enemyList;
     public List<GameObject> circuitList;
 
     [Header("Location")]
-    public Transform DropLocation;
+    public Transform dropLocation;
 
+    [Header("UI")]
+    public GameObject gameOverScreen;
+
+    [HideInInspector]
+    public bool isPlayerAlive = true;
 
     private int previousEnemyCount = 0;
 
@@ -40,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         if (enemyList.Count == 0 && previousEnemyCount > 0)
         {
-            GenerateLoot(DropLocation.position);
+            GenerateLoot(dropLocation.position);
         }
         previousEnemyCount = enemyList.Count;
         if (Input.GetKeyDown(KeyCode.N))
@@ -68,12 +72,18 @@ public class GameManager : MonoBehaviour
     }
     public void GenerateLoot(Vector3 dropPosition)
     {
-        circuitList.Add(Instantiate(LootTable[Random.Range(0, LootTable.Count)], dropPosition, Quaternion.identity));
+        circuitList.Add(Instantiate(lootTable[Random.Range(0, lootTable.Count)], dropPosition, Quaternion.identity));
+    }
+    public void GameOver()
+    {
+        gameState = GameState.Dead;
+        gameOverScreen.SetActive(true);
     }
 }
 public enum GameState
 {
     //MainMenu,
     InGame,
-    Inventory
+    Inventory,
+    Dead
 }
