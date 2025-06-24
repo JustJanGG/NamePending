@@ -9,31 +9,47 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private PlayerStats playerStats;
     private Collider2D playerCollider;
+    private Animator animator;
 
     [Header("Movement")]
     public Vector2 direction;
     private float dashTimer;
     private bool isDashing;
+    private Vector2 lastMoveDirection;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         playerStats = GetComponent<PlayerStats>();
         playerCollider = GetComponentsInChildren<Collider2D>().FirstOrDefault(collider => collider.gameObject.layer == LayerMask.NameToLayer("PlayerCollision"));
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         isDashing = false;
+        lastMoveDirection = Vector2.right;
     }
 
     private void Update()
     {
+        animator.SetFloat("XSpeed", direction.x);
+        animator.SetFloat("YSpeed", direction.y);
+        animator.SetFloat("velocity", direction.magnitude);
+
+        if (direction.magnitude > 0.01f)
+        {
+            lastMoveDirection = direction;
+            animator.SetFloat("lastXSpeed", lastMoveDirection.x);
+            animator.SetFloat("lastYSpeed", lastMoveDirection.y);
+        }
+
         if (GameManager.instance.gameState == GameState.Dead)
         {
             rigidBody.linearVelocity = Vector2.zero;
             return;
         }
+
         if (dashTimer > -1.0f)
         {
             dashTimer -= Time.deltaTime;

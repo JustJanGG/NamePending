@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 1d0cd69555a2b294d88c0d3077655a92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4731156030872057307
+    second: swamp-brawler-anim-horizontal-slash-4-dir_0
+  - first:
+      213: 473297480848980284
+    second: swamp-brawler-anim-horizontal-slash-4-dir_1
+  - first:
+      213: -3395943092953653455
+    second: swamp-brawler-anim-horizontal-slash-4-dir_2
+  - first:
+      213: -2587475631593560129
+    second: swamp-brawler-anim-horizontal-slash-4-dir_3
+  - first:
+      213: -5691003945997809627
+    second: swamp-brawler-anim-horizontal-slash-4-dir_4
+  - first:
+      213: -5142735188448663980
+    second: swamp-brawler-anim-horizontal-slash-4-dir_5
+  - first:
+      213: -2723654679112925005
+    second: swamp-brawler-anim-horizontal-slash-4-dir_6
+  - first:
+      213: 8383063680864828945
+    second: swamp-brawler-anim-horizontal-slash-4-dir_7
+  - first:
+      213: 983730350694949201
+    second: swamp-brawler-anim-horizontal-slash-4-dir_8
+  - first:
+      213: 8078873857850131188
+    second: swamp-brawler-anim-horizontal-slash-4-dir_9
+  - first:
+      213: -1386963144634334971
+    second: swamp-brawler-anim-horizontal-slash-4-dir_10
+  - first:
+      213: 7118950275299583600
+    second: swamp-brawler-anim-horizontal-slash-4-dir_11
+  - first:
+      213: 1840915685338963592
+    second: swamp-brawler-anim-horizontal-slash-4-dir_12
+  - first:
+      213: -4246774573868825391
+    second: swamp-brawler-anim-horizontal-slash-4-dir_13
+  - first:
+      213: -5856987459824406939
+    second: swamp-brawler-anim-horizontal-slash-4-dir_14
+  - first:
+      213: 9055006935057717366
+    second: swamp-brawler-anim-horizontal-slash-4-dir_15
+  - first:
+      213: -4161539448695813022
+    second: swamp-brawler-anim-horizontal-slash-4-dir_16
+  - first:
+      213: 8540683381053655351
+    second: swamp-brawler-anim-horizontal-slash-4-dir_17
+  - first:
+      213: -2143233361588124716
+    second: swamp-brawler-anim-horizontal-slash-4-dir_18
+  - first:
+      213: 3615306418343017511
+    second: swamp-brawler-anim-horizontal-slash-4-dir_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a8cea18ae875eb0800000000000000
+      internalID: -4731156030872057307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 210
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39371b1d8d719600800000000000000
+      internalID: 473297480848980284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 210
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f5e0bdfbf2fd0d0800000000000000
+      internalID: -3395943092953653455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 210
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7e2e14f90771cd0800000000000000
+      internalID: -2587475631593560129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 210
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5284477301e7501b0800000000000000
+      internalID: -5691003945997809627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456ad9ee79551a8b0800000000000000
+      internalID: -5142735188448663980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 140
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0c4a8ff72a33ad0800000000000000
+      internalID: -2723654679112925005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 140
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e3d6b9000a65470800000000000000
+      internalID: 8383063680864828945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_8
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 140
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15161fbba89e6ad00800000000000000
+      internalID: 983730350694949201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_9
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 140
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2c85258fced1070800000000000000
+      internalID: 8078873857850131188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501038f4e5480cce0800000000000000
+      internalID: -1386963144634334971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 70
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076a6ecbe879bc260800000000000000
+      internalID: 7118950275299583600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_12
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 70
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ed21eef0f3c8910800000000000000
+      internalID: 1840915685338963592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 70
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d44363860d6015c0800000000000000
+      internalID: -4246774573868825391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 70
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56eaf3bdfecc7bea0800000000000000
+      internalID: -5856987459824406939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67850daf4d8d9ad70800000000000000
+      internalID: 9055006935057717366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_16
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c06b19bed3f36c0800000000000000
+      internalID: -4161539448695813022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_17
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73909cad84a968670800000000000000
+      internalID: 8540683381053655351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_18
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d306cbec94b142e0800000000000000
+      internalID: -2143233361588124716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp-brawler-anim-horizontal-slash-4-dir_19
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c768368062c2230800000000000000
+      internalID: 3615306418343017511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ef387b564d869a64492168ec0e0fcf09
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      swamp-brawler-anim-horizontal-slash-4-dir_0: -4731156030872057307
+      swamp-brawler-anim-horizontal-slash-4-dir_1: 473297480848980284
+      swamp-brawler-anim-horizontal-slash-4-dir_10: -1386963144634334971
+      swamp-brawler-anim-horizontal-slash-4-dir_11: 7118950275299583600
+      swamp-brawler-anim-horizontal-slash-4-dir_12: 1840915685338963592
+      swamp-brawler-anim-horizontal-slash-4-dir_13: -4246774573868825391
+      swamp-brawler-anim-horizontal-slash-4-dir_14: -5856987459824406939
+      swamp-brawler-anim-horizontal-slash-4-dir_15: 9055006935057717366
+      swamp-brawler-anim-horizontal-slash-4-dir_16: -4161539448695813022
+      swamp-brawler-anim-horizontal-slash-4-dir_17: 8540683381053655351
+      swamp-brawler-anim-horizontal-slash-4-dir_18: -2143233361588124716
+      swamp-brawler-anim-horizontal-slash-4-dir_19: 3615306418343017511
+      swamp-brawler-anim-horizontal-slash-4-dir_2: -3395943092953653455
+      swamp-brawler-anim-horizontal-slash-4-dir_3: -2587475631593560129
+      swamp-brawler-anim-horizontal-slash-4-dir_4: -5691003945997809627
+      swamp-brawler-anim-horizontal-slash-4-dir_5: -5142735188448663980
+      swamp-brawler-anim-horizontal-slash-4-dir_6: -2723654679112925005
+      swamp-brawler-anim-horizontal-slash-4-dir_7: 8383063680864828945
+      swamp-brawler-anim-horizontal-slash-4-dir_8: 983730350694949201
+      swamp-brawler-anim-horizontal-slash-4-dir_9: 8078873857850131188
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
