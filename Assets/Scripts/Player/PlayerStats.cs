@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour
     public float lightningResistance;
     private Dictionary<DamageType, float> resistances = new();
 
+
     private void Start()
     {
         resistances.Add(DamageType.Physical, physicalResistance);
@@ -47,6 +48,8 @@ public class PlayerStats : MonoBehaviour
                 Die();
             }
         }
+        GameObject.FindAnyObjectByType<HealthBar>().UpdateHealthBar();
+        
     }
 
     private void Die()
