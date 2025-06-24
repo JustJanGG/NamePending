@@ -21,9 +21,6 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject gameOverScreen;
 
-    [HideInInspector]
-    public bool isPlayerAlive = true;
-
     private int previousEnemyCount = 0;
 
     private void Awake()
