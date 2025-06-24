@@ -39,6 +39,11 @@ public class SlimeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.gameState == GameState.Dead)
+        {
+            rigidBody.linearVelocity = Vector2.zero;
+            return;
+        }
         if (!isAttacking)
         {
             Move();
@@ -165,7 +170,7 @@ public class SlimeMovement : MonoBehaviour
         {
             GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("EnemyBelowPlayer");
         }
-        GetComponent<Renderer>().sortingOrder = MapSortingOrder(transform.position.y, -50, 50, -100, 100) *-1;
+        GetComponent<Renderer>().sortingOrder = MapSortingOrder(transform.position.y, -50, 50, -100, 100) * -1;
     }
 
     private int MapSortingOrder(float x, float in_min, float in_max, float out_min, float out_max)
