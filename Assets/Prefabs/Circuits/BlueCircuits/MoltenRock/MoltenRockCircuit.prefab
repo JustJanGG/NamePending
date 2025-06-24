@@ -476,7 +476,6 @@ GameObject:
   - component: {fileID: 2914370023961955342}
   - component: {fileID: 8997367198581306246}
   - component: {fileID: 3352524839721650870}
-  - component: {fileID: 6381426409401701782}
   m_Layer: 5
   m_Name: CircuitTooltipWorldSpace
   m_TagString: Untagged
@@ -613,17 +612,3 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6381426409401701782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560356821601457710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6403c95a3d67bb647ad3a0c0b998a43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headerText: {fileID: 6569191274020811832}
-  layoutElement: {fileID: 3352524839721650870}
