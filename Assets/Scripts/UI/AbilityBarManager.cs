@@ -37,7 +37,7 @@ public class AbilityBarManager : MonoBehaviour
                     GameObject circuit = ability.transform.Find(circuitSlotUi.transform.name).GetChild(0).gameObject;
                     ability.GetComponent<Ability>().RemoveCircuit(circuit);
                     circuit.transform.SetParent(null);
-                    circuitSlotUi.GetComponent<Image>().color = Color.white;
+                    circuitSlotUi.GetComponent<SpriteRenderer>().sprite = circuitSlotUi.GetComponent<CircuitSlotSpriteChanger>().emptyCircuitSprite;
 
                     circuit.GetComponent<Draggable>().Pickup(false);
                     Vector3 randomPoint = Random.insideUnitCircle.normalized * Random.Range(0.1f, 0.3f);
@@ -53,18 +53,19 @@ public class AbilityBarManager : MonoBehaviour
         switch (ability.transform.Find(circuitSlotUi.transform.name).GetComponentInChildren<ICircuit>().circuitType)
         {
             case CircuitType.Blue:
-                circuitSlotUi.GetComponent<Image>().color = Color.blue;
+                circuitSlotUi.GetComponent<SpriteRenderer>().sprite = circuitSlotUi.GetComponent<CircuitSlotSpriteChanger>().blueCircuitSprite;
                 break;
 
             case CircuitType.Red:
-                circuitSlotUi.GetComponent<Image>().color = Color.red;
+                circuitSlotUi.GetComponent<SpriteRenderer>().sprite = circuitSlotUi.GetComponent<CircuitSlotSpriteChanger>().redCircuitSprite;
                 break;
 
             case CircuitType.Green:
-                circuitSlotUi.GetComponent<Image>().color = Color.green;
+                circuitSlotUi.GetComponent<SpriteRenderer>().sprite = circuitSlotUi.GetComponent<CircuitSlotSpriteChanger>().greenCircuitSprite;
                 break;
 
             default:
+                circuitSlotUi.GetComponent<SpriteRenderer>().sprite = circuitSlotUi.GetComponent<CircuitSlotSpriteChanger>().emptyCircuitSprite;
                 break;
         }
     }
