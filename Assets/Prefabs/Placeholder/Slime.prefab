@@ -214,7 +214,7 @@ MonoBehaviour:
   maxHealth: 300
   movementSpeed: 2
   aggroRange: 15
-  physicalDamage: 1
+  physicalDamage: 3
   fireDamage: 0
   coldDamage: 0
   lightningDamage: 0

@@ -22,7 +22,10 @@ public class ChainLightningPrefab : AbilityPrefab, IBlueCircuitPrefab, IChaining
         prefabOf.GetComponent<BlueCircuit>().Hit(lastEnemyHit, reducedList, damage);
         alreadyHit = new List<GameObject>();
         alreadyHit.Add(lastEnemyHit);
-        lastEnemyTrans = new Vector3(lastEnemyHit.transform.position.x, lastEnemyHit.transform.position.y, 0f);
+        if (lastEnemyTrans != null)
+        {
+            lastEnemyTrans = new Vector3(lastEnemyHit.transform.position.x, lastEnemyHit.transform.position.y, 0f);
+        }
         GameObject closestEnemy;
         GetComponentInChildren<ParticleSystem>().Play();
 

@@ -6,10 +6,15 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-    int uiLayer;
+    private int uiLayer;
+    private GameObject abilityBar;
+    private float oldXPosition;
+
+
     private void Awake()
     {
        this.GetComponent<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>();
+       abilityBar = GetComponentInChildren<AbilityBarManager>().gameObject;
     }
 
     private void Start()
@@ -17,15 +22,17 @@ public class UIManager : MonoBehaviour
         uiLayer = LayerMask.NameToLayer("UI");
         transform.Find("TransparentBackground").GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
         transform.Find("TransparentBackground").GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
+        oldXPosition = abilityBar.GetComponent<RectTransform>().anchoredPosition.x;
+
     }
 
     private void Update()
     {
+        float oldXPosition = abilityBar.GetComponent<RectTransform>().anchoredPosition.x;
         if (GameManager.instance.gameState == GameState.Inventory)
         {
-            GameObject abilityBar = GetComponentInChildren<AbilityBarManager>().gameObject;
-            abilityBar.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
-            abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(abilityBar.GetComponent<RectTransform>().anchoredPosition.x, 150);
+            abilityBar.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+            abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(300f, 150f);
             transform.Find("TransparentBackground").gameObject.SetActive(true);
         }
         else
@@ -36,9 +43,8 @@ public class UIManager : MonoBehaviour
 
     private void ResetAbilityBar()
     {
-        GameObject abilityBar = GetComponentInChildren<AbilityBarManager>().gameObject;
         abilityBar.transform.localScale = new Vector3(1f, 1f, 1f);
-        abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(abilityBar.GetComponent<RectTransform>().anchoredPosition.x, 50);
+        abilityBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(oldXPosition, 50f);
         transform.Find("TransparentBackground").gameObject.SetActive(false);
     }
 
